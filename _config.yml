@@ -5,6 +5,7 @@ highlighter: rouge
 gist:
   noscript: false
 kramdown:
+  input: GFM
   math_engine: mathjax
   syntax_highlighter: rouge
 lsi: false
