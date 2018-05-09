@@ -77,3 +77,8 @@ Second
 Third
 ```
 
+
+{% include_relative week01/exercise/001.md %}
+{% include_relative week01/exercise/002.md %}
+{: .exercises }
+
