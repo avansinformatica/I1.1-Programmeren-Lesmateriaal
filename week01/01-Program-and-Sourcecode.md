@@ -78,7 +78,7 @@ Third
 ```
 
 
-{% include_relative week01/exercise/001.md %}
-{% include_relative week01/exercise/002.md %}
+{% include_relative e_001.md %}
+{% include_relative e_002.md %}
 {: .exercises }
 
