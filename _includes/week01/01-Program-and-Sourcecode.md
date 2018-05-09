@@ -79,5 +79,6 @@ Third
 
 
 {% include week01/exercise/001.md %}
+{% include week01/exercise/002.md %}
 {: .exercises }
 
