@@ -1,16 +1,3 @@
----
-layout: default
-title: Week 1
----
-# Object-Oriented Programming with Java, part I
-
-> This material is licensed under the Creative Commons BY-NC-SA license, which means that you can use it and distribute it freely so long as you do not erase the names of the original authors. If you do changes in the material and want to distribute this altered version of the material, you have to license it with a similar free license. The use of the material for commercial use is prohibited without a separate agreement.
-
-Authors: Arto Hellas, Matti Luukkainen
-Translators to English: Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas
-
-The course is maintained by the Agile Education Research Group
-
 ## 1. The program and the source code
 
 ### 1.1 Source code
@@ -91,23 +78,7 @@ Third
 ```
 
 
-
->> ### Exercise 1: Name
->> Create a program that prints your name to the screen.
->>
->>The program output should resemble the following:
->>
->> ```output
->> Jane Doe
->> ```
->{: .exercise }
->> ### Exercise 2: Hello world! (And all the people of the world)
->> Create a program that prints out the following:
->>
->> ```output
->> Hello world!
->> (And all the people of the world)
->> ```
->{: .exercise }
+{% include_relative week01/exercise/002.md %}
+{% include_relative week01/exercise/002.md %}
 {: .exercises }
 
