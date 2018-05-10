@@ -104,21 +104,35 @@
     <script>
       $(function()
       {
+        //make exercise clickable
         $("blockquote.exercise h3").click(function(){
           $(this).siblings().toggle(100);
         });
 
+        //replace ~~stuff~~ in output code blocks with red text
         $("code.language-output").each(function(index, element)
         {
           var text = $(this).text();
           text = text.replace(/\~\~([^\~]+)\~\~/g, "<span style='color: red'>$1</span>");
           $(this).html(text);
         });
+
+        //add tryme button
+        $("div.tryme").each(function(index, element)
+        {
+          var text = $(this).text();
+           var btn = $(this).prepend('<a class="btn btn-primary" href="#" style="float: right">Try Me</a>');
+            btn.click(function()
+            {
+                alert("Here should be an online IDE with\n" + text);
+            });
+        });
+
       });
     
 
       
     </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   </body>
 </html>

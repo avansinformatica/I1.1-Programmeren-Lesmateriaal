@@ -19,6 +19,13 @@ Normaal, *italic*, **bold**, ***bolditalic***, ~~strikethrough~~
 System.out.println("Hello World");
 ```
 
+and we can have code linked with an online IDE?
+
+```java
+System.out.println("Hello World, try me");
+```
+{: .tryme}
+
 ## Output
 
 ```output
@@ -41,4 +48,4 @@ This will have a ~~red~~ text to indicate this was typed by the user
 When $$a \ne 0$$, there are two solutions to $$(ax^2 + bx + c = 0)$$ and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
-## 
+
