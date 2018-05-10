@@ -25,6 +25,10 @@ System.out.println("Hello World");
 Hello World
 ```
 
+```output
+This will have a ~~red~~ text to indicate this was typed by the user
+```
+
 ## Youtube
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ixJCo0cyAuA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
