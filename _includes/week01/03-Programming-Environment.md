@@ -4,6 +4,8 @@ Programming these days takes place in development environments almost without ex
 
 > In this course, we will use the IntelliJ development environment. A guide for using IntelliJ is available here.
 
+TODO
+
 {% include week01/exercise/001.md %}
 {% include week01/exercise/002.md %}
 {% include week01/exercise/003.md %}
