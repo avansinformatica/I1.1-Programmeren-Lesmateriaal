@@ -63,6 +63,7 @@
         }
         h2{ margin-bottom: 20px;}
         h3{ margin-bottom: 20px;}
+        hr{ margin-bottom: 150px; margin-top: 20px; }
 
     </style>
     <title>{{ page.title }}</title>
@@ -106,8 +107,17 @@
         $("blockquote.exercise h3").click(function(){
           $(this).siblings().toggle(100);
         });
+
+        $("code.language-output").each(function(index, element)
+        {
+          var text = $(this).text();
+          text = text.replace(/\~\~([^\~]+)\~\~/g, "<span style='color: red'>$1</span>");
+          $(this).html(text);
+        });
       });
     
+
+      
     </script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   </body>

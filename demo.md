@@ -10,6 +10,8 @@ Normaal, *italic*, **bold**, ***bolditalic***, ~~strikethrough~~
 
 [link](https://www.avans.nl)
 
+[documentatie over markdown in kramdown](https://kramdown.gettalong.org/quickref.html#block-attributes) (bijvoorbeeld over classes, md in html elementen etc)
+
 
 ## Code
 
