@@ -11,4 +11,10 @@ title: Week 1
 {% include week01/exercise/005.md %}
 {% include week01/exercise/006.md %}
 {% include week01/exercise/007.md %}
+{% include week01/exercise/008.md %}
+{% include week01/exercise/009.md %}
+{% include week01/exercise/010.md %}
+{% include week01/exercise/011.md %}
+{% include week01/exercise/012.md %}
+{% include week01/exercise/013.md %}
 {: .exercises }
