@@ -17,3 +17,9 @@ title: Week 1
 {% include week01/06-Strings.md %}
 ---
 {% include week01/07-User-Input.md %}
+---
+{% include week01/08-Conditional-Statements.md %}
+---
+{% include week01/09-Loops.md %}
+---
+end of week 1
