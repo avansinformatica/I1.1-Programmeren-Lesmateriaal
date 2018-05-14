@@ -125,3 +125,87 @@ Hi Arthur, greetings from the world of methods!
 
 More complicated expressions can also be used as a parameter for our self-written methods, the same way we used them together with the ready-made `System.out.println()` method.
 
+```java
+public static void main(String[] args) {
+    String name1 = "Anne";
+    String name2 = "Green";
+    greet( name1 + " " + name2 );
+
+    int age = 24;
+    greet("John " + age + " years");
+}
+```
+
+```output
+Hi Anne Green, greetings from the world of methods!
+Hi John 24 years, greetings from the world of methods!
+```
+
+In both cases the method has only one parameter. The value for the parameter is calculated before calling the method. In the first case the parameter value comes from the String concatenation (a cool word that means putting the text together) `name1 + " " + name2`. The value for the concatenation is *Anne Green*. In the second case we get the parameter value from the String concatenation `"John " + age + " years"`.
+
+### 13.2 Many parameters
+
+A method can be defined to have more than one parameter. In this case, the parameters are always listed in the same order.
+
+```java
+public static void greet(String name, String greetingsFrom) {
+    System.out.println("Hi " + name + ", greetings from " + greetingsFrom);
+}
+```
+
+```java
+String who = "Matt";
+String greetings = "Alabama";
+
+greet(who, greetings);
+greet(who, greetings + " from Nevada");
+```
+
+In the last `greet` function (or method) call the second parameter is formed by concatenating (or adding) the text “from Nevada” to the variable `greetings`. This is done before the actual function call.
+
+```output
+Hi Matt, greetings from Alabama
+Hi Matt, greetings from Alabama from Nevada
+```
+
+### 13.3 Method calling another method
+
+Methods can also be called outside of main. Methods can call each other! Let us create a method greetManyTimes that greets the user many times getting assistance from the method `greet`:
+
+```java
+public static void greet(String name) {
+    System.out.println("Hi " + name + ", greetings from the world of methods!");
+}
+
+public static void greetManyTimes(String name, int times) {
+    int i = 0;
+    while ( i < times ) {
+        greet(name);
+        i++;
+    }
+
+}
+
+public static void main(String[] args) {
+    greetManyTimes("Anthony", 3);
+    System.out.println("and");
+    greetManyTimes("Martin", 2);
+}
+```
+
+Output:
+
+```output
+Hi Anthony, greetings from the world of methods!
+Hi Anthony, greetings from the world of methods!
+Hi Anthony, greetings from the world of methods!
+and
+Hi Martin, greetings from the world of methods!
+Hi Martin, greetings from the world of methods!
+```
+
+{% include week02/exercise/039.md %}
+{% include week02/exercise/040.md %}
+{% include week02/exercise/041.md %}
+{% include week02/exercise/042.md %}
+{: .exercises }

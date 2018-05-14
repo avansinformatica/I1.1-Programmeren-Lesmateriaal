@@ -20,22 +20,24 @@
         blockquote.exercises
         {
           border-left: 0;
-          background-color: #E8FFFF;
+          background-color: #c6002a;
           border-radius: 10px;
-          margin-left: 0px; 
+          padding-right: 10px;
         }
         blockquote.exercise
         {
           border-left: 0;
-          background-color: #E8FFFF;
+          background-color: #c6002a;
           padding-top: 10px;
           padding-bottom: 10px;
           margin-left: 0px; 
+          color: white;
         }
         blockquote.exercise h3
         {
-          background-color: #95E7ED;
+          background-color: #c6002a;
           border-radius: 10px;
+          border-color: white;
           padding: 5px;
           cursor: pointer;
         }
@@ -44,13 +46,19 @@
           display: none;
         }
 
+        blockquote.exercise .highlighter-rouge
+        {
+          color: #00ACEB
+        }
+
         .language-java
         {
           border-radius: 10px;
-          border: 1px solid #eee;
+          border: 1px solid #181712;
           padding: 25px;
           padding-bottom: 10px;
           margin-left: 25px;        
+          background-color: white;
         }
         .language-output
         {
@@ -58,42 +66,65 @@
           border: 1px solid #eee;
           padding: 25px;
           margin: 25px;      
-          background-color: #eec;
+          background-color: #181712;
+          color: white;
           display: block;
         }
+
         h2{ margin-bottom: 20px;}
         h3{ margin-bottom: 20px;}
         hr{ margin-bottom: 150px; margin-top: 20px; }
+
+        img[src$="right"] {
+            display:block;
+            float: right;
+            margin-left: 25px;
+          }
+
+        img[src$="left"] {
+            display:block;
+            float: left;
+            margin-right: 25px;
+          }
+        img[src*="thumb"] {
+          width: 150px;
+          height: auto;
+        }
+        h1,h2,h3 { clear: both;}
+
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link
+        {
+          background-color: #c6002a;
+          color: white;
+        }
 
     </style>
     <title>{{ page.title }}</title>
   </head>
   <body>
-    <div class="container">
         <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 1" %} active{% endif %}" href="week1">Week 1</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 2" %} active{% endif %}" href="week2">Week 2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 3" %} active{% endif %}" href="week3">Week 3</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 4" %} active{% endif %}" href="week4">Week 4</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 5" %} active{% endif %}" href="week5">Week 5</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if page.title == "Week 6" %} active{% endif %}" href="week6">Week 6</a>
-            </li>
-          </ul>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 1" %} active{% endif %}" href="week1">Week 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 2" %} active{% endif %}" href="week2">Week 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 3" %} active{% endif %}" href="week3">Week 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 4" %} active{% endif %}" href="week4">Week 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 5" %} active{% endif %}" href="week5">Week 5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if page.title == "Week 6" %} active{% endif %}" href="week6">Week 6</a>
+          </li>
+        </ul>
       <div class="container">
       {{ content }}
       </div>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
