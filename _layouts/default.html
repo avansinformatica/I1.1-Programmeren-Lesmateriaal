@@ -120,8 +120,9 @@
         //add tryme button
         $("div.tryme").each(function(index, element)
         {
-          var text = $(this).text();
-           var btn = $(this).prepend('<a class="btn btn-primary" href="#" style="float: right">Try Me</a>');
+           var text = $(this).text();
+           var btn = $('<a class="btn btn-primary" href="#" style="float: right">Try Me</a>');
+           $(this).prepend(btn);
             btn.click(function()
             {
                 alert("Here should be an online IDE with\n" + text);
