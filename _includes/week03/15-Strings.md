@@ -49,3 +49,43 @@ char character = word.charAt(word.length());
 {% include week03/exercise/051.md %}
 {% include week03/exercise/052.md %}
 {: .exercises }
+
+### 15.1 Other methods for strings
+
+We often want to read only a specific part of a string. A method in the String class called `substring` makes this possible. It can be used in two ways:
+
+```java
+String word = "Supercalifragilisticexpialidocious";
+System.out.println(word.substring(14)); //prints "listicexpialidocious"
+System.out.println(word.substring(9,20)); //prints "fragilistic"
+```
+
+We can store the return value in a variable, because the return value of the substring method is of type String.
+
+```java
+String book = "Mary Poppins";
+String endpart = book.substring(5);
+System.out.println("Harry " + endpart); // prints "Harry Poppins"
+```
+
+Methods in the String class also make it possible to search for a specific word in text. For example, the word "or" can be found in the word "Horse". A method called `indexOf()` searches for the word given as a parameter in a string. If the word is found, it returns the starting index (location), remember that the numbering starts from 0 of the word. If the word is not found, the method returns the value -1.
+
+```java
+String word = "aesthetically";
+
+int index = word.indexOf("tic"); // index value will be 6
+System.out.println(word.substring(index)); //prints "tically"
+
+index = word.indexOf("ally"); //index value will be 9
+System.out.println(word.substring(index)); //prints "ally"
+
+index = word.indexOf("book"); // string "aesthetically" does not include "book"
+System.out.println(index); //prints -1
+System.out.println(word.substring(index)); //error!
+```
+
+{% include week03/exercise/053.md %}
+{% include week03/exercise/054.md %}
+{% include week03/exercise/055.md %}
+{% include week03/exercise/056.md %}
+{: .exercises }
