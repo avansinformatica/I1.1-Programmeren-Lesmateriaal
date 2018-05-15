@@ -1,6 +1,7 @@
 ## 14. More about methods
 
 ### 14.1 Methods and visibility of variables
+
 Let us try to change from within a method the value of a variable located in the main program.
 
 ```java
