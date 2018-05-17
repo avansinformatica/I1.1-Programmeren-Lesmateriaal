@@ -10,5 +10,7 @@ title: Week 4
 ---
 {% include week04/21-Object-oriented-programming.md %}
 ---
+{% include week04/22-Randomness.md %}
+---
 
 end of week 4
