@@ -2,11 +2,20 @@
 
 ### 4.1 Variables and data types
 
-A *variable* is one of the most important concepts in computer programming. A variable should be imagined as a box in which you can store information. The information stored in a variable always has a type. These types include
-* text (String)
-* whole numbers (int)
-* decimal numbers (double)
-* truth values (boolean). 
+A *variable* is one of the most important concepts in computer programming. A variable should be imagined as a box in which you can store information. The information stored in a variable always has a type. Java only has a limited number of data types, but it can be extended with custom types. Those custom types can be recognized, as their name is always spelled with a capital. The basic set of variable types in java is as followed:
+
+| Type      | Memory size   | Range  | Default | Description |
+|-----------|---------------|--------|---------|-------------|
+| byte      | 1 byte        | -$$128$$ to $$127$$                                                         | 0       | The smallest numeric datatype in java. Can be used for large collections of data to save memory. |
+| short     | 2 bytes       | $$-32 768$$ to $$32 767$$                                                   | 0       | A small numeric datatype in java. Can be used for large collections of data to save memory |
+| int       | 4 bytes       | $$-2^{31}$$ to $$2^{31} - 1$$                                       | 0       | The default datatype for numbers. This number is 32bit and processors are optimized to handle these numbers |
+| long      | 8 bytes       | $$-2^{63}$$ to $$2^{63} - 1$$                                       | 0L      | Used when the int datatype is not big enough |
+| float     | 4 bytes       | $$-(2-2^{-23}) \times 2^{127}$$ to $$(2-2^{-23}) \times 2^{127}$$   | 0.0f    | The floating point type is used for storing non-integer values. This is not a precise datatype, and should not be used for currency where precision is required
+| double    | 8 bytes       | $$-(2-2^{-52}) \times 2^{1023}$$ to $$(2-2^{-52}) \times 2^{1023}$$ | 0.0d    | The double is used for storing non-integer values. This is not a precise datatype, and should not be used for currency where precision is required. A double has more memory space than a float, which is used for storing numbers with more precision | 
+| boolean   | not defined   | true, false                                                         | false   | Used for simple truth values of true or false. Are used becaused they are easy to used in expressions | 
+| char      | 2 bytes       | all unicode characters                                              | '\u0000'| Used for storing the characters in a text. Can contain values like 'a', 'Z', '0' or '@' |
+
+Another type that you have seen so far is the `String`. A string is a variable that contain text
 
 A value can be assigned to a variable using the equals sign (=).
 

@@ -157,6 +157,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Glossary</a>
               <a class="dropdown-item" href="#">IntelliJ FAQ</a>
+              <a class="dropdown-item" href="#">Seperate Articles</a>
             </div>          </li>
         </ul>
       <div class="container">
@@ -201,6 +202,11 @@
             {
                 alert("Here should be an online IDE with\n" + text);
             });
+        });
+        //bootstrap tables
+        $("table").each((index, element) =>
+        {
+          element.className = "table table-triped";
         });
 
       });
