@@ -113,7 +113,7 @@
         }
         h1,h2,h3 { clear: both;}
 
-        .nav-pills
+        .nav-pills, .dropdown-menu
         {
           background-color: #c6002a;
         }
@@ -125,7 +125,6 @@
         {
           background-color: #c6002a;
           color: #00ACEB;
-          font-weight: bold;
         }
 
     </style>
@@ -151,6 +150,14 @@
           <li class="nav-item">
             <a class="nav-link {% if page.title == "Week 6" %} active{% endif %}" href="week6">Week 6</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Extras
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Glossary</a>
+              <a class="dropdown-item" href="#">IntelliJ FAQ</a>
+            </div>          </li>
         </ul>
       <div class="container">
       {{ content }}

@@ -1,4 +1,4 @@
-## 9. Introduction to loops
+## 10. Introduction to loops
 
 Conditional statements allow us to execute different commands based on the conditions. For example, we can let the user login only if the username and password are correct.
 
@@ -73,8 +73,8 @@ while (true) {
 System.out.println("Thanks, bye!");
 ```
 
-
 {% include week01/exercise/022.md %}
 {% include week01/exercise/023.md %}
 {% include week01/exercise/024.md %}
+{% include week02/exercise/026.md %}
 {: .exercises }

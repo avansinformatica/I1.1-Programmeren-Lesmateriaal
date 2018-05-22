@@ -20,6 +20,6 @@ title: Week 1
 ---
 {% include week01/08-Conditional-Statements.md %}
 ---
-{% include week01/09-Loops.md %}
+{% include week01/09-Changing-Variables.md %}
 ---
 end of week 1

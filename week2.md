@@ -4,7 +4,7 @@ title: Week 2
 ---
 {% include_relative /licence.md %}
 ---
-{% include week02/10-Changing-Variables.md %}
+{% include week02/10-Loops.md %}
 ---
 {% include week02/11-More-Loops.md %}
 ---

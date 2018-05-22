@@ -1,4 +1,4 @@
-## 10. Changing variables
+## 9. Changing variables
 
 We usually want to change the value of an existing variable. This can be done using the normal assignment statement. In the next example, we increase the value of the variable `age` by one:
 
@@ -37,5 +37,4 @@ System.out.println(length);  // prints 24
 ```
 
 {% include week02/exercise/025.md %}
-{% include week02/exercise/026.md %}
 {: .exercises }
