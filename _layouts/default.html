@@ -22,23 +22,30 @@
           border-left: 0;
           background-color: #c6002a;
           border-radius: 10px;
-          padding-right: 10px;
+          margin: 0px;
+          padding-right: 10px; 
+          margin-top: 10px;
+          margin-bottom: 10px; 
         }
         blockquote.exercise
         {
           border-left: 0;
-          background-color: #c6002a;
           padding-top: 10px;
           padding-bottom: 10px;
           margin-left: 0px; 
+          padding-left: 0px;
           color: white;
           border-bottom: 1px solid white;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          background-color: transparent;
+        }
+        blockquote.exercise:last-child
+        {
+          border: none !important;
         }
         blockquote.exercise h3
         {
-          background-color: #c6002a;
-          border-radius: 10px;
-          border-color: white;
           padding: 5px;
           cursor: pointer;
         }
@@ -52,26 +59,35 @@
           color: #00ACEB
         }
 
+        blockquote.exercises p
+        {
+          color: white;
+          padding-bottom: 10px;
+        }
+
+        .highlight
+        {
+          margin: 0px;
+        }
+
         .language-java
         {
           border-radius: 10px;
           border: 1px solid #181712;
-          padding: 25px;
-          padding-bottom: 10px;
-          margin-left: 25px;        
+          padding: 10px;
           background-color: white;
         }
         .language-output
         {
           border-radius: 10px;
           border: 1px solid #eee;
-          padding: 25px;
-          margin: 25px;      
           background-color: #181712;
           color: white;
           display: block;
+          padding: 10px;
         }
 
+ 
         h2{ margin-bottom: 20px;}
         h3{ margin-bottom: 20px;}
         hr{ margin-bottom: 150px; margin-top: 20px; }
@@ -87,8 +103,12 @@
             float: left;
             margin-right: 25px;
           }
-        img[src*="thumb"] {
+          img[src*="thumb"] {
           width: 150px;
+          height: auto;
+        }
+        img[src*="thumbmedium"] {
+          width: 300px;
           height: auto;
         }
         h1,h2,h3 { clear: both;}
@@ -156,6 +176,12 @@
           var text = $(this).text();
           text = text.replace(/\~\~([^\~]+)\~\~/g, "<span style='color: red'>$1</span>");
           $(this).html(text);
+        });
+        //change output formatting (can't do this with css)
+        $("code.language-output").each(function(index, element)
+        {
+          $(this).removeClass("language-output");
+          $(this).parent().addClass("language-output");
         });
 
         //add tryme button

@@ -67,7 +67,7 @@ Lets take an analogy from the world outside of computers: the blueprints of a ho
 
 Individual objects, the houses in our analogy, are made from that same blueprint. They are instances of the same class. The state of individual objects, the attributes, can vary (color of walls, building material of the roof, doors, windowsills, etc...). Here is one instance of a House object:
 
-![house](images/21_house.jpg)
+![house](images/21_house.jpg?thumbmedium)
 
 An object is always created from its class by calling the method - the constructor - that creates the object with the command `new`. For example, a new instance is created from the class Scanner by calling `new Scanner(..)`:
 

@@ -8,3 +8,6 @@ title: Glossary
 * attribute
 * encapsulation
 * overloading
+* constructor
+* class
+* variable
