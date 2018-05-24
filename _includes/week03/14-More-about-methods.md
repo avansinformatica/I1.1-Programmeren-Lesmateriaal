@@ -173,8 +173,8 @@ public static double average(int number1, int number2, int number3) {
 }
 ```
 
-{% include week03/exercise/043.md %}
-{% include week03/exercise/044.md %}
-{% include week03/exercise/045.md %}
-{% include week03/exercise/046.md %}
+{% include week03/exercise/001.md %}
+{% include week03/exercise/002.md %}
+{% include week03/exercise/003.md %}
+{% include week03/exercise/004.md %}
 {: .exercises }

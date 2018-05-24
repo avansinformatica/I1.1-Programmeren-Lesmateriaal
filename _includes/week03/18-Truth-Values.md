@@ -120,6 +120,6 @@ public static boolean allPositive(ArrayList<Integer> numbers) {
 
 When we are going through the list of numbers and we find a negative number, we can exit the method by returning false. If there are no negative numbers on the list, we get to the end and therefore can return the value true. We now got rid of the helper variable inside the method!
 
-{% include week03/exercise/068.md %}
-{% include week03/exercise/069.md %}
+{% include week03/exercise/026.md %}
+{% include week03/exercise/027.md %}
 {: .exercises }

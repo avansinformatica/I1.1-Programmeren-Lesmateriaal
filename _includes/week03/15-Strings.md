@@ -42,12 +42,12 @@ The characters in a string are numbered (indexed) starting from 0. This means th
 char character = word.charAt(word.length());
 ```
 
-{% include week03/exercise/047.md %}
-{% include week03/exercise/048.md %}
-{% include week03/exercise/049.md %}
-{% include week03/exercise/050.md %}
-{% include week03/exercise/051.md %}
-{% include week03/exercise/052.md %}
+{% include week03/exercise/005.md %}
+{% include week03/exercise/006.md %}
+{% include week03/exercise/007.md %}
+{% include week03/exercise/008.md %}
+{% include week03/exercise/009.md %}
+{% include week03/exercise/010.md %}
 {: .exercises }
 
 ### 15.1 Other methods for strings
@@ -84,8 +84,8 @@ System.out.println(index); //prints -1
 System.out.println(word.substring(index)); //error!
 ```
 
-{% include week03/exercise/053.md %}
-{% include week03/exercise/054.md %}
-{% include week03/exercise/055.md %}
-{% include week03/exercise/056.md %}
+{% include week03/exercise/011.md %}
+{% include week03/exercise/012.md %}
+{% include week03/exercise/013.md %}
+{% include week03/exercise/014.md %}
 {: .exercises }

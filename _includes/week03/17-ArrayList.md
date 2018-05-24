@@ -180,8 +180,8 @@ In the code block of the for command (inside { }) a variable `teacher` is used. 
 
 Even though the for command might seem a bit strange at first, you should definitely get used to use it!
 
-{% include week03/exercise/057.md %}
-{% include week03/exercise/058.md %}
+{% include week03/exercise/015.md %}
+{% include week03/exercise/016.md %}
 {: .exercises }
 
 
@@ -221,8 +221,8 @@ Collections also includes other useful methods:
 - `shuffle` shuffles the list items, can be useful for example in games
 - `reverse` reverses the order of list items
 
-{% include week03/exercise/059.md %}
-{% include week03/exercise/060.md %}
+{% include week03/exercise/017.md %}
+{% include week03/exercise/018.md %}
 {: .exercises }
 
 
@@ -280,8 +280,8 @@ as a parameter
 
 The program now includes two lists, *programmingLanguages* and *countries*. First the printing method is given the list *programmingLanguages*. The method `print` internally refers to the list given as a parameter with the name *printed*! Next, the printing method is given the list *countries*. Now, the method uses again the name *printed* referring to the parameter list.
 
-{% include week03/exercise/061.md %}
-{% include week03/exercise/062.md %}
+{% include week03/exercise/019.md %}
+{% include week03/exercise/020.md %}
 >As we notice from the example above, an ArrayList can be printed as it is. The print formatting is not usually what is sought after, so we are forced to handle the printing ourself. For example, with the help of the `for` command.
 {: .exercises }
 
@@ -314,8 +314,8 @@ ArrayLists can also be used to store `doubles` (decimal numbers) and characters 
         ArrayList<Character> characters = new ArrayList<Character>();
 ```
 
-{% include week03/exercise/063.md %}
-{% include week03/exercise/064.md %}
+{% include week03/exercise/021.md %}
+{% include week03/exercise/022.md %}
 {: .exercises }
 
 ### 17.7 ArrayList as return value of a method
@@ -345,7 +345,7 @@ public class Main {
 }
 ```
 
-{% include week03/exercise/065.md %}
-{% include week03/exercise/066.md %}
-{% include week03/exercise/067.md %}
+{% include week03/exercise/023.md %}
+{% include week03/exercise/024.md %}
+{% include week03/exercise/025.md %}
 {: .exercises }
