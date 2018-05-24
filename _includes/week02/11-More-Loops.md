@@ -29,11 +29,11 @@ while (number >= 1) {
 ```
 
 >Complete the following exercises using the while statement:
-{% include week02/exercise/027.md %}
-{% include week02/exercise/028.md %}
-{% include week02/exercise/029.md %}
-{% include week02/exercise/030.md %}
-{% include week02/exercise/031.md %}
+{% include week02/exercise/005.md %}
+{% include week02/exercise/006.md %}
+{% include week02/exercise/007.md %}
+{% include week02/exercise/008.md %}
+{% include week02/exercise/009.md %}
 {: .exercises }
 
 ### 11.1 Assignment operations
@@ -104,10 +104,10 @@ while (i < 4) {
 }
 ```
 
-{% include week02/exercise/032.md %}
-{% include week02/exercise/033.md %}
-{% include week02/exercise/034.md %}
-{% include week02/exercise/035.md %}
+{% include week02/exercise/010.md %}
+{% include week02/exercise/011.md %}
+{% include week02/exercise/012.md %}
+{% include week02/exercise/013.md %}
 {: .exercises }
 
 ### 11.2 Infinite loops
@@ -185,7 +185,7 @@ while (true) {
 System.out.println("Your age is " + age);
 ```
 
-{% include week02/exercise/036.md %}
+{% include week02/exercise/014.md %}
 {: .exercises }
 
 ### Note: creating a program in small steps

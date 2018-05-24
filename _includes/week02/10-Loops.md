@@ -73,8 +73,8 @@ while (true) {
 System.out.println("Thanks, bye!");
 ```
 
-{% include week01/exercise/022.md %}
-{% include week01/exercise/023.md %}
-{% include week01/exercise/024.md %}
-{% include week02/exercise/026.md %}
+{% include week02/exercise/001.md %}
+{% include week02/exercise/002.md %}
+{% include week02/exercise/003.md %}
+{% include week02/exercise/004.md %}
 {: .exercises }

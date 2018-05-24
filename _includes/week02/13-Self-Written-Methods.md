@@ -93,8 +93,8 @@ To be even more exact, the main program is also a method. When the program start
 From now on when we introduce methods, we will not point out that they need to be written in the right place inside the program code. For example, a method cannot be defined inside another method.
 
 
-{% include week02/exercise/037.md %}
-{% include week02/exercise/038.md %}
+{% include week02/exercise/015.md %}
+{% include week02/exercise/016.md %}
 {: .exercises }
 
 ### 13.1 Method parameters
@@ -204,8 +204,8 @@ Hi Martin, greetings from the world of methods!
 Hi Martin, greetings from the world of methods!
 ```
 
-{% include week02/exercise/039.md %}
-{% include week02/exercise/040.md %}
-{% include week02/exercise/041.md %}
-{% include week02/exercise/042.md %}
+{% include week02/exercise/017.md %}
+{% include week02/exercise/018.md %}
+{% include week02/exercise/019.md %}
+{% include week02/exercise/020.md %}
 {: .exercises }

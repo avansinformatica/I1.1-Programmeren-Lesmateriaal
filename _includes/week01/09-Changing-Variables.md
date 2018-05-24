@@ -36,5 +36,5 @@ length--;                    // means the same as length = length - 1;
 System.out.println(length);  // prints 24
 ```
 
-{% include week02/exercise/025.md %}
+{% include week01/exercise/022.md %}
 {: .exercises }
