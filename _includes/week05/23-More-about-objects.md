@@ -184,7 +184,7 @@ public void becomeOlder(int years) {
 }
 ```
 
-{% include week05/exercise/084.md %}
+{% include week05/exercise/001.md %}
 {: .exercises }
 
 ### 23.4 Object is at the end of a wire
@@ -391,8 +391,8 @@ Matti is accepted as a member
 Juhana is not accepted as a member
 ```
 
-{% include week05/exercise/085.md %}
-{% include week05/exercise/086.md %}
+{% include week05/exercise/002.md %}
+{% include week05/exercise/003.md %}
 {: .exercises }
 
 ### 23.6 Another object of the same type as a parameter to a method
@@ -540,7 +540,7 @@ public static void main(String[] args) {
 14.2.2011 earlier than 31.12.2010: false
 ```
 
-{% include week05/exercise/087.md %}
+{% include week05/exercise/004.md %}
 {: .exercises }
 
 ### 23.8 Objects on a list
@@ -591,7 +591,7 @@ Matti, age 30 years
 Martin, age 30 years
 ```
 
-{% include week05/exercise/088.md %}
+{% include week05/exercise/005.md %}
 {: .exercises }
 
 ### 23.9 An object within an object
@@ -669,7 +669,7 @@ System.out.println("Today is " + day + "." + month + "." + year );
 
 When age is removed, the `olderThan` method has to be changed so that it compares birthdates. We'll do this as an excersise assignment.
 
-{% include week05/exercise/089.md %}
+{% include week05/exercise/006.md %}
 {: .exercises }
 
 ### 23.10 A list of objects within an object
@@ -767,13 +767,15 @@ The members of weight watchers association 'kumpulan paino':
   Petri
 ```
 
-{% include week05/exercise/090.md %}
+{% include week05/exercise/007.md %}
 {: .exercises }
 
 
-23.11 Method returns an object
+### 23.11 Method returns an object
+
 We've seen methods that return booleans, numbers, lists and strings. It's easy to guess that a method can return any type of an object. Let's make a method for the weight watchers association that returns the person with the highest weight index.
 
+```java
 public class WeightWatchersAssociation {
     // ...
 
@@ -794,10 +796,13 @@ public class WeightWatchersAssociation {
         return heaviestSoFar;
     }
 }
-The logic in this method works in the same way as when finding the largest number in a list. We use a dummy variable heaviestSoFar which is initially made to refer to the first person on the list. After that the list is read through and we see if there's anyone with a greater weight index in it, if so, we make heaviestSoFar refer to that one instead. At the end we return the value of the dummy variable, or in other words the reference to a person object.
+```
+
+The logic in this method works in the same way as when finding the largest number in a list. We use a dummy variable `heaviestSoFar` which is initially made to refer to the first person on the list. After that the list is read through and we see if there's anyone with a greater weight index in it, if so, we make `heaviestSoFar` refer to that one instead. At the end we return the value of the dummy variable, or in other words the *reference to a person object*.
 
 Let's make an expansion to the previous main program. The main program receives the reference returned by the method to its variable heaviest.
 
+```java
 public static void main(String[] args) {
     WeightWatchersAssociation weightWatcher = new WeightWatchersAssociation("Kumpluan paino", 25);
 
@@ -807,13 +812,20 @@ public static void main(String[] args) {
     System.out.print("member with the greatest weight index: " + heaviest.getName() );
     System.out.println(" weight index " + String.format( "%.2f", heaviest.weightIndex() ) );
 }
+```
+
 Prints:
 
+```output
 member with the greatest weight index: Petri
 weight index 37,42
-23.12 Method returns an object it creates
-In the last example a method returned one Person object that the WeightWatcers object had in it. It's also possible that a method returns an entirely new object. In the following is a simple counter that has a method clone with which a clone - an entirely new counter object - can be made from the counter, which at creation has the same value as the counter that is being cloned:
+```
 
+### 23.12 Method returns an object it creates
+
+In the last example a method returned one Person object that the WeightWatcers object had in it. It's also possible that a method returns an entirely new object. In the following is a simple counter that has a method `clone` with which a clone - an entirely new counter object - can be made from the counter, which at creation has the same value as the counter that is being cloned:
+
+```java
 public Counter {
     private int value;
 
@@ -842,8 +854,11 @@ public Counter {
         return clone;
     }
 }
+```
+
 Here's a usage example:
 
+```java
 Counter counter = new Counter();
 counter.grow();
 counter.grow();
@@ -867,13 +882,17 @@ clone.grow();
 
 System.out.println(counter);         // prints 6
 System.out.println(clone);           // prints 3
+```
+
 The value of the object being cloned and the value of the clone - after the cloning has happened - are the same. However they are two different objects, so in the future as one of the counters grows the value of the other isn't affected in any way.
 
-Exercise 91: Extending MyDate
+{% include week05/exercise/008.md %}
+{: .exercises }
 
-23.13 More assignments
+## 23.13 More assignments
+
 All the new theory for this week has already been covered. However, since this week's topics are quite challenging, we will practise our routine with a couple of more exercises.
 
-Exercise 92: Difference of two dates
-
-Exercise 93: Person extended
+{% include week05/exercise/009.md %}
+{% include week05/exercise/010.md %}
+{: .exercises }
