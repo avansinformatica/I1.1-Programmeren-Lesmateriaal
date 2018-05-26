@@ -40,10 +40,10 @@ System.out.println("The variable's type is truth value. Its value is " + isTrue)
 ```
 Printing:
 ```output
-The variable's type is text. Its value is includes text
-The variable's type is integer. Its value is 123
-The variable's type is decimal number. Its value is 3.141592653
-The variable's type is truth value. Its value is true
+The variable's type is String. Its value is includes text
+The variable's type is int. Its value is 123
+The variable's type is double. Its value is 3.141592653
+The variable's type is boolean. Its value is true
 ```
 
 A variable holds its value until it is assigned a new one. Note that the variable type is written only when the variable is first declared in the program. After that we can use the variable by its name.
