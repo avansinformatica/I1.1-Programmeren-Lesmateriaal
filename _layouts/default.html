@@ -211,6 +211,31 @@
           element.className = "table table-triped";
         });
 
+        //add tryme button
+        $("div.language-java").each(function(index, element)
+        {
+           var text = $(this).text();
+           var btn = $('<a class="btn btn-primary" href="" style="float: right; margin-top: -10px; margin-right: -10px;">Copy</a>');
+           $(this).prepend(btn);
+            btn.click(function()
+            {
+              btn.removeClass("btn-primary");
+              btn.addClass("btn-success");
+              setTimeout(function()
+              {
+                btn.removeClass("btn-success");
+                btn.addClass("btn-primary");
+              }, 500);
+              var $temp = $("<textarea>");
+              $("body").append($temp);
+              $temp.val(text).select();
+              document.execCommand("copy");
+              $temp.remove();
+              return false;
+            });
+        });
+
+
       });
     
 
