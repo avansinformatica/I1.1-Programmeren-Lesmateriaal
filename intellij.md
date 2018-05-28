@@ -56,3 +56,8 @@ Methods, attributes, variables and classes can be renamed, where all references 
 ### Commenting
 
 You can quickly comment and uncomment multiple lines by selecting the lines you want to comment, and pressing *Ctrl*{: .key} + */*{: .key}
+
+### Indenting
+
+You can quickly indent multiple lines of code by selecting the lines you want to move left or right, and pressing *Tab*{: .key} to move the lines right, or *Shift*{: .key} + *Tab*{: .key} to move the lines left
+
