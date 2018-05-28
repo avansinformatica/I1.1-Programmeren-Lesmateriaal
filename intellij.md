@@ -1,39 +1,3 @@
-<style>
-/* Base style, essential for every key. */
-kbd, .key {
-	display: inline;
-	display: inline-block;
-	min-width: 1em;
-	padding: .2em .3em;
-	font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
-	text-align: center;
-	text-decoration: none;
-	-moz-border-radius: .3em;
-	-webkit-border-radius: .3em;
-	border-radius: .3em;
-	border: none;
-	cursor: default;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	user-select: none;
-}
-kbd[title], .key[title] {
-	cursor: help;
-}
-
-/* Dark style for display on light background. This is the default style. */
-kbd, kbd.dark, .dark-keys kbd, .key, .key.dark, .dark-keys .key {
-	background: rgb(80, 80, 80);
-	background: -moz-linear-gradient(top, rgb(60, 60, 60), rgb(80, 80, 80));
-	background: -webkit-gradient(linear, left top, left bottom, from(rgb(60, 60, 60)), to(rgb(80, 80, 80)));
-	color: rgb(250, 250, 250);
-	text-shadow: -1px -1px 0 rgb(70, 70, 70);
-	-moz-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
-	-webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
-	box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
-}
-</style>
-
 ## IntelliJ
 
 To start programming in java, the first step is to download the Java SE Development Kit (JDK). You can find this at the [java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) website. Make sure you accept the licence agreement, and download the version for your platform. SE is the Standard Edition. Java also comes in an Enterprise Edition (Java EE), and a micro edition (Java ME).
@@ -88,3 +52,7 @@ By pressing *Alt*{: .key} + *Insert*{: .key}, you'll open the *Generate* menu. I
 ### Renaming
 
 Methods, attributes, variables and classes can be renamed, where all references are also renamed. This can be done through the refactor - rename option, or by pressing *Shift*{: .key} + *F6*{: .key}
+
+### Commenting
+
+You can quickly comment and uncomment multiple lines by selecting the lines you want to comment, and pressing *Ctrl*{: .key} + */*{: .key}

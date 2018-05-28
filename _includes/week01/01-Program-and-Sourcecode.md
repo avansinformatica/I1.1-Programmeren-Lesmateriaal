@@ -43,7 +43,12 @@ The information processed by a command are the parameters of a command. They are
 
 #### 1.4.3 Comments
 
-Comments are a useful way to make notes in the source code for yourself and others. Everything on a line after two forward slashes // is treated as a comment.
+Comments are a useful way to make notes in the source code for yourself and others. There are 2 different ways of adding comments to your code.
+
+* By adding `//` in front of the comment.  
+  Everything on a line after the `//` will be treated as comments
+* By putting `/*` and `*/` around the comment.  
+  Everything inbetween the `/*` and `*/` will be treated as comments, even newlines. This can be used for multiline comments. This is very often used for adding documentation to your code, more on that in week 2
 
 #### 1.4.4 Example of using comments
 ```java
@@ -52,9 +57,18 @@ System.out.print("Hello world");
 
 System.out.print(" and all the people of the world."); // We print more text to the same line.
 
+/*
+System.out.print("This line will also not be executed");
+*/
+
+System.out.print("Hello" /* this was hello world*/);
+
 // System.out.print("this line will not be executed, because it is commented out");
 ```
 The last line of the example introduces a particularly handy use for comments: you can comment out code instead of completely deleting it if you want to temporarily try out something.
+
+> You can quickly comment and uncomment multiple lines in IntelliJ by selecting the lines you want to comment, and pressing *Ctrl*{: .key} + */*{: .key}.
+{: .tip}
 
 ### 1.5 More about printing
 

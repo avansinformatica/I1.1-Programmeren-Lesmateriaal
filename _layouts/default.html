@@ -129,6 +129,59 @@
           color: #00ACEB;
         }
 
+        .tip
+        {
+          margin-left: 0px;
+          padding-left: 105px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border: 0;
+          background-color: #c6002a;
+          display: block;
+          min-height: 120px;
+          color: white;
+          border-radius: 10px;
+        }
+        .tip::before {
+          content:url(images/tip.png);
+          float: left;
+          margin-left: -100px;
+        }​
+
+        kbd, .key {
+          display: inline;
+          display: inline-block;
+          min-width: 1em;
+          padding: .2em .3em;
+          font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
+          text-align: center;
+          text-decoration: none;
+          -moz-border-radius: .3em;
+          -webkit-border-radius: .3em;
+          border-radius: .3em;
+          border: none;
+          cursor: default;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          user-select: none;
+        }
+        kbd[title], .key[title] {
+          cursor: help;
+        }
+
+        /* Dark style for display on light background. This is the default style. */
+        kbd, kbd.dark, .dark-keys kbd, .key, .key.dark, .dark-keys .key {
+          background: rgb(80, 80, 80);
+          background: -moz-linear-gradient(top, rgb(60, 60, 60), rgb(80, 80, 80));
+          background: -webkit-gradient(linear, left top, left bottom, from(rgb(60, 60, 60)), to(rgb(80, 80, 80)));
+          color: rgb(250, 250, 250);
+          text-shadow: -1px -1px 0 rgb(70, 70, 70);
+          -moz-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+          -webkit-box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+          box-shadow: inset 0 0 1px rgb(150, 150, 150), inset 0 -.05em .4em rgb(80, 80, 80), 0 .1em 0 rgb(30, 30, 30), 0 .1em .1em rgba(0, 0, 0, .3);
+        }
+
+
     </style>
     <title>{{ page.title }}</title>
   </head>
@@ -198,7 +251,7 @@
         $("div.tryme").each(function(index, element)
         {
            var text = $(this).text();
-           var btn = $('<a class="btn btn-primary" href="#" style="float: right">Try Me</a>');
+           var btn = $('<a class="btn btn-primary" href="#" style="float: right; margin-top: -10px; margin-right: -10px;">Try Me</a>');
            $(this).prepend(btn);
             btn.click(function()
             {
@@ -215,7 +268,7 @@
         $("div.language-java").each(function(index, element)
         {
            var text = $(this).text();
-           var btn = $('<a class="btn btn-primary" href="" style="float: right; margin-top: -10px; margin-right: -10px;">Copy</a>');
+           var btn = $('<a class="btn btn-primary" href="" style="float: right; margin-top: -10px; margin-right: -10px; margin-left: 15px;">Copy</a>');
            $(this).prepend(btn);
             btn.click(function()
             {

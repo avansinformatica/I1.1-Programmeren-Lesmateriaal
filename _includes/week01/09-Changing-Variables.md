@@ -12,7 +12,7 @@ System.out.println(age);  // prints 2
 
 The `age = age + 1` statement increments the value of the variable `age` by one. It is also possible to increment a variable by one as below:
 
-```output
+```java
 int age = 1;
 
 System.out.println(age);  // prints 1
