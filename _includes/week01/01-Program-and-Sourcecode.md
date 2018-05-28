@@ -90,3 +90,16 @@ First
 Second
 Third
 ```
+
+These special characters are called *escape characters*, and always start with a `\`. Other special characters are
+
+* `\t`  
+  Prints a tab character and aligns the next text
+* `\\`
+  Prints a backspace (\) character
+* `\"`
+  Prints a " character
+* `\'`
+  Prints a ' character
+
+A full reference of characters can be found at the [java](https://docs.oracle.com/javase/tutorial/java/data/characters.html) website
