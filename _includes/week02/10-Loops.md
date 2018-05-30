@@ -14,23 +14,24 @@ while (true) {
 
 In the example above, the `while (true)` command causes the associated block (i.e. the code between the curly braces `{}`) to be *looped* (or repeated) infinitely.
 
-We generally do **not** want an infinite loop. The loop can be interrupted using e.g. the break command.
+We generally do **not** want an infinite loop. The loop can be interrupted by changing the condition in the while-loop
 
 ```java
-while (true) {
+boolean running = true;
+while (running) {
     System.out.println("I can program!");
 
     System.out.print("Continue? ('no' to quit)? ");
     String command = reader.nextLine();
     if (command.equals("no")) {
-        break;
+        running = false;
     }
 }
 
 System.out.println("Thank you and see you later!");
 ```
 
-Now the loop progresses like this: First, the program prints *I can program!*. Then, the program will ask the user if it should continue. If the user types *no*, the `break` command is executed and the loop is interrupted and *Thank you and see you again!* is printed.
+Now the loop progresses like this: First, the program prints *I can program!*. Then, the program will ask the user if it should continue. If the user types *no*, the variable `running` is set to false, and the loop stops and *Thank you and see you again!* is printed. Take note that the commands in the loop will continue to execute, and the loop will stop at the end of the code block in the loop. As there is no other code in the loop, it stops immediately 
 
 ```output
 I can program!
@@ -46,28 +47,27 @@ Many different things can be done inside a loop. Next we create a simple calcula
 
 ```java
 System.out.println("welcome to the calculator");
-
-while (true) {
+boolean running;
+while (running) {
     System.out.print("Enter a command (sum, difference, quit): ");
     String command = reader.nextLine();
     if (command.equals("quit")) {
-        break;
-    }
-
-    System.out.print("enter the numbers");
-    int first = Integer.parseInt(reader.nextLine());
-    int second = Integer.parseInt(reader.nextLine());
-
-    if (command.equals("sum") ) {
-        int sum = first + second;
-        System.out.println( "The sum of the numbers is " + sum );
-    } else if (command.equals("difference")) {
-        int difference = first - second;
-        System.out.println("The difference of the numbers is " + difference);
+        running = false;
     } else {
-        System.out.println("Unknown command");
-    }
+        System.out.print("enter the numbers");
+        int first = Integer.parseInt(reader.nextLine());
+        int second = Integer.parseInt(reader.nextLine());
 
+        if (command.equals("sum") ) {
+            int sum = first + second;
+            System.out.println( "The sum of the numbers is " + sum );
+        } else if (command.equals("difference")) {
+            int difference = first - second;
+            System.out.println("The difference of the numbers is " + difference);
+        } else {
+            System.out.println("Unknown command");
+        }
+    }
 }
 
 System.out.println("Thanks, bye!");

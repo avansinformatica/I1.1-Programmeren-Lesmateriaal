@@ -1,8 +1,8 @@
 ## 11. More loops
 
-we have previously learned to use repetition using the `while (true)` loop, which repeats commands until the `break` command is used.
+we have previously learned to use repetition using the `while (running)` loop, which repeats commands until `running` is set to false.
 
-The `break` command is not the only way to end a loop. A common structure for a loop is `while (condition)`, where the condition can be **any statement with a truth value**. This means that the condition works exactly like conditions in an `if` statements.
+The `running` variable is not the only way to end a loop. A common structure for a loop is `while (condition)`, where the condition can be **any statement with a truth value**. This means that the condition works exactly like conditions in an `if` statements.
 
 In the following example, we print the numbers 1, 2, …, 10. When the value of the variable number increases above 10, the condition of the while statement is no longer true and the loop ends.
 
@@ -160,7 +160,11 @@ while (age < 5 || age > 85) {  // age less than 5 OR greater than 85
 System.out.println("Your age is " + age);
 ```
 
-The program could also have been implemented using the good old `while (true)` structure:
+#### 11.4 Breaking out of a loop
+
+It is also possible to change the flow of execution in a loop. This is done with the `break` and `continue` keywords.
+
+The `break` keyword immediately breaks the loop, and jumps out of the loop. An example of this is the code from section 11.3, which can also be written as
 
 ```java
 System.out.println("Type your age ");
@@ -184,6 +188,28 @@ while (true) {
 
 System.out.println("Your age is " + age);
 ```
+
+The `continue` statement jumps back to the beginning of the loop. This can be used to 'skip' certain values of variables. An example
+
+```java
+int i = 0;
+while (i < 100)
+{
+    if(i % 2 == 0) {
+        continue;
+    }
+    if(i % 3 == 0) {
+        continue;
+    }
+    if(i % 5 == 0) {
+        continue;
+    }
+    System.out.println(i);
+}
+```
+
+This example will output all values that are not dividable by 2, 3, 5
+
 
 {% include week02/exercise/014.md %}
 {: .exercises }
