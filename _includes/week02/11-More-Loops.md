@@ -160,7 +160,7 @@ while (age < 5 || age > 85) {  // age less than 5 OR greater than 85
 System.out.println("Your age is " + age);
 ```
 
-#### 11.4 Changing the flow of execution in a loop
+### 11.4 Changing the flow of execution in a loop
 
 It is also possible to change the flow of execution in a loop. This is done with the `break` and `continue` keywords.
 
@@ -220,3 +220,27 @@ This example will output all values that are not dividable by 2, 3, 5
 >When you are programming something, no matter if it is an exercise or a project of your own, it is advised to do it in very tiny pieces. Do not ever try to solve the whole problem in one go. Start with something easy, something you know that you can do. In this recent set of exercises, for example, we focused first on stopping the program when the user types -1. When one part of the program is complete and working, we can move on to work out the solution for the next sub-problem of the big main problem.
 >
 >Some of the exercises in this course are sliced into smaller pieces like the set of exercises we just introduced. Usually the pieces need to be sliced again into smaller pieces depending on the problem. It is advised that you execute the whole program after almost every new line of code you write. This enables you to be sure that your solution is going in the right and working direction.
+
+### 11.4 For loops
+
+By now you will have noticed that there are usually 3 important components in a loop; the initialization, condition and increment
+
+```java
+int i = 0;              //initialization
+while(i < 10)           //condition
+{
+    System.out.println(i);
+    i++;                //increment
+}
+```
+
+These 3 parts are key to a successful loop, and for instance, forgetting the increment will result in an infinite loop. They are split up on 3 different lines, which is not good for the structure of your code. To improve the structure, java offers a for-loop. This for-loop combines these 3 parts in a single line
+
+```java
+for(int i = 0; i < 10; i++)
+{
+    System.out.println(i);
+}
+```
+
+This program is identical to the while loop. The for has all 3 different components between brackets, and is therefore different than the while() or if() conditions. This `for`-syntax is very powerful, but can some time getting used to. For now, you can pick if you do loops with a while() statement or a for() statement
