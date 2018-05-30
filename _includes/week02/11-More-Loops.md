@@ -160,7 +160,7 @@ while (age < 5 || age > 85) {  // age less than 5 OR greater than 85
 System.out.println("Your age is " + age);
 ```
 
-#### 11.4 Breaking out of a loop
+#### 11.4 Changing the flow of execution in a loop
 
 It is also possible to change the flow of execution in a loop. This is done with the `break` and `continue` keywords.
 
