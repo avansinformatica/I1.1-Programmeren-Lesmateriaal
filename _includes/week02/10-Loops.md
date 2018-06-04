@@ -43,11 +43,11 @@ Continue? ('no' to quit)? ~~no~~
 Thank you and see you again!
 ```
 
-Many different things can be done inside a loop. Next we create a simple calculator, which performs calculations based on commands that the user enters. If the command is *quit*, the `break` command will be executed to end the loop. Otherwise two numbers are asked. Then, if the initial command was *sum*, the program calculates and prints the sum of the two numbers. If the command was *difference*, the program calculates and prints the difference of the two numbers. If the command was something else, the program reports that the command was unknown.
+Many different things can be done inside a loop. Next we create a simple calculator, which performs calculations based on commands that the user enters. If the command is *quit*, the variable running will be set to false, and the program will quit. Otherwise two numbers are asked. Then, if the initial command was *sum*, the program calculates and prints the sum of the two numbers. If the command was *difference*, the program calculates and prints the difference of the two numbers. If the command was something else, the program reports that the command was unknown.
 
 ```java
 System.out.println("welcome to the calculator");
-boolean running;
+boolean running = true;
 while (running) {
     System.out.print("Enter a command (sum, difference, quit): ");
     String command = reader.nextLine();
