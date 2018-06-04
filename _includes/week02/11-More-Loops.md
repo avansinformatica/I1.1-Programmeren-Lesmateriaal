@@ -162,9 +162,11 @@ System.out.println("Your age is " + age);
 
 ### 11.4 Changing the flow of execution in a loop
 
+#### 11.4.1 Break
+
 It is also possible to change the flow of execution in a loop. This is done with the `break` and `continue` keywords.
 
-The `break` keyword immediately breaks the loop, and jumps out of the loop. An example of this is the code from section 11.3, which can also be written as
+The `break` keyword immediately breaks the loop, and jumps out of the loop. This is usually used as little as possible, as the code execution can become very chaotic with a lot of `break` commands. An example of using this is rewriting the code from section 11.3, which can also be written as
 
 ```java
 System.out.println("Type your age ");
@@ -189,12 +191,17 @@ while (true) {
 System.out.println("Your age is " + age);
 ```
 
+Note that this example uses a `while(true)` command, which is another bad practice
+
+#### 11.4.2 Continue
+
 The `continue` statement jumps back to the beginning of the loop. This can be used to 'skip' certain values of variables. An example
 
 ```java
 int i = 0;
 while (i < 100)
 {
+    i++;
     if(i % 2 == 0) {
         continue;
     }
@@ -208,7 +215,7 @@ while (i < 100)
 }
 ```
 
-This example will output all values that are not dividable by 2, 3, 5
+This example will output all values that are not dividable by 2, 3, 5. Note that the output does not include 0, as this is skipped by the `i++` command. 
 
 
 {% include week02/exercise/014.md %}
