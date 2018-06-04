@@ -199,8 +199,7 @@ The `continue` statement jumps back to the beginning of the loop. This can be us
 
 ```java
 int i = 0;
-while (i < 100)
-{
+while (i < 100) {
     i++;
     if(i % 2 == 0) {
         continue;
@@ -234,8 +233,7 @@ By now you will have noticed that there are usually 3 important components in a 
 
 ```java
 int i = 0;              //initialization
-while(i < 10)           //condition
-{
+while(i < 10) {         //condition
     System.out.println(i);
     i++;                //increment
 }
@@ -244,8 +242,7 @@ while(i < 10)           //condition
 These 3 parts are key to a successful loop, and for instance, forgetting the increment will result in an infinite loop. They are split up on 3 different lines, which is not good for the structure of your code. To improve the structure, java offers a for-loop. This for-loop combines these 3 parts in a single line
 
 ```java
-for(int i = 0; i < 10; i++)
-{
+for(int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 ```
