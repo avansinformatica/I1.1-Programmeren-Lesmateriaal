@@ -39,6 +39,6 @@ Some other debugging features that can help you debug your code with methods are
 - ![step out](images/2_5_step_out.png){: .key .light} Step Out  
   This will finish the current method, and go up one level in the callstack. This is useful for instance if you just want to validate the parameters passed to a function when they are a complicated expression
 
-This call stack can also be retrieved while the application is running. Usually you will be viewing this call stack after the program is done running (because the call stack will be printed out), and this is referred to as a *back trace* or a *stack trace*. 
+This call stack can also be retrieved while the application is running. Usually you will be viewing this call stack after the program is done running (because the call stack will be printed out), and this is referred to as a *back trace* or a *stack trace*. Usually when something goes wrong in your program, java will print out a stack trace
 
 
