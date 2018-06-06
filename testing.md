@@ -2,6 +2,7 @@
 
 - Tests annoteren met @Test
 - Klassen annoteren met @Points("2-10")
+- @Points is een space-seperated lijst met te behalen punten voor deze opgaven... "week1 1" is dus punt "week1" en punt "1"
 - @Rule wordt uitgevoerd voordat tests uitgevoerd worden
 
 

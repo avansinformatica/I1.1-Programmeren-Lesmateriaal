@@ -73,6 +73,14 @@ while (running) {
 System.out.println("Thanks, bye!");
 ```
 
+> Note that this code uses the `reader` to read user input. To make this reader object, don't forget to add the following line to your code:
+>
+> ```java
+> Scanner reader = new Scanner(System.in);
+>```
+>
+{: .tip}
+
 {% include week02/exercise/001.md %}
 {% include week02/exercise/002.md %}
 {% include week02/exercise/003.md %}
