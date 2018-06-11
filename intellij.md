@@ -12,7 +12,14 @@ To program in Java we'll use the IntelliJ IDEA, Community edition. This can be f
 
 ### Configure JDK in IntelliJ
 
-After installing IntelliJ and starting it, the first thing you'll need to do is configure the jdk path. This is the JDK you installed in the first step, and is usually found in `c:\Program Files\java\jdk1.8.0_xxx` (where xxx is the version number, 172 at the time of writing). After this you'll be presented with a startup screen. Create a new project to get into the main screen, where we can install the TMC plugin to work on the exercises presented in this course. Open the Settings window through the file -> settings menu, go to the plugins page and click the "Browse Repositories" button. Then search for TMC and install the TMC Plugin for IntelliJ. The plugin will be enabled after restarting IntelliJ
+After installing IntelliJ and starting it, the first thing you'll need to do is set up a number of extra features. Just leave these on the default settings and click the button to use the default. After starting up IntelliJ you'll get the startup window. 
+![startup](images/intellij_startup.png)
+
+In this window, click 'create new project' to create a new window.
+
+![newproject](images/intellij_newproject.png)
+
+The first time in this window, the JDK needs to be setup. This is done with the new button at the top of the window, and selecting your JDK. This is usually found in `c:\Program Files\java\jdk1.8.0_xxx` (where xxx is the version number, 172 at the time of writing). After selecting the Java JDK, press the 'next' button on the create new project screen to get into the main screen, where we can install the TMC plugin to work on the exercises presented in this course. Open the Settings window through the file -> settings menu, go to the plugins page and click the "Browse Repositories" button. Then search for TMC and install the TMC Plugin for IntelliJ. The plugin will be enabled after restarting IntelliJ
 
 ### TMC in Java
 
