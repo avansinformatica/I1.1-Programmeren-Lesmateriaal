@@ -28,7 +28,7 @@ After installing, you will be presented with the TMC login. Login with your [TMC
 
 After you're logged in you can download the TMC exercises through the TMC menu, by clicking "Download current course's ALL exercises". After downloading, open the TMC exercise list, doubleclick an exercise and you're ready to go. You can find the sourcecode to work on in the project's "src" folder.
 
-#### Configure JDK for TMC in IntelliJ
+#### Configure JDK for testing
 
 To test code using the TMC tests, java has to be added to the system path, so 'javac' can be found. If this is not in the path, you will have to add this manually. In order to add this manually, follow the following steps (windows 10)
 
