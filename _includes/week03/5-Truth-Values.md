@@ -1,4 +1,4 @@
-## 18. Using truth values
+## 3.5. Using truth values
 A variable of type truth value (`boolean`) can only have two values: either `true` or `false`). Here is an example on how to use boolean variables:
 
 ```java
@@ -42,7 +42,7 @@ if (!firstGreater) {  // means the same as firstGreater==false
 }
 ```
 
-### 18.1 Methods that return a truth value
+### 3.5.1 Methods that return a truth value
 
 Truth values come in especially handy when we want to write methods that check for validity. Let us create a method that checks if the list it gets as a parameter includes only positive numbers (here 0 is considered positive). The method returns the information as a boolean (i.e. truth value).
 
@@ -100,7 +100,7 @@ if (allPositive(numbers)) {
 }
 ```
 
-### 18.2 The return command and ending a method
+### 3.5.2 The return command and ending a method
 
 The execution of a method is stopped immediately when a command called `return` is executed. Using this information to our advantage, we write the `allPositive` method easier to understand.
 
