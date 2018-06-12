@@ -145,8 +145,116 @@ As seen in the table, for positive numbers, there's nothing special. For negativ
 | −2      | 1111 1110 |
 | −1      | 1111 1111 |
 
+Compared to other systems for representing signed numbers, two's-complement has the advantage that the fundamental arithmetic operations of addition, subtraction, and multiplication are identical to those for unsigned binary numbers, making it easier and faster to implement
+
 ### 3.6.5 Bitshift Operators
 
+Another operator often used for bit operations is bit shifting. Bit shifting is moving all the bits and shifting them a number of bits to the left or right. Bit shifting is done by the `<<` or `>>` operators. The `<<` operator shifts all bits left, and the `>>` shifts all bits right. 
+
+```java
+int a = 0b00000001 << 5;            // a = 0b00100000
+int b = 0b10000000 >> 7;            // b = 0b00000001
+
+while(a != 0)
+{
+    System.out.println(a);
+    a = a >> 1;                     // will keep shifting the bits in a to the right
+}
+```
+
+When shifting bits, the 'new' bits inserted are always 0. In result, shifting 1 to the right has the effect of dividing by 2, while shifting 1 to the left has the effect of multiplying by 2 (or even better, $$x >> n = x / 2^n$$ and $$x << n = x * 2^n$$). 
+
+The bitshift operators will ignore the sign-bit, resulting in the same behaviour for negative numbers. There is also a third bitshift operator in java, the *unsigned right shift* `>>>` operator, which will shift including the signbit
+
+```java
+int a = -1 >> 1;                    // -1 will shift to -2
+int b = -1 >>> 1;                   // -1 will shift to 2147483647
+```
+
 ### 3.6.6 Not Operator
+The not operator flips all bits in a number, including the sign bit.
+
+```java
+int a = ~1;                         //~1 = -2
+int b = ~0;                         //~0 = -1
+```
 
 ### 3.6.7 Practical applications
+
+#### 3.6.7.1 Bits as a boolean array
+
+An integer is made up of 32 bits, which can all be individually set. This can be used to store multiple true/false values. In a single int, we can store 32 booleans, which is a lot smaller to communicate (smaller filesize, less network data usage). To access these booleans, we can make a method to test if a bit is set, and a method to set or unset a bit
+
+```java
+public static boolean isBitSet(int number, int bit)
+{
+    return (number >> bit) & 1 != 0;
+}
+```
+
+This method will bitshift the number to the right, so the bit we're interested in, is in the most-right position. After this all other bits are 'removed' by doing an and operation on the last bit. Another way to implement this would be to change the and mask with the right bit set. This can be done with the following code
+
+```java
+public static boolean isBitSet(int number, int bit)
+{
+    return (number & (1 >> bit)) != 0;
+}
+```
+
+These two methods are doing the same thing (though work differently)
+
+To set a bit, we can combine the right bitmask with an or operation, and to unset a bit, we can use an and operation with a mask with most values set to 1
+
+```java
+public static int setBit(int number, int bit)
+{
+    return number | (1<<bit);
+}
+public static int clearBit(int number, int bit)
+{
+    return number & ~(1<<bit);
+}
+```
+
+This is a function often used in programming, where a large number of related booleans have to be passed to a method as parameter.
+
+```java
+int HALIGN_LEFT =   1<<0;
+int HALIGN_CENTER = 1<<1;
+int HALIGN_RIGHT =  1<<2;
+int VALIGN_TOP =    1<<3;
+int VALIGN_CENTER = 1<<4;
+int VALIGN_BOTTOM = 1<<5;
+
+public static void printText(String text, int alignment)
+{
+    if(alignment & HALIGN_LEFT != 0) {
+//      ...
+    }
+}
+
+printText("Hello World", HALIGN_CENTER | VALIGN_BOTTOM);
+```
+
+#### 3.6.7.1 Combining numbers
+
+An integer is 32bit in size. This means we can store a single number in it, with 4 294 967 296 different options. In some low-level applications, it's only possible to send a single parameter, where we want to send more than 1 parameter. In this case, we can *encode* 2 numbers into a single number. We can do this in the decimal system as well. Suppose we can only send a 6-digit number, but we want to send 2 smaller numbers. We could just stick these 2 numbers together. The number `123456` would mean `123` and `456`, and `001002` would mean `1` and `2`. We can use some modulo arithmatic to seperate these numbers (`int number1 = number % 1000; int number2 = number / 1000`)
+
+This principle also works with binary numbers. Suppose we'd like to encode 2 8-bit numbers into a single 16-bit number. It's easy to just stick them together
+
+```java
+int a = 0b10101010;
+int b = 0b01010101;
+int combined = a<<8 | b<<0;     // combined is 0b1010101001010101
+```
+
+By bitshifting the first number left, and combining both numbers with the `Or` operator, the numbers become one long number. This is of course limited to the size of the variable. Bitshifting is also used to read out these numbers again
+
+
+
+{% include week03/exercise/028.md %}
+{% include week03/exercise/029.md %}
+{: .exercises }
+
+
+

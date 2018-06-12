@@ -67,3 +67,6 @@ Ontwikkel een klasse Huurder
     De huurder kan de kamer huren
     De huurder kan de kamer niet huren
     ``` 
+
+
+    asduioashda
