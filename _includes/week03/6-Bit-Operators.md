@@ -155,8 +155,7 @@ Another operator often used for bit operations is bit shifting. Bit shifting is 
 int a = 0b00000001 << 5;            // a = 0b00100000
 int b = 0b10000000 >> 7;            // b = 0b00000001
 
-while(a != 0)
-{
+while(a != 0) {
     System.out.println(a);
     a = a >> 1;                     // will keep shifting the bits in a to the right
 }
@@ -186,8 +185,7 @@ int b = ~0;                         //~0 = -1
 An integer is made up of 32 bits, which can all be individually set. This can be used to store multiple true/false values. In a single int, we can store 32 booleans, which is a lot smaller to communicate (smaller filesize, less network data usage). To access these booleans, we can make a method to test if a bit is set, and a method to set or unset a bit
 
 ```java
-public static boolean isBitSet(int number, int bit)
-{
+public static boolean isBitSet(int number, int bit) {
     return (number >> bit) & 1 != 0;
 }
 ```
@@ -195,8 +193,7 @@ public static boolean isBitSet(int number, int bit)
 This method will bitshift the number to the right, so the bit we're interested in, is in the most-right position. After this all other bits are 'removed' by doing an and operation on the last bit. Another way to implement this would be to change the and mask with the right bit set. This can be done with the following code
 
 ```java
-public static boolean isBitSet(int number, int bit)
-{
+public static boolean isBitSet(int number, int bit) {
     return (number & (1 >> bit)) != 0;
 }
 ```
@@ -206,12 +203,10 @@ These two methods are doing the same thing (though work differently)
 To set a bit, we can combine the right bitmask with an or operation, and to unset a bit, we can use an and operation with a mask with most values set to 1
 
 ```java
-public static int setBit(int number, int bit)
-{
+public static int setBit(int number, int bit) {
     return number | (1<<bit);
 }
-public static int clearBit(int number, int bit)
-{
+public static int clearBit(int number, int bit) {
     return number & ~(1<<bit);
 }
 ```
@@ -226,8 +221,7 @@ int VALIGN_TOP =    1<<3;
 int VALIGN_CENTER = 1<<4;
 int VALIGN_BOTTOM = 1<<5;
 
-public static void printText(String text, int alignment)
-{
+public static void printText(String text, int alignment) {
     if(alignment & HALIGN_LEFT != 0) {
 //      ...
     }
