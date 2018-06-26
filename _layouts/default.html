@@ -273,17 +273,7 @@
           $(this).parent().addClass("language-output");
         });
 
-        //add tryme button
-        $("div.tryme").each(function(index, element)
-        {
-           var text = $(this).text();
-           var btn = $('<a class="btn btn-primary" href="#" style="float: right; margin-top: -10px; margin-right: -10px;">Try Me</a>');
-           $(this).prepend(btn);
-            btn.click(function()
-            {
-                alert("Here should be an online IDE with\n" + text);
-            });
-        });
+
         //bootstrap tables
         $("table").each((index, element) =>
         {
