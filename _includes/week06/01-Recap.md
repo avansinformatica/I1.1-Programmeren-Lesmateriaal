@@ -1,0 +1,22 @@
+## 6.1. A quick recap
+Let us start week 6 with two assignments that use the most important topics of week 5. You might want to read chapter 23.10 before assignment 94 and chapters 23.6 and 23.12 before assignment 95.
+
+Exercise 94: PhoneBook
+
+Exercise 95: Money
+
+24.1 Character strings are immutable
+The String objects of Java, as with the Money class objects, are unchangeable, immutable. If for example a new object is concatenated to the end of a character string with the + operator, the original character string doesn't become longer, but a new character string object is born:
+
+String characterString = "test";
+characterString + "tail";
+
+System.out.println( characterString );  // test
+We see that the character string cannot be changed, but we can add the value of the new character string - that was born from concatenation - to the old variable:
+
+String characterString = "test";
+characterString = characterString + "tail";   // or characterString += "tail";
+
+System.out.println( characterString );  // testtail
+Now the variable characterString refers to a new character string object, which was created by combining the previous character string value the variable referred to ("test") with the "tail" character string. Nothing refers to the "test" character string object anymore.
+
