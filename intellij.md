@@ -10,20 +10,29 @@
 
 To program in Java we'll use the IntelliJ IDEA, Community edition. This can be found at [the jetbrains website](https://www.jetbrains.com/idea/download/#section=windows). It's also possible to use the ultimate edition, a licence is available at https://www.jetbrains.com/student/, free for students. We won't be using any ultimate features through the course though
 
-### Configure JDK in IntelliJ
+### Creating a TMC account
 
-After installing IntelliJ and starting it, the first thing you'll need to do is set up a number of extra features. Just leave these on the default settings and click the button to use the default. After starting up IntelliJ you'll get the startup window. 
+Create an account on the [TMC](https://tmc.mooc.fi) website. In the *Organizational identifier (e.g. student number)* field, fill in your student number. Make sure you also fill in your name.
+
+### Installing the TMC plugin
+
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2056781/sp/205678100/embedIframeJs/uiconf_id/34305081/partner_id/2056781?iframeembed=true&playerId=kaltura_player&entry_id=1_9js76cqo&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;&wid=1_wats2otg" width="1280" height="720" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0" title="Kaltura Player"></iframe>
+
+
+After installing IntelliJ and starting it, the first thing should do is setup the TestMyCode plugin. In the startup screen, click on the configure button, and click plugins. On the screen that pops up, search for TMC, then click on the button to search online repositories. Select the TMC plugin, install it and restart IntelliJ. After installing, a new option should appear, **Get started with TMC**. Click it to fill in your information and select the right course
 ![startup](images/intellij_startup.png)
 
-In this window, click 'create new project' to create a new window.
+### Starting up
+
+After TMC is set up, we need to get in the IntelliJ user interface. To get there, we need to make a project. Click **Create new Project** to open a new project
 
 ![newproject](images/intellij_newproject.png)
 
-The first time in this window, the JDK needs to be setup. This is done with the new button at the top of the window, and selecting your JDK. This is usually found in `c:\Program Files\java\jdk1.8.0_xxx` (where xxx is the version number, 172 at the time of writing). After selecting the Java JDK, press the 'next' button on the create new project screen to get into the main screen, where we can install the TMC plugin to work on the exercises presented in this course. Open the Settings window through the file -> settings menu, go to the plugins page and click the "Browse Repositories" button. Then search for TMC and install the TMC Plugin for IntelliJ. The plugin will be enabled after restarting IntelliJ
+The first time in this window, the JDK needs to be setup. This is done with the new button at the top of the window, and selecting your JDK. This is usually found in `c:\Program Files\java\jdk1.8.0_xxx` (where xxx is the version number, 172 at the time of writing). After selecting the Java JDK, press the 'next' button on the create new project screen to get into the main screen, where we can pick the first exercise
 
-### TMC in Java
+### TMC in IntelliJ
 
-After installing, you will be presented with the TMC login. Login with your [TMC](https://tmc.mooc.fi) login information. Then select the right organization (2017_avans_ti_breda), and pick the subject. Make sure this is set up in the settings properly
+After installing, you will be presented with the TMC login. Login with your  login information. Then select the right organization (2017_avans_ti_breda), and pick the subject. Make sure this is set up in the settings properly
 ![tmc](images/intellij_tmc.png)
 
 After you're logged in you can download the TMC exercises through the TMC menu, by clicking "Download current course's ALL exercises". After downloading, open the TMC exercise list, doubleclick an exercise and you're ready to go. You can find the sourcecode to work on in the project's "src" folder.
