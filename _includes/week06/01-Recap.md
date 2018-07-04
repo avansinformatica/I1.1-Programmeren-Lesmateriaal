@@ -1,6 +1,6 @@
 ## 6.1. A quick recap
 
-Let us start week 6 with two assignments that use the most important topics of week 5. You might want to read chapter 23.10 before assignment 94 and chapters 23.6 and 23.12 before assignment 95.
+Let us start week 6 with two assignments that use the most important topics of week 5.
 
 {% include week06/exercise/001.md %}
 {% include week06/exercise/002.md %}
