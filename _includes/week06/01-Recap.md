@@ -2,9 +2,9 @@
 
 Let us start week 6 with two assignments that use the most important topics of week 5. You might want to read chapter 23.10 before assignment 94 and chapters 23.6 and 23.12 before assignment 95.
 
-Exercise 94: PhoneBook
-
-Exercise 95: Money
+{% include week06/exercise/001.md %}
+{% include week06/exercise/002.md %}
+{: .exercises }
 
 ### 6.1.1 Character strings are immutable
 The String objects of Java, as with the Money class objects, are unchangeable, *immutable*. If for example a new object is concatenated to the end of a character string with the + operator, the original character string doesn't become longer, but a new character string object is born:

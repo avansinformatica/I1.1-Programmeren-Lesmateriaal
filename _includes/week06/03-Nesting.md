@@ -68,7 +68,7 @@ So first i=0 prints 0: and a carriage return. After this i grows and 1 is printe
 2:
 ```
 
-The inner for loop is also easy to understand separately. It prints out 0 1 2. When we combine these two, we'll notice that the inner for loop carries out its print just before the outer for loop's carriage return.
+The inner for loop is also easy to understand separately. It prints out `0 1 2`. When we combine these two, we'll notice that the inner for loop carries out its print just before the outer for loop's carriage return.
 
 ### 6.3.1 variables defined outside of a for loop as its condition
 
@@ -86,7 +86,7 @@ for(int i = 0; i < 3; i++) {
 }
 ```
 
-The amount of runs the inner for loop does now depends on the value of the variable i of the outer loop. So when i=0 the inner loop prints 0, when i=1 the inner loop prints 0 1. The entire output of the program is as follows:
+The amount of runs the inner for loop does now depends on the value of the variable i of the outer loop. So when i=0 the inner loop prints 0, when `i=1` the inner loop prints 0 1. The entire output of the program is as follows:
 
 ```output
 0: 0
@@ -122,9 +122,9 @@ The output looks like this:
 10 20 30 40 50 60 70 80 90 100
 ```
 
-The topmost row has the multiplication table of 1. At the beginning i=1 and the inner loop's variable j gets the values 1...10. For each i, j value pair their product is printed. So at the beginning i=1, j=1, then i=1, j=2, ..., i=1, j=10 next i=2, j=1, and so forth.
+The topmost row has the multiplication table of 1. At the beginning `i=1` and the inner loop's variable `j` gets the values 1...10. For each `i`, `j` value pair their product is printed. So at the beginning `i=1`, `j=1`, then `i=1`, `j=2`, ..., `i=1`, `j=10` next `i=2`, `j=1`, and so forth.
 
-Of course the multiplication table program can be cut in to smaller pieces, too. We can define the methods public void printMultiplicationTableRow(int multiplier, int howManyTimes) and public void printMultiplicationTable(int upTo), in this case the structure of our program could be as follows:
+Of course the multiplication table program can be cut in to smaller pieces, too. We can define the methods public void printMultiplicationTableRow(int multiplier, int howManyTimes) and public void `printMultiplicationTable(int upTo)`, in this case the structure of our program could be as follows:
 
 ```java
 public class MultiplicationTable {
@@ -155,6 +155,6 @@ Now calling new MultiplicationTable().print(5); prints the tables below.
 5 10 15 20 25
 ```
 
-Exercise 99: Array to stars
-
-Exercise 100: Night sky
+{% include week06/exercise/006.md %}
+{% include week06/exercise/007.md %}
+{: .exercises }
