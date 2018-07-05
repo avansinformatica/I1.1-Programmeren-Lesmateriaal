@@ -119,8 +119,8 @@ Sat: Snow -3 degrees.
 Sun: Sunny -5 degrees.
 ```
 
-{% include week04/exercise/080.md %}
-{% include week04/exercise/081.md %}
-{% include week04/exercise/082.md %}
-{% include week04/exercise/083.md %}
+{% include week04/exercise/011.md %}
+{% include week04/exercise/012.md %}
+{% include week04/exercise/013.md %}
+{% include week04/exercise/014.md %}
 {: .exercises }

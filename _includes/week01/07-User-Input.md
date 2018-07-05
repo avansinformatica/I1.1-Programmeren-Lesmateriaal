@@ -27,7 +27,7 @@ System.out.println("Hi, " + name);
 ```
 
 ```output
-What is your name? John
+What is your name? ~~John~~
 Hi, John
 ```
 
@@ -49,13 +49,12 @@ public class Greeting {
 }
 ```
 
-When the program above is executed, you can type the input. The output tab in NetBeans (at the bottom) looks as follows when the program has finished (the user inputs the name "John").
+When the program above is executed, you can type the input. The output tab in IntelliJ (at the bottom) looks as follows when the program has finished (the user inputs the name "John").
 
 ```output
-run:
-Who is greeted: John
+Who is greeted: ~~John~~
 Hi John
-BUILD SUCCESSFUL (total time: 6 seconds)
+Process finished with exit code 0
 ```
 
 ### 7.2 Reading integers

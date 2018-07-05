@@ -76,7 +76,7 @@ Scanner reader = new Scanner(System.in);
 Constructors take parameters the way any other method does.
 ```
 
-{% include week04/exercise/072.md %}
+{% include week04/exercise/003.md %}
 {: .exercises }
 
 ### 21.4 Defining your own class - object variables
@@ -201,7 +201,7 @@ Brian, age 0 years
 Martin, age 0 years
 ```
 
-{% include week04/exercise/073.md %}
+{% include week04/exercise/004.md %}
 {: .exercises }
 
 ### 21.7 More methods
@@ -300,9 +300,9 @@ Age of Andrew: 1
 Pekka and Andrew total of 3 years old
 ```
 
-{% include week04/exercise/074.md %}
-{% include week04/exercise/075.md %}
-{% include week04/exercise/076.md %}
+{% include week04/exercise/005.md %}
+{% include week04/exercise/006.md %}
+{% include week04/exercise/007.md %}
 {: .exercises }
 
 ### 21.8 The Person class grows
@@ -497,7 +497,7 @@ What happens is that the object is asked for its string representation. The stri
 
 **We can get rid of the obsolete `printObject` method.**
 
-{% include week04/exercise/077.md %}
+{% include week04/exercise/008.md %}
 {: .exercises }
 
 ### 21.10 More methods
@@ -614,7 +614,7 @@ John,  body mass index: 20,90
 
 The method `String.format` is not the most flexible way provided by Java for formatting float values, but it is simple to use and suits our purposes here well.
 
-{% include week04/exercise/078.md %}
+{% include week04/exercise/009.md %}
 {: .exercises }
 
 ## Important notes regarding the use of objects. You should definately read these.
@@ -647,5 +647,5 @@ public String toString() {
 
 Now it is time to continue practising programming.
 
-{% include week04/exercise/079.md %}
+{% include week04/exercise/010.md %}
 {: .exercises }
