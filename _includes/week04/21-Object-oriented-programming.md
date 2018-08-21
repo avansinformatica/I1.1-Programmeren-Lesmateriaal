@@ -395,7 +395,7 @@ adult: bob, age 30 years
 
 Let us tune up the solution a little further. Now, a person can only be printed in a manner where in addition to the name, the age also gets printed. In some cases, we might only want to print the name of the object. Let us tailor a method for this purpose:
 
-```
+```java
 public class Person {
     // ...
 

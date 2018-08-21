@@ -111,7 +111,7 @@ Pekka, age 24 years
 Esko, age 0 years
 ```
 
-The technique in which a class has two constructors is called *constructor overloading*. A class can have multiple constructors, which are different from one another according to parameter quanitities and/or types. However, it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add a constructor public `Person(String name, int weight)` on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.
+The technique in which a class has two constructors is called *constructor overloading*. A class can have multiple constructors, which are different from one another according to parameter quanitities and/or types. However, it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add a constructor `public Person(String name, int weight)` on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.
 
 ### 23.2 Calling your own constructor
 
@@ -692,7 +692,7 @@ public class WeightWatchersAssociation {
 }
 ```
 
-Let's create a method with which a person is added to the association. The method won't add anyone to the association but people with a high enough weight index. Let's also make a toString with which the members' names are printed:
+Let's create a method with which a person is added to the association. The method won't add anyone to the association but people with a high enough weight index. Let's also make a `toString` with which the members' names are printed:
 
 ```java
 public class WeightWatchersAssociation {
