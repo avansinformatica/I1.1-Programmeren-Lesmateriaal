@@ -84,7 +84,8 @@ Repetition is often required in programs. First we make a `so-called while-true-
 ```java
 Scanner reader = new Scanner(System.in);
 
-while (true) {
+boolean running = true;
+while (running) {
     System.out.print("Enter password: ");
     String password = reader.nextLine();
 
@@ -395,7 +396,7 @@ Money on Maija's accounts: 10000
 
 Initially, the accounts of both persons are empty. When money is added to the salaryAccount - which `matti` has a reference to - the amount of money on Matti's accounts grows. When money is added to the householdAccount the amount of money each person has grows. This is because both Matti and Maija have "access" to the householdAccount, so in each of the persons' object variable `accounts`, there's a reference to the householdAccount.
 
-###1.7 The structure of a program
+### 1.7 The structure of a program
 
 A program should be clear and easy to understand for both the original  writer and others. The most important aspects of a clear program are class structure and good naming conventions. Each class should have a single, clearly defined responsibility. Methods are used to reduce repetition and to create a structure for the internal functionality of the class. A method should also have a clear responsibility to ensure it stays short and simple. Methods that do many things should be divided into smaller helper methods, which are called by the original method. A good programmer writes code that can be understood even weeks after it was originally written.
 
@@ -699,7 +700,7 @@ public class Book {
 }
 ```
 
-The instance variables in the Book class above can only be accessed with the public methods `getName` and `getContents`. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.
+The instance variables in the `Book` class above can only be accessed with the public methods `getName` and `getContents`. Fields declared as private are only accessible in code inside the class. Methods can also be declared as private, which prevents them from being called outside the class.
 
 Now it's time to start practicing!
 

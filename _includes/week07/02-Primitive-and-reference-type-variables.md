@@ -19,11 +19,11 @@ int five = 5;
 int six = 6;
 ```
 
-The primitive-type variables introduced above are named five and six. When introducing the variable five the value 5 is set to the slot that was created for it (int five = 5;). When introducing the variable six the value 6 is set to the slot that was created for it (int six = 6;). The variables five and six are both of the type int, or integers.
+The primitive-type variables introduced above are named five and six. When introducing the variable five the value 5 is set to the slot that was created for it (`int five = 5;`). When introducing the variable six the value 6 is set to the slot that was created for it (`int six = 6;`). The variables five and six are both of the type int, or integers.
 
 Primitive-type variables can be visualized as boxes that both have the values belonging to them saved in to them:
 
-![Primitives 5 and 6](/images/7_2_primitive-five-and-six.png)
+![Primitives 5 and 6](images/7_2_primitive-five-and-six.png)
 
 Next lets inspect how the values of primitive-type variables get copied.
 
@@ -39,7 +39,7 @@ six = 64; // the variable 'six' now holds the value 64
 
 Above we introduce the variables five and six and we set values to them. After this the value held in the slot of the variable `six` is copied to the slot of the variable five (`five = six;`). If the value of the variable `six` is changed after this point the value in the variable `five` remains unaffected: the value of the variable `five` is in its own slot and is not related to the value in the slot of the variable `six` in any way. The end situation as a picture:
 
-![Primitives 5 and 6 - 64](/images/7_2_primitive-five-and-six-64.png)
+![Primitives 5 and 6 - 64](images/7_2_primitive-five-and-six-64.png)
 
 ### 2.1.1 Primitive type variable as a method parameter and return value
 
@@ -61,7 +61,7 @@ myValue = addToValue(myValue, 15);
 
 In the example, `addToValue` is called using the variable myValue and the value 15. These are copied to the method parameters `value`, which will hold the value 10 (the contents of `myValue`), and `amount`, which wil hold the value 15. The method returns the sum of `value` and `amount`, which is equal to `10 + 15 = 25`.
 
-Note! In the previous example, the value of the variable myValue is changed only because it is assigned the return value of addToValue (myValue = addToValue(myValue, 15);). If the call to addToValue were as follows, the value of the variable myValue would remain unchanged.
+Note! In the previous example, the value of the variable myValue is changed only because it is assigned the return value of `addToValue`; (myValue = addToValue(myValue, 15);). If the call to `addToValue` were as follows, the value of the variable `myValue` would remain unchanged.
 
 ```java
 int myValue = 10;
@@ -167,7 +167,7 @@ Calculator axeCalculator = new Calculator(6);
 
 In the examples we first create a reference-type variable called `bonusCalculator`. The `new` operator tells that we define storage space for the information to be assigned to the variable, then we execute the code which follows the `new` operator, and we return a reference to the object that has been so created. The reference which is returned is assigned to the `bonusCalculator` variable through the `=` equal sign. The same thing happens with the variable called `axeCalculator`. If we want to think about it with pictures, we can imagine a reference-type variable as it were a box, the variable itself, with a line or an arrow, which starts at the box and points to an object. In fact, the variable does not contain the object, but it points to the object information.
 
-![7_2_reference-type-calculators.png](/images/7_2_reference-type-calculators.png)
+![7_2_reference-type-calculators.png](images/7_2_reference-type-calculators.png)
 
 Next, let us have a look at how a reference-type object is duplicated.
 
@@ -180,9 +180,9 @@ bonusCalculator = axeCalculator; // the reference contained by the variable axeC
                                  // is copied to the variable bonusCalculator
 ```
 
-When we copy a reference-type variable (see above bonusCalculator = axeCalculator;), the reference to the variable duplicates as well. In this case, a reference to the axeCalculator variable slot is copied to the bonusCalculator variable slot. Now, both the objects point to the same place!
+When we copy a reference-type variable (see above `bonusCalculator = axeCalculator;`), the reference to the variable duplicates as well. In this case, a reference to the `axeCalculator` variable slot is copied to the bonusCalculator variable slot. Now, both the objects point to the same place!
 
-![7_2_reference-type-calculators-ref-changed.png](/images/7_2_reference-type-calculators-ref-changed.png)
+![7_2_reference-type-calculators-ref-changed.png](images/7_2_reference-type-calculators-ref-changed.png)
 
 Let us continue with the example above and let us set a new reference to the variable `axeCalculator`; this new reference will point to a new object created by the command `new Calculator(10)`.
 
@@ -204,7 +204,7 @@ In these examples, we do the same operations which were shown in the assignment 
 
 At the end of the previous example no variable points to the Calculator object which received value 5 in its constructor. Java's garbage collection deletes such useless objects from time to time. Our final situation looks like the following:
 
-![7_2_reference-type-calculators-3rd-object.png](/images/7_2_reference-type-calculators-3rd-object.png)
+![7_2_reference-type-calculators-3rd-object.png](images/7_2_reference-type-calculators-3rd-object.png)
 
 Let us have a look to a third example still, and let us focus on an essential difference between primitive-type and reference-type variables.
 
@@ -229,9 +229,9 @@ System.out.println(axeCalculator.getValue());
 
 Both `bonusCalculator` and `axeCalculator` point to the same object, after we have run the command `bonusCalculator = axeCalculator;`, and therefore, now they both have the same value 7, even though we have increased only one of them.
 
-The situation might be clear if we look at the following picture. The method `axeCalculator.increaseValue()` increases by one the value variable of the object pointing to the axeCalculator variable. Because bonusCalculator points to the same object, the method bonusCalculator.getValue() returns the same value which was increased by the method `axeCalculator.increaseValue()`.
+The situation might be clear if we look at the following picture. The method `axeCalculator.increaseValue()` increases by one the value variable of the object pointing to the `axeCalculator` variable. Because `bonusCalculator` points to the same object, the method `bonusCalculator.getValue()` returns the same value which was increased by the method `axeCalculator.increaseValue()`.
 
-![7_2_reference-type-calculators-val-changed.png](/images/7_2_reference-type-calculators-val-changed.png)
+![7_2_reference-type-calculators-val-changed.png](images/7_2_reference-type-calculators-val-changed.png)
 
 In the following example, three reference-type variables all point to the same `Calculator` object.
 
@@ -243,7 +243,7 @@ Calculator lennon = bonus;
     
 In the example, we create only one Calculator object, but all the three Calculator variables point to that same one. Therefore, bonus, ihq, and lennon method calls all modify the same object. To tell it once again: when reference-type variables are copied, their references also duplicate. The same concept in a picture:
 
-![7_2_three-calculators-1.png](/images/7_2_three-calculators-1.png) 
+![7_2_three-calculators-1.png](images/7_2_three-calculators-1.png) 
 
 Let's use this example to focus on duplication once more.
 
@@ -257,7 +257,7 @@ lennon = new Calculator(3);
 
 The modification of the `lennon` variable contents – that is to say the change of reference – does not affect the references of either `bonus` or `ihq`. When we assign a value to a variable, we **only** change the contents of that variable's own slot. The same concept in a picture:
 
-![7_2_three-calculators-2.png](/images/7_2_three-calculators-2.png);
+![7_2_three-calculators-2.png](images/7_2_three-calculators-2.png);
 
 ### 2.2.1 A Reference-Type Variables and Method Parameters
 
@@ -283,7 +283,7 @@ addToCalculator(bonus, times);
 
 In the example we call the `addToCalculator` method, whose given variables are `bonus` and `times`. This means that the reference of the reference-type variable `bonus` and the value of the original-type variable `times` (which is 10) are copied as parameters whose names are `calculator` and `amount`, respectively. The method executes the `increaseValue()` method of the calculator variable a number of times which equals the value of amount. See the following picture:
 
-![7_2_refs-main-and-method-world.png](/images/7_2_refs-main-and-method-world.png)
+![7_2_refs-main-and-method-world.png](images/7_2_refs-main-and-method-world.png)
 
 *The method contains variables which are completely separated from the main program!*
 
