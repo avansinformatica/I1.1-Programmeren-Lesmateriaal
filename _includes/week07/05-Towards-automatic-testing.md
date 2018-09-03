@@ -1,5 +1,5 @@
 ## 5. Towards Automatic Tests
-Testing a program manually is a hopeless burden. It is possible to automate inputs by setting up a string as a Scanner object parameter. The example below shows how it is possible to test automatically the program above.
+Testing a program manually is a hopeless burden. It is possible to automate inputs by setting up a string as a `Scanner` object parameter. The example below shows how it is possible to test automatically the program above.
 
 ```java
 String input = "translate\n" + "monkey\n"  +
@@ -33,7 +33,7 @@ Command: Give word: Translation: juusto
 Command: Cheers!
 ```
 
-Giving a string to a Scanner class is a way to replace the String inputs given through the keyboard. The contents of the String variable input "simulates" the user input. `\n` denotes a line break. Each single part of the `input` variable which ends with a line break corresponds to one nextLine() input.
+Giving a string to a `Scanner` class is a way to replace the `String` inputs given through the keyboard. The contents of the `String` variable input "simulates" the user input. `\n` denotes a line break. Each single part of the `input` variable which ends with a line break corresponds to one `nextLine()` input.
 
 It is easy to change the text input, and we can add new words to our dictionary in the following way:
 
@@ -46,7 +46,7 @@ String input = "add\n"  + "cheese\n" + "juusto\n" +
                 "quit\n";
 ```
 
-If you want to test again your program manually, change the Scanner object constructor parameter into System.in, i.e system input stream.
+If you want to test again your program manually, change the `Scanner` object constructor parameter into `System.in`, i.e system input stream.
 
 The program functionality must be checked from the output pane, still. The result can still be confusing at the beginning, because the automatic input does not appear in the output pane at all.
 

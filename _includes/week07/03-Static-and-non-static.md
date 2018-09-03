@@ -53,7 +53,7 @@ if (matti.enoughMoneyForSingleTicket()) {
 
 Note the naming convention! All **constants**, i.e. all variable which are provided with the definition final, are written with CAPITAL_LETTERS_AND_UNDERLINE_CHARACTERS.
 
-Static methods function analogously. For instance, the class HslPrices could encapsulate the variables and only provide *accessors*. We call accessors the methods which allow us to either read a variable value or to assign them a new one.
+Static methods function analogously. For instance, the class `HslPrices` could encapsulate the variables and only provide *accessors*. We call accessors the methods which allow us to either read a variable value or to assign them a new one.
 
 ```java
 public class HslPrices {
@@ -70,7 +70,7 @@ public class HslPrices {
 }
 ```
     
-In such cases, when we code a class such as Person, we can't call the variable straight, but we have to get it through the method `getSingleTicketPrice()`.
+In such cases, when we code a class such as `Person`, we can't call the variable straight, but we have to get it through the method `getSingleTicketPrice()`.
 
 ```java
 public class Person {
@@ -96,7 +96,7 @@ Even though Java allows for static variable use, we do not usually require it. O
 
 ### 3.2 Non-Static
 
-Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the `new` operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class Person, which has the object variable `name` and `money`.
+Non-static methods and variables are related to objects. The object variables, or attributes, are defined at the beginning of the class. When an object is created with the `new` operator, we allocate storage space for all its object variables. The variable values are personal of the object, which means that every object receives personal variable values. Let us focus again on the class `Person`, which has the object variable `name` and `money`.
 
 ```java
 public class Person {

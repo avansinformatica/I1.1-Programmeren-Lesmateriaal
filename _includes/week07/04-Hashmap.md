@@ -8,7 +8,7 @@ HashMap uses the `Object` class `hashCode()` method to find a key value. Every H
 
 Java's `HashMap` class encapsulates - or hides - the way it works, and it returns made-up methods ready to use.
 
-When we create a HashMap we need two **type parameters**, a type for the key variable, and a type for the stored object. The following example uses a String-type object as key, and a String-type object as the stored object.
+When we create a `HashMap` we need two **type parameters**, a type for the key variable, and a type for the stored object. The following example uses a String-type object as key, and a String-type object as the stored object.
 
 ```java
 HashMap<String, String> numbers = new HashMap<String, String>();
@@ -30,9 +30,9 @@ null
 null
 ```
         
-In the example, we create a HashMap where both the key and the stored object are strings. We add information to the HashMap with the `put()` method, which receives the references to the key and to the stored object as parameter. The method `get()` returns either the reference to the key given as parameter or a `null` value in case the key was not found.
+In the example, we create a `HashMap` where both the key and the stored object are strings. We add information to the `HashMap` with the `put()` method, which receives the references to the key and to the stored object as parameter. The method `get()` returns either the reference to the key given as parameter or a `null` value in case the key was not found.
 
-Each key is mapped to one value, within the HashMap. If we store a new value with an already existing key, the old value is lost.
+Each key is mapped to one value, within the `HashMap`. If we store a new value with an already existing key, the old value is lost.
 
 ```java
 HashMap<String, String> numbers = new HashMap<String, String>();
@@ -57,12 +57,12 @@ null
 null
 ```
         
-{% include week07/exercise/004.md %}
+{% include week07/exercise/005.md %}
 {: .exercises }
 
 ### 4.1 Book Search through HashMap
 
-Let us go deeper into HashMap workings with the help of the following example. Books can be retrieved based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class `Book`, which has a name and the book contents as object variables.
+Let us go deeper into `HashMap` workings with the help of the following example. Books can be retrieved based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class `Book`, which has a name and the book contents as object variables.
 
 ```java
 public class Book {
@@ -107,7 +107,7 @@ public class Book {
 }
 ```
 
-In the following example, we create a HashMap which makes use of the book name - a String-type object - and stores the references which point to `Book`-objects.
+In the following example, we create a `HashMap` which makes use of the book name - a String-type object - and stores the references which point to `Book`-objects.
 
 ```java
 HashMap<String, Book> bookCollection = new HashMap<String, Book>();
@@ -141,11 +141,11 @@ Name: Pride and Prejudice (1813)
 Contents: ...
 ```
         
-HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a *list* or another HashMap, of course!
+HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a *list* or another `HashMap`, of course!
 
 ### 4.2 Library
 
-The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in `String` class provides us the tools for this. The toLowerCase() method turns a string's characters to lower case, and the trim() method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.
+The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in `String` class provides us the tools for this. The `toLowerCase()` method turns a string's characters to lower case, and the `trim()` method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.
 
 ```java
 String text = "Pride and Prejudice ";
@@ -220,7 +220,7 @@ public Book getBookUsingItsBeginningCharacters(String beginning) {
 }
 ```
 
-Let's leave the method above out of our library for now. Our library is still lacking an essential feature concerning book addition. Let us create the method `public ArrayList<Book> bookList()`, which returns a list of the books in our library. The method `bookList()` makes use of the `values()` method, which is provided by HashList. The `values()` method returns a set of our library books, which can be given as parameter to the constructor of an `ArrayList` class.
+Let's leave the method above out of our library for now. Our library is still lacking an essential feature concerning book addition. Let us create the method `public ArrayList<Book> bookList()`, which returns a list of the books in our library. The method `bookList()` makes use of the `values()` method, which is provided by `HashList`. The `values()` method returns a set of our library books, which can be given as parameter to the constructor of an `ArrayList` class.
 
 ```java
 public class Library {
@@ -274,7 +274,7 @@ Among the programming principles, there is the so called *DRY* principle (Don't 
 
 ### 4.3 Original-Type Variables in a HashMap
 
-Both HashMap keys and stored objects are reference-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.
+Both `HashMap` keys and stored objects are reference-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.
 
 | Original-type | Reference-type equivalent                                                       |
 |---------------|---------------------------------------------------------------------------------|
@@ -289,7 +289,7 @@ HashMap<Integer, String> table = new HashMap<Integer, String>();
 table.put(1, "Be!");
 ```
 
-In Java, the automatic translation of original-type variables into reference-type ones is called *auto-boxing*, i.e. allocation into a slot. The same process also works in the opposite way. We can create a method which returns a HashMap containing an Integer. In the following example, the automatic translation happens inside the method `addTwitch`.
+In Java, the automatic translation of original-type variables into reference-type ones is called *auto-boxing*, i.e. allocation into a slot. The same process also works in the opposite way. We can create a method which returns a `HashMap` containing an `Integer`. In the following example, the automatic translation happens inside the method `addTwitch`.
 
 ```java
 public class TwitchRegister {
@@ -309,7 +309,7 @@ public class TwitchRegister {
 }
 ```
 
-Even though the HashMap contains `Integer` objects, Java can also translate certain reference-type variables into their original-type equivalent. For instance, Integer objects can be translated into int values, if needed. However, this can be misleading! If we try to translate a null reference into a number, we receive the java.lang.reflect.InvocationTargetException error. When we make use of this automatic translation, we have to be sure that the value we want to translate is not null. The above lastTwitch method must be fixed in the following way.
+Even though the `HashMap` contains `Integer` objects, Java can also translate certain reference-type variables into their original-type equivalent. For instance, Integer objects can be translated into int values, if needed. However, this can be misleading! If we try to translate a null reference into a number, we receive the *java.lang.reflect.InvocationTargetException* error. When we make use of this automatic translation, we have to be sure that the value we want to translate is not null. The above lastTwitch method must be fixed in the following way.
 
 ```java
 public int lastTwitch(String name) {
