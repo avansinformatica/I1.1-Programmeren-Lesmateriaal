@@ -186,7 +186,7 @@ An integer is made up of 32 bits, which can all be individually set. This can be
 
 ```java
 public static boolean isBitSet(int number, int bit) {
-    return (number >> bit) & 1 != 0;
+    return ((number >> bit) & 1) != 0;
 }
 ```
 
