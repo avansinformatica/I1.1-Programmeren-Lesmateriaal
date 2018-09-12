@@ -113,7 +113,7 @@ In the following example, we create a `HashMap` which makes use of the book name
 HashMap<String, Book> bookCollection = new HashMap<String, Book>();
 ```
 
-The HashMap above has a `String` object as key. Let us extend our example so that we would add two books to our book collection, "Sense and Sensibility" and "Pride and Prejudice".
+The `HashMap` above has a `String` object as key. Let us extend our example so that we would add two books to our book collection, "Sense and Sensibility" and "Pride and Prejudice".
 
 ```java
 Book senseAndSensibility = new Book("Sense and Sensibility", 1811, "...");
@@ -124,7 +124,7 @@ bookCollection.put(senseAndSensibility.getName(), senseAndSensibility);
 librabookCollectionry.put(prideAndPrejudice.getName(), prideAndPrejudice);
 ```
 
-Books can be retrieved from the book collection based on their name. A search for the book "Persuasion" does not return a corresponding entry, in which case the HashMap returns a `null` reference. However, the book "Pride and Prejudice" was found.
+Books can be retrieved from the book collection based on their name. A search for the book "Persuasion" does not return a corresponding entry, in which case the `HashMap` returns a `null` reference. However, the book "Pride and Prejudice" was found.
 
 ```java
 Book book = bookCollection.get("Persuasion");
@@ -153,7 +153,7 @@ text = text.toLowerCase(); // the text is now "pride and prejudice "
 text = text.trim() // the text is now "pride and prejudice"
 ```
 
-Let us create the the class `Library`, which encapsulates a HashMap containing books, and allows for book search regardless of its spelling. Let us add the methods `addBook(Book book)` and `removeBook(String bookName)` to our Library class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called `private String stringCleaner(String string)`.
+Let us create the the class `Library`, which encapsulates a `HashMap` containing books, and allows for book search regardless of its spelling. Let us add the methods `addBook(Book book)` and `removeBook(String bookName)` to our Library class. It's already clear that we would need various different methods to clean a string. Therefore, we can create a separate method called `private String stringCleaner(String string)`.
 
 ```java
 public class Library {
