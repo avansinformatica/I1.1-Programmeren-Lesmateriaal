@@ -321,6 +321,6 @@ public int lastTwitch(String name) {
 }
 ```
 
-{% include week07/exercise/006.md %}
-{% include week07/exercise/007.md %}
+{% include week07/exercise/001.md %}
+{% include week07/exercise/002.md %}
 {: .exercises }
