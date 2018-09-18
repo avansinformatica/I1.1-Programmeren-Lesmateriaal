@@ -342,7 +342,7 @@ public int hashCode() {
 
 We can still improve the `hashCode` method by taking into consideration the book publishing year, in our calculations:
 
-```
+```java
 public int hashCode() {
     if (this.name == null) {
         return 7;
