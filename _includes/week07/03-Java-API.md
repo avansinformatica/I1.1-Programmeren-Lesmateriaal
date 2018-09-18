@@ -5,5 +5,5 @@ The Java programming language we use in our course is made of three things. The 
 API is a set of built-in classes specific of the programming language, which is provided to users for their own projects. For instance the casses `ArrayList`, `Arrays`, `Collections`, and `String` are all part of Java's build-in API. A description of the API of Java 8 can be found at the address [http://docs.oracle.com/javase/8/docs/api/](http://docs.oracle.com/javase/8/docs/api/). On the left side of the page we find a description of Java's built-in classes. If you look for the `ArrayList` class, you find a link to [http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html](http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), which shows the stucture, constructors, and methods of the class.
 
 
-{% include week07/exercise/002.md %}
+{% include week07/exercise/004.md %}
 {: .exercises }

@@ -105,7 +105,7 @@ At first, always code only a small program which solves only a part of the probl
 Practice makes perfect. Make up your own fun project.
 ```
 
-{% include week07/exercise/004.md %}
+{% include week07/exercise/006.md %}
 {: .exercises }
 
 ### 5.1 An Interface as Variable Type
@@ -282,7 +282,7 @@ The `read` method which is called in connection to Mikael's list parses all the 
 
 *At this point, there are a lot of references; it would be good to draw down the objects and try to grasp how the `read` method call connected to `mikaelList` works!*
 
-{% include week07/exercise/005.md %}
+{% include week07/exercise/007.md %}
 {: .exercises }
 
 ### 5.3 An Interface as Method Return Value
@@ -503,5 +503,5 @@ for(String value: translations.values()) {
 In the following exercise we build an online shop, and we train to use classes through their interfaces.
 
 
-{% include week07/exercise/006.md %}
+{% include week07/exercise/008.md %}
 {: .exercises }

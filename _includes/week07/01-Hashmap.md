@@ -57,7 +57,7 @@ null
 null
 ```
         
-{% include week07/exercise/005.md %}
+{% include week07/exercise/001.md %}
 {: .exercises }
 
 ### 1.1 Book Search through HashMap
@@ -321,6 +321,6 @@ public int lastTwitch(String name) {
 }
 ```
 
-{% include week07/exercise/001.md %}
 {% include week07/exercise/002.md %}
+{% include week07/exercise/003.md %}
 {: .exercises }
