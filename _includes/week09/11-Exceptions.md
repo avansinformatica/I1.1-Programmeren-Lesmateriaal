@@ -213,6 +213,6 @@ The class `Exception` can provide useful methods. For instance, the method `prin
 Exception in thread "main" java.lang.NullPointerException
   at package.Class.print(Class.java:43)
   at package.Class.main(Class.java:29)
-```output
+```
 
 Reading the stack trace happens button up. The lowest is the first call, i.e. the program execution has started from the `main()` method of class `Class`. At line 29 of the main method of `Class`, we called the method `print()`. Line 43 of the method `print` caused a `NullPointerException`. Exception information are extremely important to find out the origin of a problem.
