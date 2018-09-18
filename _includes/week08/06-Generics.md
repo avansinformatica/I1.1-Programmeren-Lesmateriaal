@@ -124,7 +124,7 @@ Sorting club members is easy, now.
 
 If we want to sort the members in descending order, we only have to switch the variable order in our `compareTo` method.
 
-{% include week07/exercise/009.md %}
-{% include week07/exercise/010.md %}
-{% include week07/exercise/011.md %}
+{% include week08/exercise/009.md %}
+{% include week08/exercise/010.md %}
+{% include week08/exercise/011.md %}
 {: .exercises }
