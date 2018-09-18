@@ -6,8 +6,4 @@ title: Week 8
 ---
 {% include week08/06-Generics.md %}
 ---
-{% include week08/07-Collections.md %}
----
-{% include week08/08-Single-responsable-principle.md %}
----
 end of week 2

@@ -2,7 +2,7 @@
 
 The class library [Collections](http://java.sun.com/javase/8/docs/api/java/util/Collections.html) is Java's general-purpose library for collection classes. As we can see, Collections provides methods to sort objects either through the interface `Comparable` or `Comparator`. In addition to sorting, we can use this class library to retrieve the minimum and maximum values (through the methods `min` and `max`, respectively), retrieve a specific value (`binarySearch` method), or reverse the list (`reverse` method).
 
-### 7.1 Search 
+### 7.1 Search
 
 The `Collections` class library provides a pre-made binary search functionality. The method `binarySearch()` returns the index of our searched key, if this is found. If the key is not found, the search algorithm returns a negative value. The method `binarySearch()` makes use of the `Comparable` interface to retieve objects. If the object's `compareTo()` method returns the value 0, i.e. if it is the same object, the key is considered found.
 

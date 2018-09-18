@@ -103,6 +103,7 @@ The interface requires the method `compareTo`, which returns an integer that tel
         return this.height - clubMember.getHeight();
     }
 ```
+
 Sorting club members is easy, now.
 
 ```java
