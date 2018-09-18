@@ -191,6 +191,7 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 ```
 
 {% include week09/exercise/015.md %}
+{: .exercises }
 {% include week09/exercise/016.md %}
 {: .exercises }
 
