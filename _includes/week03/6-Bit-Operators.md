@@ -194,7 +194,7 @@ This method will bitshift the number to the right, so the bit we're interested i
 
 ```java
 public static boolean isBitSet(int number, int bit) {
-    return (number & (1 >> bit)) != 0;
+    return (number & (1 << bit)) != 0;
 }
 ```
 
