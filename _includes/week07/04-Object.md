@@ -1,4 +1,4 @@
-## 1. Object
+## 4. Object
 
 In our course, we have been using frequently the method `public String toString()` when we wanted to print an object in the shape of a string. Calling the method without setting it up properly does usually show weird text. We can have a look at the class Book, which does not contain the method `public String toString()` yet, and see what happens when the program uses the method `System.out.println()` and tries to print an object of Book class.
 
@@ -71,7 +71,7 @@ Above the `toString` method of class Book we see the `@Override` *annotation*. W
 
 There are also other useful methods we inherit from the Object class. Let us now get acquainted with the methods equals and hashCode.
 
-### 1.1 Equals Method
+### 4.1 Equals Method
 
 The equals method is used to compare two objects. The method is particularly used when we compare two String objects.
 
@@ -272,7 +272,7 @@ The books are the same
 ```
 
 
-#### 1.1.1 Equals and ArrayList
+#### 4.1.1 Equals and ArrayList
 
 Various different Java made-up methods make use of the `equals` method to implement their search functionality. For instance, the contains mehod of class `ArrayList` compares objects through the `equals` method. Let us continue to use the `Book` class we defied for our examples. If our objects do not implement the `equals` method, we can't use the `contains` method, for instance. Try out the code below in two different book classes. The first class implements the equals method, the other does not.
 
@@ -292,7 +292,7 @@ if (!books.contains(objectBook)) {
 }
 ```
 
-### 1.2 HashCode Method
+### 4.2 HashCode Method
 
 The `hashCode` method takes an object and returns a numeric value, i.e. a hash value. We need numeric values for instance when we use and object as HashMap keys. So far, we have been using only String and Integer objects as HashMap keys, and their `hashCode` method is implemented by default. Let us make an example where it is not so: let us continue with our book examples and let us start to take note of our books on loan. We want to implement our bookkeeping through Hashmap. The key is the book, and the book's value is a string, which tells the loaner's name:
 
@@ -342,7 +342,7 @@ public int hashCode() {
 
 We can still improve the `hashCode` method by taking into consideration the book publishing year, in our calculations:
 
-```
+```java
 public int hashCode() {
     if (this.name == null) {
         return 7;
@@ -440,4 +440,5 @@ Pekka
 Arto
 ```
 
-Exercise 9: Car Registration Centre
+{% include week07/exercise/005.md %}
+{: .exercises }

@@ -1,4 +1,4 @@
-## 2. Interface
+## 5. Interface
 
 `Interface` is an instrument we have to define the functionality our classes should have. Interfaces are defined as normal Java classes, but instead of the definition "`public class` ...", we write "`public interface` ...". The interfaces influence class behaviour by defining the method names and return values, but they *do* **not** *contain method implementation*. The access modifier is not specified, because it is always `public`. Let us have a look at the interface `Readable`, which defines whether an object can be read.
 
@@ -105,9 +105,10 @@ At first, always code only a small program which solves only a part of the probl
 Practice makes perfect. Make up your own fun project.
 ```
 
-Exercise 10: NationalService
+{% include week07/exercise/006.md %}
+{: .exercises }
 
-### 2.1 An Interface as Variable Type
+### 5.1 An Interface as Variable Type
 
 When we create a new variable we always specify its type. There are two types of variable types: primitive-type variables (int, double, ...) and reference-type (all objects). As far as reference-type variables are concerned, their class has also been their type, so far.
 
@@ -158,7 +159,7 @@ The `EBook` class implements the interface `Readable`. However, notice that even
 
 Type casting works if and only if the variable's type is really what we try to change it into. Type casting is not usually a best practice; one of the only cases where that is legitimate is in connection with the equals method.
 
-### 2.2 An Interface as Method Parameter
+### 5.2 An Interface as Method Parameter
 
 The real use of interfaces becomes clear when we use them for the type of a method parameter. Because interfaces can be used as variable type, they can be used in method calls as parameter type. For instance, the below method print of class `Printer` receives a `Readable` variable.
 
@@ -281,9 +282,10 @@ The `read` method which is called in connection to Mikael's list parses all the 
 
 *At this point, there are a lot of references; it would be good to draw down the objects and try to grasp how the `read` method call connected to `mikaelList` works!*
 
-Exercise 11: Boxes and Things
+{% include week07/exercise/007.md %}
+{: .exercises }
 
-### 2.3 An Interface as Method Return Value
+### 5.3 An Interface as Method Return Value
 
 As well as any other variable type, an interface can also be used as method return value. Below you find `Factory`, which can be used to produce different objects that implement the interface `Item`. In the beginning, `Factory` produces books and disks at random.
 
@@ -367,11 +369,11 @@ Because the packer doesn't know the classes which implement the Item interface, 
 
 *Using interfaces while programming permits us to reduce the number of dependences among our classes. In our example, `Packer` is not dependent on the classes which implement `Item` interface, it is only dependent on the interface itself. This allows us to add classes wihout having to change the class `Packer`, as long as they implement our interface. We can even add classes that implement the interface to the methods which make use of our packer without compromising the process. In fact, less dependences make it **easy to extend** a program.*
 
-### 2.4 Made-Up Interfaces
+### 5.4 Made-Up Interfaces
 
 Java API offers a sensible number of made-up interfaces. Below, we get to know some of Java's most used interfaces: [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html), [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html), Set and [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html).
 
-#### 2.4.1 List
+#### 5.4.1 List
 
 The `List` interface defines lists basic functionality. Because the class ArrayList implements the List interface, it can also be initialized through the List interface.
 
@@ -393,9 +395,11 @@ When it comes to bigger lists, we can point out more than evident performance di
 
 In our programming course you will rather want to choose ArrayList, in fact. Programming to interface is worth of it, anyway: implement your program so that you'll use data structures via interfaces.
 
-2.4.2 Map
-The Map Interface defines HashMap basic fuctionality. Because HashMaps implement the Map interface, it is possible to initialize them trough the Map interface.
+#### 5.4.2 Map
 
+The Map Interface defines `HashMap` basic fuctionality. Because HashMaps implement the Map interface, it is possible to initialize them trough the Map interface.
+
+```java
 Map<String, String> translations = new HashMap<String, String>();
 translations.put("gambatte", "tsemppiä");
 translations.put("hai", "kyllä");
@@ -409,15 +413,20 @@ translations.put("hai", "yes");
 for(String key: translations.keySet()) {
     System.out.println(key + ": " + translations.get(key));
 }
-        
+```
+
+```output        
 gambatte: good luck
 hai: yes
+```
         
-The keySet method returns a set made of keys which implement Set interface. The set which implement the Set interface can be parsed with a for-each loop. HashMap values are retrieved through the values method, which returns a set of values which implement the Collection interface. We should now focus on Set and Collection interfaces.
+The `keySet` method returns a set made of keys which implement Set interface. The set which implement the `Set` interface can be parsed with a for-each loop. HashMap values are retrieved through the values method, which returns a set of values which implement the `Collection` interface. We should now focus on `Set` and `Collection` interfaces.
 
-2.4.3 Set
+#### 5.4.3 Set
+
 The Set interface defines the functionality of Java's sets. Java's sets always contain 0 or 1 element of a certain type. Among the others, HashSet is one of the classes which implement the Set interface. We can parse a key set through a for-each loop, in the following way
 
+```java
 Set<String> set = new HashSet<String>();
 set.add("one");
 set.add("one");
@@ -426,17 +435,22 @@ set.add("two");
 for (String key: set) {
     System.out.println(key);
 }
-        
+```
+
+```output       
 one
 two
+```
         
-Notice that HashSet is not concerned on the order of its keys.
+Notice that `HashSet` is not concerned on the order of its keys.
 
-2.4.4 Collection
-The Collection interface defines the functionality of collections. Among the others, Java's lists and sets are collections -- that is, List and Set interfaces implement the Collection interface. Collection interface provides methods to check object existence (the contains method) and to check the collection size (size method). We can parse any class which implements the Collection interface with a for-each loop.
+### 5.4.4 Collection
 
-We now create a HashMap and parse first its keys, and then its values.
+The `Collection` interface defines the functionality of collections. Among the others, Java's lists and sets are collections -- that is, `List` and `Set` interfaces implement the `Collection` interface. `Collection` interface provides methods to check object existence (the contains method) and to check the collection size (size method). We can parse any class which implements the `Collection` interface with a for-each loop.
 
+We now create a `HashMap` and parse first its keys, and then its values.
+
+```java
 Map<String, String> translations = new HashMap<String, String>();
 translations.put("gambatte", "good luck");
 translations.put("hai", "yes");
@@ -455,7 +469,9 @@ Collection<String> values = translations.values();
 for(String value: values) {
     System.out.println(value);
 }
-        
+```
+
+```output     
 Keys:
 gambatte
 hai
@@ -463,9 +479,11 @@ hai
 Values:
 yes
 good luck
+```
         
 The following example would have produced the same output, too.
 
+```java
 Map<String, String> translations = new HashMap<String, String>();
 translations.put("gambatte", "good luck");
 translations.put("hai", "yes");
@@ -480,7 +498,10 @@ System.out.println("Values:");
 for(String value: translations.values()) {
     System.out.println(value);
 }
+```
         
 In the following exercise we build an online shop, and we train to use classes through their interfaces.
 
-Exercise 12: Online Shop
+
+{% include week07/exercise/008.md %}
+{: .exercises }

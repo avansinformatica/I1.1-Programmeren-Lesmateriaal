@@ -1,4 +1,4 @@
-## 4. HashMap
+## 1. HashMap
 
 [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) is one of Java's most useful data structures. The idea behind HashMap is we define an index for an object key - a unique value, for instance a social security number, a student number, or a phone number. We call *hashing* the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.
 
@@ -57,10 +57,10 @@ null
 null
 ```
         
-{% include week07/exercise/005.md %}
+{% include week07/exercise/001.md %}
 {: .exercises }
 
-### 4.1 Book Search through HashMap
+### 1.1 Book Search through HashMap
 
 Let us go deeper into `HashMap` workings with the help of the following example. Books can be retrieved based on their name, which acts as book key. If we find a book for the given name, we obtain the respective reference, as well as the book details. Let us create the example class `Book`, which has a name and the book contents as object variables.
 
@@ -143,7 +143,7 @@ Contents: ...
         
 HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a *list* or another `HashMap`, of course!
 
-### 4.2 Library
+### 1.2 Library
 
 The problem with the book collection above is that we must remember the correct book name when we search for it, character by character. Java built-in `String` class provides us the tools for this. The `toLowerCase()` method turns a string's characters to lower case, and the `trim()` method deletes the white spaces at the beginning and at the end of the string. Computer users tend to write white spaces at the beginning or end of a text, involuntarily.
 
@@ -272,7 +272,7 @@ public class Library {
 
 Among the programming principles, there is the so called *DRY* principle (Don't Repeat Yourself), according to which we try to avoid having code repeat in different places. Turning a string to lower case, and its *trimming* - removing white spaces from the beginning and the end of a string - would have ocurred several different places without the `stringCleaner()` method. We might hardly notice we are repeating the same code as we are writing. It is only afterwards we may see the repeated code has snuck in there. That the repetition happens is not in itself bad, however. The most important thing is that we clean our code as soon as we notice the need.
 
-### 4.3 Original-Type Variables in a HashMap
+### 1.3 Original-Type Variables in a HashMap
 
 Both `HashMap` keys and stored objects are reference-type variables. If we want to use an original-type variable as key or stored value, we can use their reference-type equivalent. Some are introduced below.
 
@@ -321,6 +321,6 @@ public int lastTwitch(String name) {
 }
 ```
 
-{% include week07/exercise/006.md %}
-{% include week07/exercise/007.md %}
+{% include week07/exercise/002.md %}
+{% include week07/exercise/003.md %}
 {: .exercises }
