@@ -78,6 +78,8 @@ Sometimes during programming, some errors come up. IntelliJ can fix a lot of the
 
 Autocompletion is often triggered automatically. When it isn't triggered, you can open it with *Ctrl*{: .key} + *Space*{: .key}
 
+Some other parts of code can be completed automatically. If you type "sout" and press *Tab*{: .key} twice, it will expand to `System.out.println`
+
 ### Parameter lookup
 
 To see the parameters in a function, use *Ctrl*{: .key} + *P*{: .key}. This allows you to easily see what parameters to fill into a function
