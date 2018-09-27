@@ -4,8 +4,8 @@ title: Week 10
 ---
 {% include_relative /licence.md %}
 ---
-{% include week09/13-Polymorphism.md %}
+{% include week10/13-Polymorphism.md %}
 ---
-{% include week09/12-FileIO.md %}
+{% include week10/14-Inheritance.md %}
 ---
-end of week 2
+end of week 4
