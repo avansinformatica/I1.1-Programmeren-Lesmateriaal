@@ -1,4 +1,5 @@
 ## 2. Towards Automatic Tests
+
 Testing a program manually is a hopeless burden. It is possible to automate inputs by setting up a string as a `Scanner` object parameter. The example below shows how it is possible to test automatically the program above.
 
 ```java

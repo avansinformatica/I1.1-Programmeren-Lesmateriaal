@@ -1,10 +1,10 @@
 ## 1. HashMap
 
-[HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) is one of Java's most useful data structures. The idea behind HashMap is we define an index for an object key - a unique value, for instance a social security number, a student number, or a phone number. We call *hashing* the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.
+[HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) is one of Java's most useful data structures. The idea behind `HashMap` is we define an index for an object key - a unique value, for instance a social security number, a student number, or a phone number. We call *hashing* the process of changing a key into an index, or simply to define an index. The hashing happens thanks to a particular function which makes sure that we get always the same index with a known key.
 
 Adding and retrieving items based on the keys allows for a particularly quick search process. Instead of parsing the table items one by one (in the worst case we would have to go through all the items), and instead of looking for a value with a binary search (in which case we would have to go through a number of items which would depend on the logarithm of the table size), we can look at only one table index and check whether a value is mapped to that index.
 
-HashMap uses the `Object` class `hashCode()` method to find a key value. Every HashMap subclass will inherit the `hashCode()` method. However, we will not go deep into HashMap workings in this course. We will return to inheritance in week 10.
+HashMap uses the `Object` class `hashCode()` method to find a key value. Every `HashMap` subclass will inherit the `hashCode()` method. However, we will not go deep into `HashMap` workings in this course.
 
 Java's `HashMap` class encapsulates - or hides - the way it works, and it returns made-up methods ready to use.
 
@@ -29,7 +29,7 @@ Kaksi
 null
 null
 ```
-        
+
 In the example, we create a `HashMap` where both the key and the stored object are strings. We add information to the `HashMap` with the `put()` method, which receives the references to the key and to the stored object as parameter. The method `get()` returns either the reference to the key given as parameter or a `null` value in case the key was not found.
 
 Each key is mapped to one value, within the `HashMap`. If we store a new value with an already existing key, the old value is lost.
@@ -56,7 +56,7 @@ Kaksi
 null
 null
 ```
-        
+
 {% include week07/exercise/001.md %}
 {: .exercises }
 
@@ -134,13 +134,13 @@ book = bookCollection.get("Pride and Prejudice");
 System.out.println(book);
 ```
 
-```output 
+```output
 null
 
 Name: Pride and Prejudice (1813)
 Contents: ...
 ```
-        
+
 HashMaps are useful when we know the key to use for our search. Keys are always unique, and it is not possible to store more than one object together with one key alone. The object which we store can still be a *list* or another `HashMap`, of course!
 
 ### 1.2 Library
