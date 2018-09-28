@@ -29,10 +29,10 @@ TODO: ADD SCREENSHOT
 
 The `String` class API documentation starts with the common heading; this is followed by the class package (`java.lang`). After the package you find the class name (Class `String`), and this is followed by the *inheritance hierarchy*.
 
-```output
-[java.lang.Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
-  java.lang.String
-```
+### Object
+>[java.lang.Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
+>  java.lang.String
+
 
 The inheritance hierarchy lists the classes from which a class derives. The inherited classes are listed in hierarchical order, where the class we are analizing is the last one. As far as our `String` class inheritance hierarchy is concerned, we notice that the `String` class derives from the class `Object`. *In Java, each class can derive from one class, tops;* however, they can inherit features of more than one, undirectly.
 
@@ -78,9 +78,9 @@ You can give whaterver object parameter to the method `printManyTimes`. Within t
 
 Let's continue with our `String` class API inspection. In the description, the inheritance hierarchy is followed by a list of the interfaces which the class implements.
 
-```output
-**All Implemented Interfaces:**
-  [Serializable](http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html), [CharSequence](http://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html), [Comparable](http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html)<[String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)>
+### Serializable
+>**All Implemented Interfaces:**
+>  [Serializable](http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html), [CharSequence](http://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html), [Comparable](http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html)<[String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)>
 ```
 
 The `String` class implements the interfaces `Serializable`, `CharSequence`, and `Comparable<String>`. An interface is a type, too. According to the description of the `String` API, we should be able to set the following interfaces as the type of a `String` object.
