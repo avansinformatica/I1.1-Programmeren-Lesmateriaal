@@ -104,7 +104,8 @@ The method defined in the superclass can always be called using the `super` pref
     }
 ```
 
-Exercise 29: Person and their Heirs
+{% include week10/exercise/029.md %}
+{: .exercises }
 
 ### 14.4 The Object Type defines the Called Method: Polymorphism
 
@@ -424,7 +425,8 @@ The `Order` class above is better now. The method `mailingAddress` uses a `Custo
 
 Now, when we modify a customer, we only need to change their information; we don't have to do anything about the orders.
 
-#### Exercise 30 : Container
+{% include week10/exercise/030.md %}
+{: .exercises }
 
 ## 50.7 Inheritance, Interfaces, Both, or None?
 
@@ -434,7 +436,8 @@ As with interfaces, when we make use of inheritance, the subclasses are committe
 
 Below, we create a farm simulator, where we simulate the life in a farm. Note that the program does not make us of inheritance, and the interface use is scarce. With programs, we often create a first version which we improve later on. Typically, we don't already understand the scope of the problem when we implement the first version; planning interfaces and inheritance hierarchy may be difficult and it may slow down the work.
 
-#### Exercise 31: Farm Simulator
+{% include week10/exercise/031.md %}
+{: .exercises }
 
 ## 50.8 An Abstract Class
 
@@ -555,7 +558,8 @@ Choice: **0**
 
 The difference between interfaces and abstract classes is that abstract classes provide the program with more structure. Because it is possible to define the functionality of abstract classes, we can use them to define the default implementation, for instance. The user interface above made use of a definition of the abstract class to store the operation name.
 
-Exercise 32: Different Boxes
+{% include week10/exercise/032.md %}
+{: .exercises }
 
 ### 50.9 Removing Objects from an ArrayList
 
@@ -591,4 +595,5 @@ The solution does not work and it throws a `ConcurrentModificationException`, be
 
 The objects which have to be deleted are gathered together while we parse the list, and the remove operation is executed only after parsing the list.
 
-### Exercise 33: Dungeon
+{% include week10/exercise/033.md %}
+{: .exercises }
