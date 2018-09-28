@@ -6,12 +6,14 @@ Each Java's class descends from the class `Object`, which means that each class 
 
 In addition to be possible to inherit the `Object` class, it is also possible to inherit other classes. If we check Java's `ArrayList` class API we notice that `ArrayList` inherits the class `AbstractList`. The class `AbstractList` inherits the class `AbstractCollection`, which descended from the class `Object`.
 
-```output
-[java.lang.Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
-  [java.util.AbstractCollection](http://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)<E>
-      [java.util.AbstractList](http://docs.oracle.com/javase/8/docs/api/java/AbstractList.html)<E>
-          java.util.ArrayList<E>
-```
+### ArrayList 
+>[java.lang.Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
+>
+>  [java.util.AbstractCollection<E>](http://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)
+>
+>      [java.util.AbstractList<E>](http://docs.oracle.com/javase/8/docs/api/java/AbstractList.html)
+>
+>          java.util.ArrayList<E>
 
 Each class can inherit one class, directly, Indirectly, a class can still inherit all the feauters its parent class. The class `ArrayList` inherits directly the class `AbstractList`, and indirectly the classes `AbstractCollection` and `Object`. In fact, the class `ArrayList` has the methods and interfaces of `AbstractList`, `AbstractCollection` and `Object` at its disposal.
 
