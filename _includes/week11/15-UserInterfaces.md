@@ -1,6 +1,6 @@
 ## 15. User Interfaces
 
-**Attention! A part of the user interface tests opens a user interface and uses your mouse to click on the user interface components. When you are executing user interface tests, do not use your mouse!**Attention
+**Attention! A part of the user interface tests opens a user interface and uses your mouse to click on the user interface components. When you are executing user interface tests, do not use your mouse!**
 
 So far, our programs have only been composed of application logic and text user interface which made use of application logic. In a couple of exercises we have also got a graphical user interface, but they had usually been created for us. Next, we see how we can create graphical user interfaces in Java.
 
@@ -138,7 +138,7 @@ You can add buttons to your user interface using the class `JButton`. Adding a `
     }
 ```
 
-ADD IMAGE 15_1_2_click.png
+![Click](images/15_1_2_click.png)
 
 Next, we try to add both text and a button to our user interface.
 
@@ -280,7 +280,7 @@ Next, we create the a `JButton` for our user interface, and we add a instance of
     }
 ```
 
-![Copier](images/15_3_send.png)
+![Send](images/15_3_send.png)
 
 When we press the button in our user interface we see the following message.
 
@@ -411,7 +411,7 @@ For our UI layout, we use `GridLayout`. There are three lines and two columns in
 
 After adding the information, our user interface looks like the following.
 
-ADD PICTURE 15_4_persondetails.png
+![Copier](images/15_4_persondetails.png)
 
 The action event listener has to know about the recording functionality (`PersonRecord` interface), as well as the fields it uses. Let's create the class `PersonRecordListener` which implements ActionListener. As constructor parameter, the class is assigned an object which implements the interface `PersonRecord`, as well as two `JTextField` objects which stand for the name and ID fields. In the method `actionPerformed` we create a new `Person` object and we record it using the record method of our `PersonRecord` object.
 
