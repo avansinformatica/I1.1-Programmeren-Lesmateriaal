@@ -458,4 +458,3 @@ We would like to create a program where the contents of the left text field will
 {% include week11/exercise/15_6.md %}
 {% include week11/exercise/15_7.md %}
 {: .exercises }
-
