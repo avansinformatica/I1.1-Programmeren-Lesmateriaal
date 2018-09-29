@@ -313,13 +313,13 @@ public class 3DPoint extends Point {
 }
 ```
 
-What does exactly happen when we call a tridimensional point's toString method? The execution proceeds in the following way:
+What does exactly happen when we call a tridimensional point's `toString` method? The execution proceeds in the following way:
 
 * we look for a `toString` method in the class `3DPoint`; this is not found and we move to its parent class
 * we look for a toString method in the superclass `Point`; the method is found and we execute its code
 * the code to execute is `return "("+this.location()+") location "+this.manhattanDistanceFromOrigin();`
-* first, we execute the method location
-* we look for a location method in the class `3DPoint`; the method is found and we executes its code
+* first, we execute the method `location`
+* we look for a `location` method in the class `3DPoint`; the method is found and we executes its code
 * the location method `calculates` its result by calling the superclass method `location`
 * next, we look for the definition of the method `manhattanDistanceFromOrigin` in the class `Point3D`; the method is found and we execute its code
 * once again, the method `calculates` its result by calling its homonym in the superclass
