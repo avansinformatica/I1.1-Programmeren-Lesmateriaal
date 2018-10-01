@@ -458,3 +458,233 @@ We would like to create a program where the contents of the left text field will
 {% include week11/exercise/15_6.md %}
 {% include week11/exercise/15_7.md %}
 {: .exercises }
+
+The event handler that is used depends on the user interface component to which the event handler is connected. If we would like to track changes in the text field from a single character, we would use the interface `ChangeListener`. In the example below, a `changeListener` implementation is linked to the left text field, which both prints the changes to the text console and always sets a new value to the right text field.
+
+```java
+leftTextArea.textProperty().addListener(new ChangeListener<String>() {
+    @Override
+    public void changed(ObservableValue<? extends String> muutos,
+            String oldValue, String newValue) {
+
+        System.out.println(oldValue + " -> " + newValue);
+        rightTextArea.setText(newValue);
+    }
+});
+```
+
+The above changes are observed in the text associated with the text field. Because text is in strings, a character string is given to the interface for the changes. As above, in this example too, the program code can be presented in a shorter format.
+
+```java
+leftTextArea.textProperty().addListener((changedValue, oldValue, newValue) -> {
+    System.out.println(oldValue + " -> " + newValue);
+    rightTextArea.setText(newValue);
+});
+```
+
+The program can also make statistics. The values ​​of the text fields generated in the previous task can be calculated fairly straightforwardly. Following the example below, the values ​​would be updated each time a user changes the content of the text field.
+
+```java
+leftTextArea.textProperty().addListener((changedValue, oldValue, newValue) -> {
+    int letterCount = newValue.length();
+    String[] splitString = newValue.split(" ");
+    int wordCount = splitString.length;
+    String lastWord = Arrays.stream(splitString)
+        .sorted((s1, s2) -> s2.length() - s1.length())
+        .findFirst()
+        .get();
+});
+```
+
+{% include week11/exercise/15_8.md %}
+{: .exercises }
+
+### 15.5. Separation of application logic and user interface logic
+
+In general, the application logic (such as checking the data) and maintaining the user interface are location in the same class is generally a bad thing. It makes it hard to maintain the source code and testing the programs programs functionality. The motto *"There should be only one clear responsibility for every class"* is applicable for User Interfaces as well.
+
+Consider the separation of application logic and user interface logic. Let's assume that we have the next interface and we want to make the user interface `PersonalCollection`.
+
+```java
+public interface PersonCollection {
+    void Save(Person person);
+    Person get(String personId);
+
+    void Delete(Person person);
+    void Delete(String personId);
+    void DeleteAll();
+
+    Collection<Person> AllPersons();
+}
+```
+
+When implementing the user interface, a good way to start is to first to draw a user interface, followed by adding appropriate user interface components to the user interface. When saving people, we need fields for the name, the personal ID and a button for adding a person. Use a class to enter the name and a personal ID (`TextField`) and a save Button for the implementation. The styling for the user interface components is also added to the class.
+
+When using the layout `GridPane`. The interface is devided in 3 rows and 2 columns. The event handling functionality will be added later. For creating the user interface design we are using the following code:
+
+```java
+    @Override
+    public void start(Stage stage) {
+        Label nameLabel = new Label("Name: ");
+        TextField nameText = new TextField();
+        Label personIdLabel = new Label("Person ID: ");
+        TextField personIdText = new TextField();
+
+        Button addButton = new Button("Add!");
+
+        GridPane gridPane = new GridPane();
+        gridPane.add(nameLabel, 0, 0);
+        gridPane.add(nameText, 1, 0);
+        gridPane.add(personIdLabel, 0, 1);
+        gridPane.add(personIdText, 1, 1);
+        gridPane.add(addButton, 1, 2);
+
+        // Layout settings of the UI
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10, 10, 10, 10));
+
+        Scene scene = new Scene(gridPane);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+```
+
+![Hello First + Last name](images/15_5_addPersonGUI.png)
+
+Next, we implement the interface `ActionEvent` in the Button add, using Lambda expression.
+
+```java
+@Override
+public void start(Stage stage) {
+    // ...
+
+    addButton.setOnAction((event) -> {
+        personCollection.Add(new Person(nameText.getText(), personIdText.getText());
+    });
+    // ...
+}
+```
+
+But. Where do we create the collection `PersonCollection`? for example, It is created at the beginning of the start method. Below, the entire application code.
+
+```java
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class JavaFxExample extends Application {
+
+    @Override
+    public void start(Stage stage) {
+
+        PersonCollection personCollection = new ConcretePersonCollection();
+        Label nameLabel = new Label("Name: ");
+        TextField nameText = new TextField();
+        Label personIdLabel = new Label("Person ID: ");
+        TextField personIdText = new TextField();
+
+        Button addButton = new Button("Add!");
+        addButton.setOnAction((event) -> {
+                Person person = new Person(nameText.getText(), personIdText.getText());
+                personCollection.Add(person);
+        });
+        GridPane gridPane = new GridPane();
+        gridPane.add(nameLabel, 0, 0);
+        gridPane.add(nameText, 1, 0);
+        gridPane.add(personIdLabel, 0, 1);
+        gridPane.add(personIdText, 1, 1);
+        gridPane.add(addButton, 1, 2);
+
+        // Layout settings of the UI
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(10, 10, 10, 10));
+
+        Scene scene = new Scene(gridPane);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(JavaFxExample.class);
+    }
+}
+```
+
+### 15.6. Starting the application from outside the class
+
+The entry point for JavaFX applications is the class  `Application`. Till now we initialized the class `Application` inside the same class using the method `main`. But it's possible to load the instance of `Application` from a seperate class as can be seen below
+
+```java
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class JavaFxApplication extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle("Hei Maailma!");
+        stage.show();
+    }
+}
+```
+
+You can start an application from a class other than the class `Application` by launch using the second-class. In the example below, a separate class `Main` launches the application.
+
+```java
+import javafx.application.Application;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Application.launch(JavaFxApplication.class);
+    }
+}
+```
+
+When executing the method `main`, The class `JavaFxApplication` will be started using the `Application` method `launch`.
+
+It's possible to provide parameters with the Application method `launch`, so it can be used inside the `JavaFxApplication`. The number of parameters is not limited, but the type of parameter can only be a `String`. In the initialized class we can use the method `getParameters()` to get the parameters.
+
+```java
+import javafx.application.Application;
+import javafx.application.Application.Parameters;
+import javafx.stage.Stage;
+
+public class JavaFxApplication extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        Parameters params = getParameters();
+        String organization = params.getNamed().get("organization");
+        String course = params.getNamed().get("course");
+
+        stage.setTitle(organization + ": " + course);
+        stage.show();
+    }
+}
+```
+
+Now, we gonna launch the application using the following code:
+
+```java
+import javafx.application.Application;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Application.launch(JavaFxApplication.class,
+            "--organization=AvansTI",
+            "--course=OGP1");
+    }
+}
+```
+
+{% include week11/exercise/15_9.md %}
+{: .exercises }
