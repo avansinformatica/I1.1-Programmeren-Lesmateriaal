@@ -8,61 +8,61 @@ If we read the desciption of the `File` [API](http://docs.oracle.com/javase/8/do
 *In the NetBeans programming environment, files have got their own tab called Files, which contains all our project files. If we add a file to a project root -- that is to say outside all folders -- we can refer to it by writing only the its name. We create a file object by fiving the file pathname to it as parameter:*
 
 ```java
-    File file = new File("file-name.txt");
+File file = new File("file-name.txt");
 ```
 
 `System.in` input stream is not the only reading source we can give to the constructor of a `Scanner` class. For instance, the reading source can be a file, in addition to the user keyboard. `Scanner` provides the same methods to read a keyboard input and a file. In the following example, we open a file and we print all the text contained in the file using the `System.out.println` statement. At the end, we close the file using the statement `close`.
 
 ```java
-        // The file we read
-        File file = new File("filename.txt");
+// The file we read
+File file = new File("filename.txt");
 
-        Scanner reader = new Scanner(file);
-        while (reader.hasNextLine()) {
-            String line = reader.nextLine();
-            System.out.println(line);
-        }
+Scanner reader = new Scanner(file);
+while (reader.hasNextLine()) {
+    String line = reader.nextLine();
+    System.out.println(line);
+}
 
-        reader.close();
+reader.close();
 ```
 
 The `Scanner` class constructor [public Scanner(File source)](http://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html#Scanner(java.io.File)) (*Constructs a new Scanner that produces values scanned from the specified file.*) throws a [FileNotFoundException](http://docs.oracle.com/javase/8/docs/api/java/io/FileNotFoundException.html) when the specified file is not found. The `FileNotFoundException` is different than `RuntimeException,` and we have either to handle it or throw it forward. At this point, you only have to know that the programming environment tells you whether you have to handle the exception or not. Let's first create a try-catch block where we handle our file as soon as we open it.
 
 ```java
-    public void readFile(File f) {
-        // the file we read
-        Scanner reader = null;
+public void readFile(File f) {
+    // the file we read
+    Scanner reader = null;
 
-        try {
-            reader = new Scanner(f);
-        } catch (Exception e) {
-            System.out.println("We couldn't read the file. Error: " + e.getMessage());
-            return; // we exit the method
-        }
-
-        while (reader.hasNextLine()) {
-            String line = reader.nextLine();
-            System.out.println(line);
-        }
-
-        reader.close();
+    try {
+        reader = new Scanner(f);
+    } catch (Exception e) {
+        System.out.println("We couldn't read the file. Error: " + e.getMessage());
+        return; // we exit the method
     }
+
+    while (reader.hasNextLine()) {
+        String line = reader.nextLine();
+        System.out.println(line);
+    }
+
+    reader.close();
+}
 ```
 
 Another option is to delegate the exception handling responsibility to the method caller. We delegate the exception handling responsibility by adding the definition `throws ExceptionType` to the method. For instance, we can add `throws Exception` because the type of all exceptions is `Exception`. When a method has the attribute `throws Exception`, whatever chunk of code which calls that method knows that it may throw an exception, and it should be prepared for it.
 
 ```java
-    public void readFile(File f) throws Exception {
-        // the file we read
-        Scanner reader = new Scanner(f);
+public void readFile(File f) throws Exception {
+    // the file we read
+    Scanner reader = new Scanner(f);
 
-        while (reader.hasNextLine()) {
-            String line = reader.nextLine();
-            System.out.println(line);
-        }
-
-        reader.close();
+    while (reader.hasNextLine()) {
+        String line = reader.nextLine();
+        System.out.println(line);
     }
+
+    reader.close();
+}
 ```
 
 In the example, the method `readFile` receives a file as parameter, and prints all the file lines. At the end, the reader is closed, and the file is closed with it, too. The attribute `throws Exception` tells us that the method may throw an exception. Same kind of attributes can be added to all the methods that handle files.
@@ -70,21 +70,21 @@ In the example, the method `readFile` receives a file as parameter, and prints a
 Note that the `Scanner` object's method `nextLine` returns a string, but it does not return a new line at the end of it. If you want to read a file and still maintain the new lines, you can add a new line at the end of each line:
 
 ```java
-    public String readFileString(File f) throws Exception {
-        // the file we read
-        Scanner reader = new Scanner(f);
+public String readFileString(File f) throws Exception {
+    // the file we read
+    Scanner reader = new Scanner(f);
 
-        String string = "";
+    String string = "";
 
-        while (reader.hasNextLine()) {
-            String line = reader.nextLine();
-            string += line;
-            string += "\n";
-        }
-
-        reader.close();
-        return string;
+    while (reader.hasNextLine()) {
+        String line = reader.nextLine();
+        string += line;
+        string += "\n";
     }
+
+    reader.close();
+    return string;
+}
 ```
 
 Because we use the `Scanner` class to read files, we have all `Scanner` methods available for use. For instance the method `hasNext()` returns the boolean value true if the file contains something more to read, and the method `next()` reads the following word and returns a `String` object.
@@ -92,18 +92,18 @@ Because we use the `Scanner` class to read files, we have all `Scanner` methods 
 The following program creates a `Scanner` object which opens the file *file.txt*. Then, it prints every fifth word of the file.
 
 ```java
-        File f = new File("file.txt");
-        Scanner reader = new Scanner(f);
+File f = new File("file.txt");
+Scanner reader = new Scanner(f);
 
-        int whichNumber = 0;
-        while (reader.hasNext()) {
-            whichNumber++;
-            String word = reader.next();
+int whichNumber = 0;
+while (reader.hasNext()) {
+    whichNumber++;
+    String word = reader.next();
 
-            if (whichNumber % 5 == 0) {
-                System.out.println(word);
-            }
-        }
+    if (whichNumber % 5 == 0) {
+        System.out.println(word);
+    }
+}
 ```
 
 Below, you find the text contained in the file, followed by the program output.
@@ -133,15 +133,15 @@ Almost each operating system producer has also got their own standards. Some sup
 You can create a Scanner object which to read a file which uses the UTF-8 character set in the following way:
 
 ```java
-    File f = new File("examplefile.txt");
-    Scanner reader = new Scanner(f, "UTF-8");
+File f = new File("examplefile.txt");
+Scanner reader = new Scanner(f, "UTF-8");
 ```
 
 Anther thing you can do to set up a character set is using an environment variable. Macintosh and Windows users can set up an the value of the environment variable `JAVA_TOOL_OPTIONS` to the string `-Dfile.encoding=UTF8`. In such case, Java always uses UTF-8 characters as a default.
 
-{% include week09/exercise/017.md %}
-{% include week09/exercise/018.md %}
-{% include week09/exercise/019.md %}
+{% include week09/exercise/003.md %}
+{% include week09/exercise/004.md %}
+{% include week09/exercise/005.md %}
 {: .exercises }
 
 
@@ -172,15 +172,15 @@ public class FileHandler {
 }
 ```
 
-In the above `writeToFile` method, we first create a `FileWriter` object, which writes into the `fileName` file stored at the location specified as parameter. After this, we write into the file using the `write` method. The exception the constructor and write method can possibly throw has to be handled either with the help of a `try-catch` block or delegating the responsibility. In the method `writeToFile` the responsibility was delegated.
+In the above method `writeToFile`, we first create a `FileWriter` object, which writes into the `fileName` file stored at the location specified as parameter. After this, we write into the file using the `write` method. The exception the constructor and write method can possibly throw has to be handled either with the help of a `try-catch` block or delegating the responsibility. In the method `writeToFile` the responsibility was delegated.
 
 Let's create a `main` method where we call the `writeToFile` method of a `FileHandler` object. The exception does not have to be handled in the `main` method either, but the method can declare to throw possibly an exception throw the definition `throws Exception`.
 
 ```java
-    public static void main(String[] args) throws Exception {
-        FileHandler handler = new FileHandler();
-        handler.writeToFile("diary.txt", "Dear Diary, today was a nice day.");
-    }
+public static void main(String[] args) throws Exception {
+    FileHandler handler = new FileHandler();
+    handler.writeToFile("diary.txt", "Dear Diary, today was a nice day.");
+}
 ```
 
 When we call the method above, we create the file "diary.txt", where we write the text "Dear Diary, today was a nice day.". If the file exists already, the old content is erased and the new one is written. `FileWriter` allows us to add text at the end of the already existing file by providing additional parameter `boolean append`, without erasing the existing text. Let's add the method `appendToFile()` to the class `FileHandler`; the method appends the text received as parameter to the end of the file.
@@ -203,6 +203,6 @@ public class FileHandler {
 
 In most of the cases, instead of writing text at the end of a file with the method `append`, it is easier to write all the file again.
 
-{% include week09/exercise/034.md %}
-{% include week09/exercise/035.md %}
+{% include week09/exercise/006.md %}
+{% include week09/exercise/007.md %}
 {: .exercises }

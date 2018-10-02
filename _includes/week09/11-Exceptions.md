@@ -5,20 +5,20 @@ Exceptions are such situations where the program executions is different from ou
 We deal with exception using the block `try { } catch (Exception e) { }`. The code contained within the brackets which follows the keyword try can possibly go through an exception. The keyword the code within the brackets which follow the keyword `catch` defines what should happen when the try-code throws an exception. We also define the type of the exception we want to catch (`catch (Exception e)`).
 
 ```java
-    try {
-        // code which can throw an exception
-    } catch (Exception e) {
-        // code which is executed in case of exception
-    }
+try {
+    // code which can throw an exception
+} catch (Exception e) {
+    // code which is executed in case of exception
+}
 ```
 
 The [parseInt](http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#parseInt(java.lang.String)) method of class `Integer` which turns a string into a number can throw a `NumberFormatException` if its string parameter cannot be turned into a number. Now we implement a program which tries to turn into a number a user input string.
 
 ```java
-    Scanner reader = new Scanner(System.in);
-    System.out.print("Write a number: ");
+Scanner reader = new Scanner(System.in);
+System.out.print("Write a number: ");
 
-    int num = Integer.parseInt(reader.nextLine());
+int num = Integer.parseInt(reader.nextLine());
 ```
 
 ```output
@@ -29,15 +29,15 @@ Write a number: ~~tatti~~
 The program above throws an exception because the user digits an erroneous number. The program execution ends up with a malfunction, and it cannot continue. We add an exception management statement to our program. The call, which may throw an exception is written into the `try` block, and the action which takes place in case of exception is written into the `catch` block.
 
 ```java
-    Scanner reader = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 
-    System.out.print("Write a number: ");
+System.out.print("Write a number: ");
 
-    try {
-        int num = Integer.parseInt(reader.nextLine());
-    } catch (Exception e) {
-        System.out.println("You haven't written a proper number.");
-    }
+try {
+    int num = Integer.parseInt(reader.nextLine());
+} catch (Exception e) {
+    System.out.println("You haven't written a proper number.");
+}
 ```
 
 ```output
@@ -52,16 +52,16 @@ You haven't written a proper number.
 In case of exception, we move from the chunk of code defined by the `try` keyword to the `catch` chunk. Let's see this by adding a print statement after the `Integer.parseInt` line in the `try` chunk.
 
 ```java
-    Scanner reader = new Scanner(System.in);
+Scanner reader = new Scanner(System.in);
 
-    System.out.print("Write a number: ");
+System.out.print("Write a number: ");
 
-    try {
-        int num = Integer.parseInt(reader.nextLine());
-        System.out.println("Looks good!");
-    } catch (Exception e) {
-        System.out.println("You haven't written a proper number.");
-    }
+try {
+    int num = Integer.parseInt(reader.nextLine());
+    System.out.println("Looks good!");
+} catch (Exception e) {
+    System.out.println("You haven't written a proper number.");
+}
 ```
 
 ```output
@@ -80,7 +80,8 @@ Let's make something more useful out of our number translator: let's do a method
 
 ```java
 public int readNumber(Scanner reader) {
-    while (true) {
+    boolean running = true;
+    while (running) {
         System.out.print("Write a number: ");
 
         try {
@@ -110,20 +111,20 @@ Methods and constructors can *throw* exceptions. So far, there are two kinds of 
 In the clock exercise of Introduction to Programming, we explained that we can stop our program of one second, by calling the method `Thread.sleep(1000)`. The method may throw an exception, which we must deal with. In fact, we handle the exception using the `try-catch` sentence; in the following example we skip the exception, and we leave empty the `catch` chunk.
 
 ```java
-    try {
-        // we sleep for 1000 milliseconds
-        Thread.sleep(1000);
-    } catch (Exception e) {
-        // In case of exception, we do not do anything.
-    }
+try {
+    // we sleep for 1000 milliseconds
+    Thread.sleep(1000);
+} catch (Exception e) {
+    // In case of exception, we do not do anything.
+}
 ```
 
 It is also possible to avoid handling the exceptions in a method, and *delegate the responsibility* to the method caller. We delegate the responsibility of a method by using the statement `throws Exception`.
 
 ```java
-    public void sleep(int sec) throws Exception {
-        Thread.sleep(sec * 1000);   // now we don't need the try-catch block
-    }
+public void sleep(int sec) throws Exception {
+    Thread.sleep(sec * 1000);   // now we don't need the try-catch block
+}
 ```
 
 The `sleep` method is called in another method. Now, this other method can either handle the exception in a `try-catch` block or delegate the responsibility forward. Sometimes, we delegate the responsibility of handling an exception, till the very end, and even the `main` method delegates it:
@@ -178,11 +179,11 @@ public class Grade {
 ```
 
 ```java
-    Grade grade = new Grade(3);
-    System.out.println(grade.getGrade());
+Grade grade = new Grade(3);
+System.out.println(grade.getGrade());
 
-    Grade wrongGrade = new Grade(22);
-    // it causes an exception, we don't continue
+Grade wrongGrade = new Grade(22);
+// it causes an exception, we don't continue
 ```
 
 ```output
@@ -190,9 +191,8 @@ public class Grade {
 Exception in thread "..." java.lang.IllegalArgumentException: The grade has to be between 0-5
 ```
 
-{% include week09/exercise/015.md %}
-{: .exercises }
-{% include week09/exercise/016.md %}
+{% include week09/exercise/001.md %}
+{% include week09/exercise/002.md %}
 {: .exercises }
 
 ### 11.3 The Exception Information
@@ -200,11 +200,11 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 The `catch` block tells how we handle an exception, and it tells us what exception we should be prepared for: `catch (Exception e)`. The exception information is saved into the `e` variable.
 
 ```java
-    try {
-        // the code, which may throw an exception
-    } catch (Exception e) {
-        // the exception information is saved into the variable e
-    }
+try {
+    // the code, which may throw an exception
+} catch (Exception e) {
+    // the exception information is saved into the variable e
+}
 ```
 
 The class `Exception` can provide useful methods. For instance, the method `printStackTrace()` prints a path which tells us where the exception came from. Let's check the following error printed by the method `printStackTrace()`.
