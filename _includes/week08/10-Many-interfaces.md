@@ -196,5 +196,5 @@ NetBeans paints the class name red. If you go to lamp icon on the left corner of
 * **Clean and Build**
 Sometimes, NetBeans may get confused and try to run a code version without noticing all the corrected changes made to it. Usually you notice it because something "strange" happens. Usually, you can fix the problem by using *Clean and build* operation. The operation is found in the *Run* menu, and you can execute it also by clicking on the *brush and hammer* symbol. Clean and build deletes the translated versions of the code and generates a new translation.
 
-{% include week08/exercise/014.md %}
+{% include week08/exercise/006.md %}
 {: .exercises }
