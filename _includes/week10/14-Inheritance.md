@@ -72,9 +72,9 @@ The `Motor` class constructor is interesting. In the first line of the construct
 When the class `Motor` inherits the class `Component`, in receives all the methods provides by `Component`. It is possible to create an instance of the class `Motor` as it is for any other class.
 
 ```java
-        Motor motor = new Motor("combustion engine", "hz", "volkswagen", "VW GOLF 1L 86-91");
-        System.out.println(motor.getMotorType());
-        System.out.println(motor.getProducer());
+Motor motor = new Motor("combustion engine", "hz", "volkswagen", "VW GOLF 1L 86-91");
+System.out.println(motor.getMotorType());
+System.out.println(motor.getProducer());
 ```
 
 ```output
@@ -101,13 +101,13 @@ When we call the constructor, the variables defined in the super class are initi
 The method defined in the superclass can always be called using the `super` prefix, in the same way we call the methods defined in this class through the `this` prefix. For instance, we can make use of a method which overrives the superclass `toString` method in the following way:
 
 ```java
-    @Override
-    public String toString() {
-        return super.toString() + "\n  And my personal message again!";
-    }
+@Override
+public String toString() {
+    return super.toString() + "\n  And my personal message again!";
+}
 ```
 
-{% include week10/exercise/029.md %}
+{% include week10/exercise/002.md %}
 {: .exercises }
 
 ### 14.4 The Object Type defines the Called Method: Polymorphism
@@ -115,10 +115,10 @@ The method defined in the superclass can always be called using the `super` pref
 The method which can be called is defined through the variable type. For instance, if a `Student` object reference is saved into a `Person` variable, the object can use only the methods defined in the `Person` class:
 
 ```java
-   Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
-   olli.credits();        // NOT WORKING!
-   olli.study();              // NOT WORKING!
-   String.out.println( olli );   // olli.toString() IT WORKS!
+Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
+olli.credits();        // NOT WORKING!
+olli.study();              // NOT WORKING!
+String.out.println( olli );   // olli.toString() IT WORKS!
 ```
 
 If the object has many different types, it has available the methods defined by *all* types. For instance, a `Student` object has available the methods defined both in the class `Person` and in `Object`.
@@ -126,11 +126,11 @@ If the object has many different types, it has available the methods defined by 
 In the previous exercise, we were in the class `Student` and we replaced the `toString` method inherited from `Person` with a new version of it. Suppose we are using an object throw a type which is not its real, what version of the object method would we call, then? For instance, below there are two students whose references are saved into a `Person` and an `Object` variables. We call the `toString` method of both. What version of the method is executed: the one defined in `Object`, in `Person`, or in `Student`?
 
 ```java
-   Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
-   String.out.println( olli );
+Person olli = new Student("Olli", "Ida Albergintie Street 1 00400 Helsinki");
+String.out.println( olli );
 
-   Object liisa = new Student("Liisa", "Väinö Auerin Street 20 00500 Helsinki");
-   String.out.println( liisa );
+Object liisa = new Student("Liisa", "Väinö Auerin Street 20 00500 Helsinki");
+String.out.println( liisa );
 ```
 
 Printing:
@@ -363,7 +363,7 @@ public class Customer {
         this.address = address;
     }
 }
-``` 
+```
 
 ```java
 public class Order extends Customer {
@@ -428,10 +428,10 @@ The `Order` class above is better now. The method `mailingAddress` uses a `Custo
 
 Now, when we modify a customer, we only need to change their information; we don't have to do anything about the orders.
 
-{% include week10/exercise/030.md %}
+{% include week10/exercise/003.md %}
 {: .exercises }
 
-## 50.7 Inheritance, Interfaces, Both, or None?
+### 14.7 Inheritance, Interfaces, Both, or None?
 
 Inheritance does not exclude using interfaces, and viceversa. Interfaces are like an agreement on the class implementation, and they allow for the abstraction of the concrete implementation. Changing a class which implements an interface is quite easy.
 
@@ -439,10 +439,10 @@ As with interfaces, when we make use of inheritance, the subclasses are committe
 
 Below, we create a farm simulator, where we simulate the life in a farm. Note that the program does not make us of inheritance, and the interface use is scarce. With programs, we often create a first version which we improve later on. Typically, we don't already understand the scope of the problem when we implement the first version; planning interfaces and inheritance hierarchy may be difficult and it may slow down the work.
 
-{% include week10/exercise/031.md %}
+{% include week10/exercise/004.md %}
 {: .exercises }
 
-## 50.8 An Abstract Class
+### 14.8 An Abstract Class
 
 Abstract classes combine interfaces and inheritance. They do not produce instances, but you can create instances of their subclasses. An abstract class can contain both normal and abstract methods, the first containing the method body, the second having only the method definition. The implementation of the abstract methods is left to the inheriting class. In general, we use abstract classes when the object they represent is not a clear, self-defined concept. In such cases, it is not possible to create instances of it.
 
@@ -561,7 +561,7 @@ Choice: **0**
 
 The difference between interfaces and abstract classes is that abstract classes provide the program with more structure. Because it is possible to define the functionality of abstract classes, we can use them to define the default implementation, for instance. The user interface above made use of a definition of the abstract class to store the operation name.
 
-{% include week10/exercise/032.md %}
+{% include week10/exercise/005.md %}
 {: .exercises }
 
 ### 50.9 Removing Objects from an ArrayList
@@ -569,34 +569,34 @@ The difference between interfaces and abstract classes is that abstract classes 
 In the following exercise we see what you may end up to, when you want to remove a part of the list objects while parsing an ArrayList:
 
 ```java
-   // somewhere, with a definition like:
-   // ArrayList<Object> list = new ...
+// somewhere, with a definition like:
+// ArrayList<Object> list = new ...
 
-   for ( Object object : list ) {
-      if ( hasToBeRemoved(object) ) {
-         list.remove(object);
-      }
-   }
+for ( Object object : list ) {
+    if ( hasToBeRemoved(object) ) {
+        list.remove(object);
+    }
+}
 ```
 
 The solution does not work and it throws a `ConcurrentModificationException`, because it is not possible to modify a list while parsing it with a *foreach iterator*. We will come back to the topic better on week 12. If you run into such a situation, you can handle it in the following way:
 
 ```java
-   // somewhere, with a definition like:
-   // ArrayList<Object> list = new ...
+// somewhere, with a definition like:
+// ArrayList<Object> list = new ...
 
-   ArrayList<Object> toBeRemoved = new ArrayList<Object>();
+ArrayList<Object> toBeRemoved = new ArrayList<Object>();
 
-   for ( Object object : list ) {
-      if ( hasToBeRemoved(object) ) {
-         toBeRemoved.add(object);
-      }
-   }
+for ( Object object : list ) {
+    if ( hasToBeRemoved(object) ) {
+        toBeRemoved.add(object);
+    }
+}
 
-   list.removeAll(toBeRemoved);
+list.removeAll(toBeRemoved);
 ```
 
 The objects which have to be deleted are gathered together while we parse the list, and the remove operation is executed only after parsing the list.
 
-{% include week10/exercise/033.md %}
+{% include week10/exercise/006.md %}
 {: .exercises }

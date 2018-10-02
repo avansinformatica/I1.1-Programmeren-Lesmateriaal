@@ -1,24 +1,24 @@
 ## 13. Object Polymorphism
 
-Precedently, we have run into situations where variables had various different types, in addition to their own. For instance, in the [section 45](https://avansti.github.io/TI1.1-OGP0-OGP1-Lesmateriaal/week7), we noticed that *all* objects are `Object`-type. If an object is a particular type, we can also represent it as `Object`-type. For instance, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) is also `Object`-type, and all String variables can be defined using `Object`.
+Precedently, we have run into situations where variables had various different types, in addition to their own. For instance, in the [section 4](https://avansti.github.io/TI1.1-OGP0-OGP1-Lesmateriaal/week7), we noticed that *all* objects are `Object`-type. If an object is a particular type, we can also represent it as `Object`-type. For instance, [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) is also `Object`-type, and all String variables can be defined using `Object`.
 
 ```java
-    String string = "string";
-    Object string = "another string";
+String string = "string";
+Object string = "another string";
 ```
 
 It is possible to assign a `String` to an `Object`-type reference.
 
 ```java
-    String string = "characterString";
-    Object string = string;
+String string = "characterString";
+Object string = string;
 ```
 
 The opposite way does not work. Because `Object`-type variables are not Strings, an `Object` variable cannot be assigned to a `String` variable.
 
 ```java
-    Object string = "another string";
-    String string = string; // DOESN'T WORK!
+Object string = "another string";
+String string = string; // DOESN'T WORK!
 ```
 
 What is the real problem?
@@ -55,17 +55,17 @@ public class Printer {
 You can give whaterver object parameter to the method `printManyTimes`. Within the method `printManyTimes`, the object has only the method which are defined in the `Object` class at its disposal, because the method is presented as `Object`-type inside the mehod.
 
 ```java
-    Printer printer = new Printer();
+Printer printer = new Printer();
 
-    String string = " o ";
-    List<String> words = new ArrayList<String>();
-    words.add("polymorphism");
-    words.add("inheritance");
-    words.add("encapsulation");
-    words.add("abstraction");
+String string = " o ";
+List<String> words = new ArrayList<String>();
+words.add("polymorphism");
+words.add("inheritance");
+words.add("encapsulation");
+words.add("abstraction");
 
-    printer.printManyTimes(string, 2);
-    printer.printManyTimes(words, 3);
+printer.printManyTimes(string, 2);
+printer.printManyTimes(words, 3);
 ```
 
 ```output
@@ -86,9 +86,9 @@ Let's continue with our `String` class API inspection. In the description, the i
 The `String` class implements the interfaces `Serializable`, `CharSequence`, and `Comparable<String>`. An interface is a type, too. According to the description of the `String` API, we should be able to set the following interfaces as the type of a `String` object.
 
 ```java
-    Serializable serializableString = "string";
-    CharSequence charSequenceString = "string";
-    Comparable<String> comparableString = "string";
+Serializable serializableString = "string";
+CharSequence charSequenceString = "string";
+Comparable<String> comparableString = "string";
 ```
 
 Because we can define the parameter type of a method, we can define methods which would accept an object which implements *a specific interface*. When we define an interface as method parameter, the parameter can be whatever object which implements such interface, the method does not care about the object actual type.
@@ -116,11 +116,9 @@ public class Printer {
 Whatever object which implements the `CharSequence` interface can be assigned to the method `printCharacters`. For instance, you can give a `String` or a `StringBuilder` which is usually more efficient when it comes to string building. The method `printCharacters` prints each character of the object in its own line.
 
 ```java
-    Printer printer = new Printer();
-
-    String string = "works";
-
-    printer.printCharacters(string);
+Printer printer = new Printer();
+String string = "works";
+printer.printCharacters(string);
 ```
 
 ```output
@@ -131,5 +129,5 @@ k
 s
 ```
 
-{% include week10/exercise/020.md %}
+{% include week10/exercise/001.md %}
 {: .exercises }

@@ -41,7 +41,7 @@ public class EvenTheBestApplication extends Application {
 
 Launching the above application creates a user interface where you can switch from one view to another by pressing the button.
 
-{% include week11/exercise/15_10.md %}
+{% include week11/exercise/FX_010.md %}
 {: .exercises }
 
 ### 16.2. Layout of each view
@@ -127,7 +127,7 @@ public class EncryptedApplication extends Application {
 
 The example uses the `setPrefSize` and `setAlignment` methods provided by both `GridPane` and `StackPane`. With method, `setPrefSize` will give you the size you want to set up, and with the method, `setAlignment` you can set alligntment the components used in a layout. `Pos.CENTER` sets the layout in the center of the view.
 
-{% include week11/exercise/15_11.md %}
+{% include week11/exercise/FX_011.md %}
 {: .exercises }
 
 ### 16.2. The same layout with views
@@ -213,7 +213,7 @@ The application works as follows:
 
 TODO add gif animation
 
-{% include week11/exercise/15_12.md %}
+{% include week11/exercise/FX_012.md %}
 {: .exercises }
 
 ### 16.3. Slightly larger application: Vocabulary workout
@@ -383,7 +383,6 @@ public class TrainingView {
 
 Training app and stack the above categories together to provide the application menu. The training app is structured as follows.
 
-
 ```java
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -446,5 +445,5 @@ public class TrainingApplication extends Application {
 }
 ```
 
-{% include week11/exercise/15_13.md %}
+{% include week11/exercise/FX_013.md %}
 {: .exercises }

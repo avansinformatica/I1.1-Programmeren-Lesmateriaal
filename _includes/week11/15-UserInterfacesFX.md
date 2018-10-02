@@ -48,7 +48,7 @@ What's wrong with the program? Our class `JavaFxExample` inherits a Class [Appli
 
 When the method `launch` is called, the method in the `Application` class creates a new object of the class given in the parameter   and invokes the method `init`. The method `init` is inherited from `Application` class, and is used to initialize objects that are  used inside the program. We left it out of this, because our program is quite simple. After invoking the method, the program calls the method `start`, which gets a [Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html) object describing the window as a parameter. In the implementation above of the methode `start`, the stage object is given as a parameter and sets the title by the method `setTitle`, after the method `show` called the window we be displayed. Eventually, the program will listen to user interface events such as window closure, which will lead to the application shutdown.
 
-{% include week11/exercise/15_1.md %}
+{% include week11/exercise/FX_001.md %}
 {: .exercises }
 
 ### 15.1. Structure of the user interface
@@ -205,8 +205,8 @@ As individual components become familiar, their use is more straightforward. Alm
 
 The only significant difference between adding user interface components is to the point where the component user wants to display the component on the interface. Let's look at the layout of the interface components.
 
-{% include week11/exercise/15_2.md %}
-{% include week11/exercise/15_3.md %}
+{% include week11/exercise/FX_002.md %}
+{% include week11/exercise/FX_003.md %}
 {: .exercises }
 
 ### 15.3. Layout of user interface components
@@ -253,7 +253,7 @@ public class JavaFxExample extends Application {
 
 ![BorderPlane](images/15_3_1_borderPlane.png)
 
-{% include week11/exercise/15_4.md %}
+{% include week11/exercise/FX_004.md %}
 {: .exercises }
 
 #### 15.3.2. HBox
@@ -306,21 +306,21 @@ The class [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout
 [GridPane](https://docs.oracle.com/javafx/2/api/javafx/scene/layout/GridPane.html) allows the user interface components to be placed in a grid. In the example below, a 3x3-square grid is created, each box contains a button.
 
 ```java
-    @Override
-    public void start(Stage stage) {
-        GridPane  gridPane = new GridPane();
-        
-        for (int x = 1; x <= 3; x++) {
-            for (int y = 1; y <= 3; y++) {
-                gridPane.add(new Button("" + x + ", " + y), x, y);
-            }
+@Override
+public void start(Stage stage) {
+    GridPane  gridPane = new GridPane();
+    
+    for (int x = 1; x <= 3; x++) {
+        for (int y = 1; y <= 3; y++) {
+            gridPane.add(new Button("" + x + ", " + y), x, y);
         }
-        
-        Scene scene = new Scene(gridPane);
-
-        stage.setScene(scene);
-        stage.show();
     }
+        
+    Scene scene = new Scene(gridPane);
+
+    stage.setScene(scene);
+    stage.show();
+}
 ```
 
 ![GridPane](images/15_3_3_gridpane.png)
@@ -374,7 +374,7 @@ public class JavaFxExample extends Application {
 
 ![Multiple layouts](images/15_3_4_multipleLayouts.png)
 
-{% include week11/exercise/15_5.md %}
+{% include week11/exercise/FX_005.md %}
 {: .exercises }
 
 ## 15.4. Event Handling
@@ -384,22 +384,22 @@ The above interfaces do not react to events in the UI. This is not due to user i
 Pressing the buttons will be handled with in the class when you implement the interface [EventHandler](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html). The event type is [ActionEvent](https://docs.oracle.com/javase/8/javafx/api/javafx/event/ActionEvent.html). The implementation of the interface defines *what needs to done* when the user presses the button.
 
 ```java
-        Button button1 = new Button("One");
-        button1.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+Button button1 = new Button("One");
+button1.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent event) {
+        System.out.println("Hello World!");
+        }
+});
 ```
 
 The explicit implementation of the interface can be replaced by a Lambda expression.
 
 ```java
-        Button button1 = new Button("One");
-        button1.setOnAction((event) -> {
-                System.out.println("Hello World!");
-            });
+Button button1 = new Button("One");
+button1.setOnAction((event) -> {
+    System.out.println("Hello World!");
+});
 ```
 
 When the button above is pressed, the word *"Hello World!"* Is printed in the console.
@@ -410,20 +410,20 @@ Typically, we want the event handler to modify the status of an object. To get a
 
 ```java
 @Override
-    public void start(Stage stage) {
-        TextField textFieldLeft = new TextField();
-        TextField textFieldRight = new TextField();
-        Button button = new Button("Copy");
+public void start(Stage stage) {
+    TextField textFieldLeft = new TextField();
+    TextField textFieldRight = new TextField();
+    Button button = new Button("Copy");
 
-        HBox hBox = new HBox();
-        hBox.setSpacing(20);
-        hBox.getChildren().addAll(textFieldLeft, button, textFieldRight);
+    HBox hBox = new HBox();
+    hBox.setSpacing(20);
+    hBox.getChildren().addAll(textFieldLeft, button, textFieldRight);
 
-        Scene scene = new Scene(hBox);
+    Scene scene = new Scene(hBox);
 
-        stage.setScene(scene);
-        stage.show();
-    }
+    stage.setScene(scene);
+    stage.show();
+}
 ```
 
 There is a text field on the left and right of the user interface. In addition to the text fields, there is a button labeled "Copy" in the center of the user interface.
@@ -433,30 +433,30 @@ There is a text field on the left and right of the user interface. In addition t
 We would like to create a program where the contents of the left text field will be copied into the content of the right field when the user presses the button. This is achieved through the interface `EventHandler`. The method to implement must be able to use the above defined objects, if the values ​​of the objects are not redefined with the same name (ie the references do not change).
 
 ```java
- @Override
-    public void start(Stage stage) {
-        TextField textFieldLeft = new TextField();
-        TextField textFieldRight = new TextField();
-        Button button = new Button("Copy");
+@Override
+public void start(Stage stage) {
+    TextField textFieldLeft = new TextField();
+    TextField textFieldRight = new TextField();
+    Button button = new Button("Copy");
 
-        button.setOnAction(event -> {
-            textFieldRight.setText(textFieldLeft.getText());
-        });
-        HBox hBox = new HBox();
-        hBox.setSpacing(20);
-        hBox.getChildren().addAll(textFieldLeft, button, textFieldRight);
+    button.setOnAction(event -> {
+        textFieldRight.setText(textFieldLeft.getText());
+    });
+    HBox hBox = new HBox();
+    hBox.setSpacing(20);
+    hBox.getChildren().addAll(textFieldLeft, button, textFieldRight);
 
-        Scene scene = new Scene(hBox);
+    Scene scene = new Scene(hBox);
 
-        stage.setScene(scene);
-        stage.show();
-    }
+    stage.setScene(scene);
+    stage.show();
+}
 ```
 
 ![Text Copy](images/15_4_copyText_2.png)
 
-{% include week11/exercise/15_6.md %}
-{% include week11/exercise/15_7.md %}
+{% include week11/exercise/FX_006.md %}
+{% include week11/exercise/FX_007.md %}
 {: .exercises }
 
 The event handler that is used depends on the user interface component to which the event handler is connected. If we would like to track changes in the text field from a single character, we would use the interface `ChangeListener`. In the example below, a `changeListener` implementation is linked to the left text field, which both prints the changes to the text console and always sets a new value to the right text field.
@@ -496,7 +496,7 @@ leftTextArea.textProperty().addListener((changedValue, oldValue, newValue) -> {
 });
 ```
 
-{% include week11/exercise/15_8.md %}
+{% include week11/exercise/FX_008.md %}
 {: .exercises }
 
 ### 15.5. Separation of application logic and user interface logic
@@ -686,5 +686,5 @@ public class Main {
 }
 ```
 
-{% include week11/exercise/15_9.md %}
+{% include week11/exercise/FX_009.md %}
 {: .exercises }
