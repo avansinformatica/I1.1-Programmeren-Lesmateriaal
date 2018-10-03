@@ -195,6 +195,40 @@ Exception in thread "..." java.lang.IllegalArgumentException: The grade has to b
 {% include week09/exercise/002.md %}
 {: .exercises }
 
+### 11.2 Exceptions and Interfaces
+
+Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following `FileServer` can *possibly* throw an exception in their methods `download` and `save`.
+
+```java
+public interface FileServer {
+    String download(String file) throws Exception;
+    void save(String file, String string) throws Exception;
+}
+```
+
+If an interface defines the `throws Exception` attributes for the methods -- i.e. the methods may throw an exception -- the classes which implement the interface must be defined in the same way. However, they do not have to throw an exception, as it becomes clear in the following example.
+
+```java
+public class TextServer implements FileServer {
+
+    private Map<String, String> data;
+
+    public TextServer() {
+        this.data = new HashMap<String, String>();
+    }
+
+    @Override
+    public String download(String file) throws Exception {
+        return this.data.get(file);
+    }
+
+    @Override
+    public void save(String file, String string) throws Exception {
+        this.data.put(file, stirng);
+    }
+}
+```
+
 ### 11.3 The Exception Information
 
 The `catch` block tells how we handle an exception, and it tells us what exception we should be prepared for: `catch (Exception e)`. The exception information is saved into the `e` variable.
