@@ -2,7 +2,7 @@
 
 When we design and implement bigger programs, the number of classes rapidly grows. When the number of classes grows, remembering their functionality and methods becomes more difficult. Giving sensible names to classes helps to remember their funcitonality. In addition to giving sensible names, it is good to split the source code files into packages according to their functionality, use, and other logical reasons. In fact, the *packages* are but folders we use to organise our source code files. Directories are often called folders, both in windows and colloqually. We will use the term directory, anyway.
 
-Programming environments provide made-up tools for package management. So far, we have been creating classes and interfaces only in the *default package* of the *Source Packages* partition. In NetBeans, we can create a new package by clicking on *Source Packages*, and choosing *New -> Java Package....* In the created package, we can create classes in the same way as we do in the *default package*.
+Programming environments provide made-up tools for package management. So far, we have been creating classes and interfaces only in the *default package* of the *Source Packages* partition. In IntelliJ, we can create a new package by clicking on *Source folder*, and choosing *New -> Package....* In the created package, we can create classes in the same way as we do in the *default package*.
 
 You can read the name of the package that contains a certain class at the beginning of the source code files in the sentence `package packageName` before the other statements. For instance, the below class `Implementation` is contained in the package `library`.
 
@@ -66,7 +66,7 @@ From now on, in *all* our exercises we will use packages. Next, we will create o
 
 All the projects which can be seen are stored in your computer *[file system](http://en.wikipedia.org/wiki/File_system)*. Each project has its own directory (folder) which contains the project directories and files.
 
-The project directory `src` contains the program source code. If a class package is a library, it is located in the directory library of the project source code directory `src`. If you are interested in it, it is possible to have a look at the concrete project structure in NetBeans, by going to the *Files* tab which is next to the *Projects* tab. If you can't see the *Files* tab, you can display it by choosing *Files* from the *Window* menu.
+The project directory `src` contains the program source code. If a class package is a library, it is located in the directory library of the project source code directory `src`. If you are interested in it, it is possible to have a look at the concrete project structure in IntelliJ, by going to the *Files* tab which is next to the *Projects* tab. If you can't see the *Files* tab, you can display it by choosing *Files* from the *Window* menu.
 
 Application development is usually done through the *Projects* tab, where NetBeans has hidden the project files which the programmer doesn't have to care about.
 
@@ -98,7 +98,7 @@ public class UserInterface {
 }
 ```
 
-The object constructor and `start` method of the above class `UserInterface` can be called from whatever program. The method `printTitle` and the variable `reader` can be used only inside their class.
+The object constructor and method `start` of the above class `UserInterface` can be called from whatever program. The method `printTitle` and the variable `reader` can be used only inside their class.
 
 When we want to assign package visibility to a variable or a method, we do not need to use any prefix. We can modify the example above assigning package visibility to the method `printTitle`.
 

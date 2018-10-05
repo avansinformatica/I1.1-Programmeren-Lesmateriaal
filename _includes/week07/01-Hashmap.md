@@ -196,14 +196,13 @@ public class Library {
 
 We implement our search functionality so that we can retrieve a book using a hash algorithm based on the book name.
 
-
 ```java
 public Book getBook(String bookName) {
     bookName = stringCleaner(bookName);
     return this.collection.get(bookName);
 }
 ```
- 
+
 The method above returns the wanted book when this is found, otherwise it returns a `null` value. We can also also go through all the collection keys one by one, and look for the beginning characters of the book's name. In this way, we would actually fail to capitalise on HashMap performance speed because, in the worst case, we would need to go through all the book names. Search based on the beginning characters of a string is possible through the `keySet()` method. The `keySet()` method returns a set of keys, which can be parsed with the for each loop.
 
 ```java

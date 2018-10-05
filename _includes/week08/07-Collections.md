@@ -4,9 +4,9 @@ The class library [Collections](http://java.sun.com/javase/8/docs/api/java/util/
 
 ### 7.1 Search
 
-The `Collections` class library provides a pre-made binary search functionality. The method `binarySearch()` returns the index of our searched key, if this is found. If the key is not found, the search algorithm returns a negative value. The method `binarySearch()` makes use of the `Comparable` interface to retieve objects. If the object's `compareTo()` method returns the value 0, i.e. if it is the same object, the key is considered found.
+The `Collections` class library provides a pre-made binary search functionality. The method `binarySearch()` returns the index of our searched key, if this is found. If the key is not found, the search algorithm returns a negative value. The method `binarySearch()` makes use of the interface `Comparable` to retieve objects. If the object's method `compareTo()` returns the value 0, i.e. if it is the same object, the key is considered found.
 
-Our `ClubMember` class compares people's heights in its `compareTo()` method, i.e. we look for club members whose height is the same while we parse our list.
+Our class `ClubMember` compares people's heights in its method `compareTo()`, i.e. we look for club members whose height is the same while we parse our list.
 
 ```java
     List<ClubMember> clubMembers = new ArrayList<ClubMember>();

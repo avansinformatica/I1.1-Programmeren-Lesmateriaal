@@ -99,7 +99,7 @@ public class Person {
 }
 ```
 
-Because the methods manipulate the object, they do not need to be defined as static, or in other words "not belonging to the object". If we try to do this, the program won't work:
+Because the methods manipulate the object, they do not need to be defined as `static`, or in other words "not belonging to the object". If we try to do this, the program won't work:
 
 ```java
 public class Person {
@@ -113,7 +113,7 @@ public class Person {
 
 As a result we'll get an error **`non-static variable age can not be referenced from static context`**, which means that a static method cannot handle an object method.
 
-So when should a static method be used then? Let us inspect the Person object handling an example familiar from chapter 23:
+So when should a static method be used then? Let us inspect the object `Person` handling an example familiar from chapter 23:
 
 ```java
 public class Program {

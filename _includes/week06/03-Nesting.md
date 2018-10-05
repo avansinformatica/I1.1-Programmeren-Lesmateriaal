@@ -124,7 +124,7 @@ The output looks like this:
 
 The topmost row has the multiplication table of 1. At the beginning `i=1` and the inner loop's variable `j` gets the values 1...10. For each `i`, `j` value pair their product is printed. So at the beginning `i=1`, `j=1`, then `i=1`, `j=2`, ..., `i=1`, `j=10` next `i=2`, `j=1`, and so forth.
 
-Of course the multiplication table program can be cut in to smaller pieces, too. We can define the methods public void printMultiplicationTableRow(int multiplier, int howManyTimes) and public void `printMultiplicationTable(int upTo)`, in this case the structure of our program could be as follows:
+Of course the multiplication table program can be cut in to smaller pieces, too. We can define the methods `public void printMultiplicationTableRow(int multiplier, int howManyTimes)` and `public void printMultiplicationTable(int upTo)`, in this case the structure of our program could be as follows:
 
 ```java
 public class MultiplicationTable {
@@ -145,7 +145,7 @@ public class MultiplicationTable {
 }
 ```
 
-Now calling new MultiplicationTable().print(5); prints the tables below.
+Now calling `new MultiplicationTable().print(5)`; prints the tables below.
 
 ```output
 1 2 3 4 5
