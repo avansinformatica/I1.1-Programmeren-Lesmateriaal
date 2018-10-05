@@ -8,9 +8,9 @@ In addition to be possible to inherit the `Object` class, it is also possible to
 
 ### ArrayList
 > [java.lang.Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)  
->   └── [java.util.AbstractCollection](http://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)  
->       └── [java.util.AbstractList](http://docs.oracle.com/javase/8/docs/api/java/AbstractList.html)  
->          └──java.util.ArrayList
+>>└── [java.util.AbstractCollection](http://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html)  
+>>>└── [java.util.AbstractList](http://docs.oracle.com/javase/8/docs/api/java/AbstractList.html)  
+>>>>└──java.util.ArrayList
 
 
 Each class can inherit one class, directly, Indirectly, a class can still inherit all the feauters its parent class. The class `ArrayList` inherits directly the class `AbstractList`, and indirectly the classes `AbstractCollection` and `Object`. In fact, the class `ArrayList` has the methods and interfaces of `AbstractList`, `AbstractCollection` and `Object` at its disposal.
