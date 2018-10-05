@@ -182,11 +182,11 @@ product.changePrice(23);
 The class `Register` is quite universal now that it is not dependent on concrete classes. Whatever class which implements `Identifiable` is compatible with `Register`. However, the method `sortAndGetEverything` can only work if we implement the interface `Comparable<Identifiable>`.
 
 ### IntelliJ Tips
->*All IntelliJ tips can be found [here](https://avansti.github.io/TI1.1-OGP0-OGP1-Lesmateriaal/intellij)
->***Implement all abstract methods**
+>* All IntelliJ tips can be found [here](https://avansti.github.io/TI1.1-OGP0-OGP1-Lesmateriaal/intellij)
+>* **Implement all abstract methods**
 >Let us suppose that your program contains the interface `Interface`, and you are building the class `Class` which implements the>interface. It will be annoying to write the declaration raws of all the interface methods.
 >
->However it is possible to ask NetBeans to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written
+>However it is possible to ask IntelliJ to fill in the method bodies automatically. When you have defined the interface a class should implement, i.e. when you have written
 >
 >```java
 >public class Class implements Interface {
@@ -194,7 +194,7 @@ The class `Register` is quite universal now that it is not dependent on concrete
 >```
 >
 >IntelliJ paints the class name red. If you go to lamp icon on the left corner of the raw, click, and choose *Implement all abstract methods*, the method bodies will appear in your code!
->***Clean and Build**
+>* **Clean and Build**
 >Sometimes, IntelliJ may get confused and try to run a code version without noticing all the corrected changes made to it. Usually  you notice it because something "strange" happens. Usually, you can fix the problem by using *Rebuild* operation. The operation is found in the *Build* menu. Rebuild deletes the translated versions of the code and generates a new translation.
 >{: .tip}
 
