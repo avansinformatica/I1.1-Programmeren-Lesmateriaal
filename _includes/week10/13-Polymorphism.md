@@ -25,7 +25,7 @@ What is the real problem?
 
 Variables have got their own type, and in addition to it they also have got the type of their parent classes and interfaces. The class `String` derives from the `Object` class, and therefore `String` objects are also `Object`-type. The class Object does not derive from the class `String`, and therefore `Object` variables are not automatically `String`-type. Let's dig deeper into the [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) class API documentation, expecially the upper part of the HTML page.
 
-TODO: ADD SCREENSHOT
+![String API](images/13_StringAPI.png)
 
 The `String` class API documentation starts with the common heading; this is followed by the class package (`java.lang`). After the package you find the class name (Class `String`), and this is followed by the *inheritance hierarchy*.
 
@@ -76,12 +76,12 @@ printer.printManyTimes(words, 3);
 [polymorphism, inheritance, encapsulation, abstraction]
 ```
 
-Let's continue with our `String` class API inspection. In the description, the inheritance hierarchy is followed by a list of the interfaces which the class implements.
+Let's continue with our class `String` API inspection. In the description, the inheritance hierarchy is followed by a list of the interfaces which the class implements.
 
 ### Serializable
->**All Implemented Interfaces:**
->  [Serializable](http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html), [CharSequence](http://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html), [Comparable](http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html)<[String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)>
-```
+> **All Implemented Interfaces:**
+> [Serializable](http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html), [CharSequence](http://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html), [Comparable](http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html), [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+>
 
 The `String` class implements the interfaces `Serializable`, `CharSequence`, and `Comparable<String>`. An interface is a type, too. According to the description of the `String` API, we should be able to set the following interfaces as the type of a `String` object.
 
