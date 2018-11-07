@@ -118,8 +118,8 @@ In the example of the animals,
 - `Bird` is the **superclass** of `Sparrow` and `Seagull`
 - `Mammal` is the **superclass** of `Cow` and `Pig`
 - `Bird`, `Mammal`, `Sparrow`, `Seagull`, `Cow` and `Pig` are all **subclass*es of `Animal`
-- `Sparrow` and`Seagull` are  **subclass*es of `Bird`
-- `Cow` and `Pig` are  **subclass*es of `Mammal`
+- `Sparrow` and`Seagull` are  **subclass**es of `Bird`
+- `Cow` and `Pig` are  **subclass**es of `Mammal`
 
 
 In java, the superclass can be used by using the `super` keyword. With `super`, we can call the constructor of the superclass, or call a method in a superclass. Methods can also be called using the `this` keyword. If a superclass has a constructor with parameters, and no constructor without parameters, the superclass's constructor **must** be called using `super(...)` in the constructor of the **subclass**. 
