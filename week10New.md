@@ -8,12 +8,10 @@ title: Week 10
 ---
 {% include week10/14-Overwriting-methods.md %}
 ---
-{% include week10/15-Polymorphism.md %}
+{% include week10/15-Abstract-class.md %}
 ---
-{% include week10/16-Abstract-class.md %}
+{% include week10/16-Casting.md %}
 ---
-{% include week10/17-Casting.md %}
----
-{% include week10/18-Access-modifiers.md %}
+{% include week10/17-Access-modifiers.md %}
 ---
 end of week 10

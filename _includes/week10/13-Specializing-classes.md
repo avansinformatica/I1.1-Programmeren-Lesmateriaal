@@ -183,7 +183,9 @@ class Pig
 }
 ```
 
-By adding the sound as a parameter of the `Animal` class constructor, we *enforce* that the sound is always set. This makes for a better design, as this makes it hard to make an Animal that does not have a sound because the programmer forgot to add a sound
+By adding the sound as a parameter of the `Animal` class constructor, we *enforce* that the sound is always set. This makes for a better design, as this makes it hard to make an Animal that does not have a sound because the programmer forgot to add a sound.
+
+**Note:** The `super` constructor should **always** be called before all other code in a constructor. If you do not put the `super` constructor first, java will throw an error while compiling.
 
 
 ### Exercises
