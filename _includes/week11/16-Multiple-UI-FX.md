@@ -44,11 +44,11 @@ Launching the above application creates a user interface where you can switch fr
 {% include week11/exercise/FX_010.md %}
 {: .exercises }
 
-### 16.2. Layout of each view
+### 16.1. Layout of each view
 
 Let's look at two separate views. In the first view, the user is asked to enter a password. If the user writes the wrong password, the wrong password will be reported. If the user writes the correct password, the program will switch to the next view. The Program activity is as follows.
 
-TODO add GIF of action
+![Login screen](images/16_1_login_screen.gif)
 
 ```java
 import javafx.application.Application;
@@ -162,39 +162,35 @@ public class ExampleApplication extends Application {
         mainMenuHbox.setSpacing(10);
 
         // 1.2. Creating the buttons
-        Button nextButton = new Button("Eka");
-        Button previousButton = new Button("Toka");
+        Button firstButton = new Button("First");
+        Button secondButton = new Button("Second");
 
         // 1.3. Add the buttons to the menu
-        mainMenuHbox.getChildren().addAll(nextButton, previousButton);
-
+        mainMenuHbox.getChildren().addAll(firstButton, secondButton);
         borderPane.setTop(mainMenuHbox);
-
 
         // 2. Create sub-views and connect them to the menu buttons
         // 2.1. Creating sub-views - here layouts
-        StackPane firstStackPane = createStackPane("Next View!");
-        StackPane secondStackPane = createStackPane("Previous View!");
+        StackPane firstStackPane = createStackPane("First View!");
+        StackPane secondStackPane = createStackPane("Second View!");
 
         // 2.2. Attach the sub-views to the buttons. Pressing a button will change the bottom view.
-        nextButton.setOnAction((event) -> borderPane.setCenter(firstStackPane));
-        previousButton.setOnAction((event) -> borderPane.setCenter(secondStackPane));
+        firstButton.setOnAction((event) -> borderPane.setCenter(firstStackPane));
+        secondButton.setOnAction((event) -> borderPane.setCenter(secondStackPane));
 
         // 2.3. First we show the first view
         borderPane.setCenter(firstStackPane);
 
-
         // 3. Create a main view and set the main level borderPane to it
         Scene mainView = new Scene(borderPane);
 
-
         // 4. Showing application
+        stage.initStyle(StageStyle.UTILITY);
         stage.setScene(mainView);
         stage.show();
     }
 
     private StackPane createStackPane(String text) {
-
         StackPane stackPane = new StackPane();
         stackPane.setPrefSize(300, 180);
         stackPane.getChildren().add(new Label(text));
@@ -211,7 +207,7 @@ public class ExampleApplication extends Application {
 
 The application works as follows:
 
-TODO add gif animation
+![Switch screen](images/16_2_switch_screen.gif)
 
 {% include week11/exercise/FX_012.md %}
 {: .exercises }
@@ -219,6 +215,10 @@ TODO add gif animation
 ### 16.3. Slightly larger application: Vocabulary workout
 
 Outlines the application for foreign word training. The application provides the user with two functions: entering words and their translations and training. Four separate classes are created for the application: the first class provides the core logic functionality of the application, i.e. the maintenance of the dictionary, the second and third class contain feed view and training views, and the fourth class includes the application's main menu and the functionality required to launch the application.
+
+#### 16.3.1. Dictionary
+
+The dictionary is implemented using an `ArrayList` and a `HashMap`. The `HashMap` contains a word and their translation. The `ArrayList` is used for selecting a random word towards to user. The class contains methods for adding translation, searching for a specific translation, and randomly providing a word for translation.
 
 ```java
 import java.util.ArrayList;
@@ -260,9 +260,11 @@ public class WordDictonairy {
 
 The dictionary could also be implemented in such a way that the word sniffing would always create a list of the keys to the ditches spreadsheet. In that case there would be no need for the word list. However, this would affect the efficiency of the application (or, at least, it would have affected before the turn of the millennium - today machines are already slightly faster ...).
 
-#### 16.2.3. Entering words
+#### 16.3.2. Entering words
 
 Next, we create the functionality that is needed to enter words. To enter words, we need a reference to the `WordDictionary` object and the text fields for the word and the translation. The `GridPane` layout is well suited for this layout. Create a class `WordView`  that provides the method `getView`, which creates a view for entering words. The method returns a reference to the [Parent](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Parent.html) type object. `Parent` is the upper class of the other components used for layout, so any class used for the layout can be represented as a parent object.
+
+The class also specifies the user interface button functionality. When a user presses the button, the word pair is added to the dictionary. At the same time, the text fields are cleared to enter the next word.
 
 ```java
 import javafx.geometry.Insets;
