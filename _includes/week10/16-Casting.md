@@ -16,7 +16,7 @@ Casting is only allowed to the right types, and to the sub or superclasses of an
 
 If we want to perform downcasting, we need to check what the type of the object is. We can do this using the `instanceOf` operator
 
-```
+```java
 Animal animal = new Cow();
 if(animal instanceOf Cow) {
     System.out.println("This is a cow");
@@ -27,4 +27,4 @@ if(animal instanceOf Cow) {
 }
 ```
 
-as you can see in this example, we could test every object to see what type it is, casting it, and then calling methods on that object. This is however usually a sign of a bad design, and should be avoided as much as possible
+as you can see in this example, we could test every object to see what type it is, casting it, and then calling methods on that object. **This is however usually a sign of a bad design, and should be avoided as much as possible**

@@ -30,6 +30,6 @@ In order to make an object, just extend the Shape class, and implement the abstr
 
 <!-- TODO: abstract toString() -->
 
-### Exercise
-- abstract menu class
-- abstract macro class
+{% include week10/exercise/005_new.md %}
+{% include week10/exercise/006_new.md %}
+{: .exercises }

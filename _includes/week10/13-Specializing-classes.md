@@ -9,8 +9,7 @@ In the animal kingdom are lots of different animals, like a `Sparrow`, `Seagull`
 In this example, all animals can make a sound, so we will want to share this functionality among all classes
 
 ```java
-class Animal
-{
+class Animal {
     private String sound;
 
     public Animal() {
@@ -30,10 +29,8 @@ class Animal
 With this class, all the animals share the functionality to make a sound. We can extend this to groups of animals, using the `extends` keyword. We can add functionality to the `Bird` and `Mammal` classes, birds can fly, while mammals can walk (birds usually hop instead of walking)
 
 ```java
-class Bird extends Animal
-{
+class Bird extends Animal {
     public Bird() {
-
     }
 
     public void fly() {
@@ -41,8 +38,7 @@ class Bird extends Animal
     }
 }
 
-class Mammal extends Animal
-{
+class Mammal extends Animal {
     public Mammal() {
     }
 
@@ -55,30 +51,25 @@ class Mammal extends Animal
 Now we can make some animals to go with these classes.
 
 ```java
-class Sparrow extends Bird
-{
+class Sparrow extends Bird {
     public Sparrow() {
         this.setSound("chirp");
     }
 }
 
-class Seagull extends Bird
-{
-    public Seagull()
-    {
+class Seagull extends Bird {
+    public Seagull() {
         this.setSound("Squaaa");
     }
 }
 
-class Cow
-{
+class Cow {
     public Cow() {
         this.setSound("moo");
     }
 }
 
-class Pig
-{
+class Pig {
     public Pig() {
         this.setSound("oink");
     }
@@ -117,66 +108,59 @@ In the example of the animals,
 - `Animal` is the **superclass** of `Bird` and `Mammal`
 - `Bird` is the **superclass** of `Sparrow` and `Seagull`
 - `Mammal` is the **superclass** of `Cow` and `Pig`
-- `Bird`, `Mammal`, `Sparrow`, `Seagull`, `Cow` and `Pig` are all **subclass*es of `Animal`
+- `Bird`, `Mammal`, `Sparrow`, `Seagull`, `Cow` and `Pig` are all **subclass**es of `Animal`
 - `Sparrow` and`Seagull` are  **subclass**es of `Bird`
 - `Cow` and `Pig` are  **subclass**es of `Mammal`
 
 
-In java, the superclass can be used by using the `super` keyword. With `super`, we can call the constructor of the superclass, or call a method in a superclass. Methods can also be called using the `this` keyword. If a superclass has a constructor with parameters, and no constructor without parameters, the superclass's constructor **must** be called using `super(...)` in the constructor of the **subclass**. 
+In java, the superclass can be used by using the `super` keyword. With `super`, we can call the constructor of the superclass, or call a method in a superclass. Methods can also be called using the `this` keyword. 
+
+### 13.2 Constructors in the superclass
+
+If a superclass has a constructor with parameters, and no constructor without parameters, the superclass's constructor **must** be called using `super(...)` in the constructor of the **subclass**.
 
 By calling the super constructor, we can shorten the example of the animal kingdom, by adding the sound to the constructor of the Animal class.
 
 ```java
-class Animal
-{
+class Animal {
     private String sound;
     
-    public Animal(String sound)
-    {
+    public Animal(String sound) {
         this.sound = sound;
     }
 }
 
-class Bird extends Animal
-{
-    public Bird(String sound)
-    {
+class Bird extends Animal {
+    public Bird(String sound) {
         super(sound);
     }
 }
 
-class Mammal extends Animal
-{
-    public Mammal(String sound)
-    {
+class Mammal extends Animal {
+    public Mammal(String sound) {
         super(sound);
     }
 }
 
-class Sparrow extends Bird
-{
+class Sparrow extends Bird {
     public Sparrow() {
         super("chirp");
     }
 }
 
-class Seagull extends Bird
-{
-    public Seagull()
-    {
+class Seagull extends Bird {
+    public Seagull() {
         super("Squaaa");
     }
 }
 
-class Cow
-{
+class Cow {
     public Cow() {
         super("moo");
     }
 }
 
-class Pig
-{
+class Pig {
     public Pig() {
         super("oink");
     }
@@ -188,5 +172,5 @@ By adding the sound as a parameter of the `Animal` class constructor, we *enforc
 **Note:** The `super` constructor should **always** be called before all other code in a constructor. If you do not put the `super` constructor first, java will throw an error while compiling.
 
 
-### Exercises
-- Exercise using Person, Student, Teacher (just simple extending and adding functionality)
+{% include week10/exercise/001_new.md %}
+{: .exercises }
