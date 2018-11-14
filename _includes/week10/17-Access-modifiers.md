@@ -9,4 +9,10 @@ When extending a class, it is possible to use the public methods and attributes 
 | no modifier | Y     | Y       | N        | N     |
 | `private`   | Y     | N       | N        | N     |
 
-As we can see, protected members are also accessable by other classes in the same package. 
+As we can see, protected members are also accessable by other classes in the same package. It is mainly used to relax the strictnes of `private` to work better in subclasses. We could take the example of `Person` class. Suppose we have a `Person` class with a `Student` subclass. 
+
+
+```java
+
+
+```

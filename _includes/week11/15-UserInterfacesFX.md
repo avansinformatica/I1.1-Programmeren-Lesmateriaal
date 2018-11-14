@@ -1,4 +1,4 @@
-## 15. Graphical User Unterfaces
+## 15. Graphical User Interfaces
 
 Let's look at creating Graphical User Interfaces (GUI). Graphical user interfaces differ from the previously used text user interfaces in several ways. When creating graphical user interfaces, we primarily use libraries that provide ready-to-use grapical components such as text boxes and buttons.
 
