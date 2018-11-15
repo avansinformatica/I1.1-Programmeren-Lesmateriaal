@@ -20,8 +20,6 @@ Here is an example that attaches a `RadioButton` to the scene:
 
 ```java
 public void start(Stage stage) {
-    stage.setTitle("RadioButton Experiment");
-
     RadioButton teacherRadioButton = new RadioButton("Teacher");
 
     HBox hbox = new HBox(teacherRadioButton);
@@ -29,18 +27,18 @@ public void start(Stage stage) {
     Scene scene = new Scene(hbox, 200, 100);
     stage.setScene(scene);
     stage.show();
-
 }
 ```
 
-TODO add output
+The application resulting from running this example looks like this:
+
+![RadioButton](images/17_1_RadioButton1.png)
 
 The `RadioButton` class has a method named `isSelected` which lets you determine if the `RadioButton` is selected or not. The `isSelected` method returns a boolean with the value true if the `RadioButton` is selected, and false if not. Here is an example:
 
 ```java
 boolean isSelected = teacherRadioButton.isSelected();
 ```
-
 
 #### 17.1.1. Combining RadioButtons in groups
 
@@ -165,7 +163,6 @@ wiskundeCheckBox.setOnAction(e -> {
 
 ### 17.3 Pictures
 
-
 There are several ways to display an image inside a Java application. One straightforward approach used JavaFx's the class [Image](https://docs.oracle.com/javafx/2/api/javafx/scene/image/Image.html) and the class [ImageView](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/ImageView.html).
 
 The parameter given to Image class is the name of the image file to be opened. The name should start with the prefix *file:* that tells the image is a file. In the example below, the file humming.jpg  is given as parameter towards the ImageView. Then the ImageView object is placed in the `Layout`. The layout is placed into the Scene Object and placed inside the view.
@@ -238,10 +235,7 @@ public void start(Stage stage) {
 
 ![ImageView2](images/17_ImageView2.png)
 
-
 TODO create exercise!
-
-
 
 ### 17.4. ComboBox
 
@@ -283,7 +277,7 @@ public void start(Stage stage) {
 
 The application resulting from running this example would look similar to this:
 
-TODO Add screenshot
+![ComboBox](images/17_4_ComboBox.png)
 
 You can read the selected value of a `ComboBox` via its `getValue` method. If no choice is selected, the `getValue` method returns null. Here is an example of calling `getValue`:
 
@@ -299,12 +293,11 @@ comboBox.setEditable(true);
 
 Once the `ComboBox` is editable the user can type in values into the `ComboBox`. The entered value is also read via the `getValue` method as explained earlier. The following screenthot shows a `ComboBox` which is editable, and with a custom value entered:
 
-TODO add screenshot!
+![ComboBox Editable](images/17_4_ComboBoxEdit.png)
 
 #### 17.4.1. Working with ObservableList
 
 TODO!!!
-
 
 ### 17.5. ListView
 
@@ -329,8 +322,7 @@ To make a `ListView` visible you must add it to the `scene`. This means that you
 Here is an example showing how to add a `ListView` to the scene:
 
 ```java
- public void start(Stage stage)  {
-
+public void start(Stage stage)  {
     ListView listView = new ListView();
 
     listView.getItems().add("Item 1");
@@ -347,7 +339,7 @@ Here is an example showing how to add a `ListView` to the scene:
 
 The application resulting from running this example would look similar to this screenshot:
 
-TODO add picture!!!
+![ListView](images/17_5_ListView.png)
 
 Like we noticed inside ComboBoxes, it's recommened to use an `OberservableList` when items can be changed.
 
