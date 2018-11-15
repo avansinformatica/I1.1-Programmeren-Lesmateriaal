@@ -26,4 +26,10 @@ An abstract class can contain abstract methods, which are methods that do not ha
 Shape shape = new Shape(Color.green); // won't compile, as Shape is an abstract class
 ```
 
-In order to make an object, just extend the Shape class, and implement the abstract methods, as done before. This new class is **not** abstract anymore
+In order to make an object, just extend the Shape class, and implement the abstract methods, as done before. This new class is **not** abstract anymore.
+
+<!-- TODO: abstract toString() -->
+
+{% include week10/exercise/005_new.md %}
+{% include week10/exercise/006_new.md %}
+{: .exercises }

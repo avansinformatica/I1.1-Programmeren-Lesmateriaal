@@ -188,7 +188,7 @@ B
 
 As mentioned before, when overriding a method, java matches the overriding of a method by the return value and parameters of the method. However if the method changes in the superclass, it must also be changed in the subclass. This is **not** done automatically, and can be forgotten by the programmer. This is why in the subclass, we can add an 'annotation', a small marker, to indicate this method is overriding another method. Then, if the method changes in the superclass, and is accidentally not changed in the subclass, the java compiler will give an error. This annotating can be done with the `@Overrides` keyword, in front of the method
 
-```
+```java
 class A {
     public void print() { 
         System.out.println("Printing in A"); 
@@ -206,4 +206,6 @@ class B extends A {
 This way, if the name of the `print` method in class `A` changes, and it is not changed in `B`, java will give an error
 
 ### Exercises
-- Robots in a field, each different AI
+{% include week10/exercise/002_new.md %}
+{% include week10/exercise/003_new.md %}
+{: .exercises }
