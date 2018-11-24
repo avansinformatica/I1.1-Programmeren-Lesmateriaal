@@ -1,6 +1,14 @@
 ## 16. Abstract class
 
-In the shape example of last chapter, there's still a big problem. It is possible in java to make a new `Shape`
+In Exercise 10.3 there's a problem though. It is possible to execute the following code
+
+```java
+Vector2D vector = new Vector3D(10,10,10);
+```
+
+This would not make any sense though, as a Vector3D would be the same as a Vector2D.
+
+In the shape example of last chapter, there's also a big problem. It is possible in java to make a new `Shape`
 
 ```java
 Shape shape = new Shape(Color.green);
