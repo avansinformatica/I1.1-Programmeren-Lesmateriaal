@@ -40,5 +40,3 @@ name: matti
 
 Notice that we also called the method `Collections.sort()`, in our example. This is because binary search cannot be done if our table or list are not already sorted up.
 
-{% include week08/exercise/004.md %}
-{: .exercises }
