@@ -27,4 +27,4 @@ if(animal instanceOf Cow) {
 }
 ```
 
-as you can see in this example, we could test every object to see what type it is, casting it, and then calling methods on that object. **This is however usually a sign of a bad design, and should be avoided as much as possible**
+as you can see in this example, we could test every object to see what type it is, casting it, and then calling methods on that object. **This is however usually a sign of a bad design, and should be avoided as much as possible**. This is why there will be no exercises for casting

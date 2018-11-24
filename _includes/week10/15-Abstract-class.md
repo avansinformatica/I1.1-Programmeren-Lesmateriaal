@@ -38,6 +38,6 @@ In order to make an object, just extend the Shape class, and implement the abstr
 
 <!-- TODO: abstract toString() -->
 
+{% include week10/exercise/004_new.md %}
 {% include week10/exercise/005_new.md %}
-{% include week10/exercise/006_new.md %}
 {: .exercises }
