@@ -4,8 +4,14 @@ title: Week 10
 ---
 {% include_relative /licence.md %}
 ---
-{% include week10/13-Polymorphism.md %}
+{% include week10/13-Specializing-classes.md %}
 ---
-{% include week10/14-Inheritance.md %}
+{% include week10/14-Overwriting-methods.md %}
 ---
-end of week 4
+{% include week10/15-Abstract-class.md %}
+---
+{% include week10/16-Casting.md %}
+---
+{% include week10/17-Access-modifiers.md %}
+---
+end of week 10
