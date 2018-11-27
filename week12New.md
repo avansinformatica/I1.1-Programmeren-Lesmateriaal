@@ -7,8 +7,6 @@ title: Week 12
 ---
 {% include week12/17-User-Components.md %}
 ---
-{% include week12/17-1-RadioButton.md %}
----
 {% include week12/18-Menu.md %}
 ---
 {% include week12/19-TableView.md %}
