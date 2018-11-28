@@ -246,3 +246,4 @@ deleteButton.setOnAction(e -> {
 ```
 
 The code above here deletes the selected row from the `ObservableList`. You can do many more actions on the `TableView` such as editing, sorting and filtering, but they are outside of the scope of this course.
+
