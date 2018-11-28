@@ -8,7 +8,7 @@ You create a `RadioButton` using its constructor. Here is a `RadioButton` instan
 RadioButton teacherRadioButton = new RadioButton("Teacher");
 ```
 
-The String passed as parameter to the `RadioButton` constructor is displayed next to the `RadioButton`.
+The `String` passed as parameter to the `RadioButton` constructor is displayed next to the `RadioButton`.
 
 To make a `RadioButton` visible you must add it to the scene graph of your application. This means adding the `RadioButton` to a `Scene`, or as child of a layout which is attached to a `Scene` object.
 
@@ -109,7 +109,7 @@ compEngRB.setOnAction(e -> {
 });
 ```
 
-But sometimes it's more convenient to create an `EventHandler` on the `ToggleGroup`. This allows you to only create one `EventHandler` for the whole `ToggleGroup`. You can implement it using the following code
+But sometimes it is more convenient to create an `EventHandler` on the `ToggleGroup`. This allows you to only create one `EventHandler` for the `ToggleGroup`. You can implement it using the following code
 
 ```java
 studyToggleGroup.selectedToggleProperty().addListener(
@@ -119,7 +119,6 @@ studyToggleGroup.selectedToggleProperty().addListener(
                     }
                 });
 ```
-
 
 {% include week12/exercise/FX_001.md %}
 {: .exercises }
