@@ -1,6 +1,6 @@
 ## 13. Extending Classes
 
-In java it's possible to extend classes to add functionality. By extending a class, you take over all the attributes, methods and constructors of the other class. By reusing the class in the other class, you only have to write this code once, and can reuse it in other classes, as if it was part of that class. An example could be classes about animals.
+In java it's possible to extend classes to add functionality. By extending a class, you take over all the attributes, methods and constructors of the other class. By reusing the class in the other class, you only have to write this code once, and can reuse it in other classes, as if it were part of that class. An example could be classes about animals.
 
 In the animal kingdom are lots of different animals, like a `Sparrow`, `Seagull`, `Cow` and `Pig`. All of these animals can make sounds. We can group these animals together though, into `Birds` and `Mammals`. A major difference between these 2 groups of animals, is that birds can fly. We can model this in the following scheme
 
