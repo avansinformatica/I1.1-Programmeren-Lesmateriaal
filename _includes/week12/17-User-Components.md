@@ -1,6 +1,6 @@
 ## 17. Other basic components
 
-Previous week we have seen some basic JavaFX controls such as `Button`, `Labal` and `TextField`. There are many more basic UI controls. In this chapter we will explain a few of them.
+Last week we have seen some basic JavaFX controls such as `Button`, `Label` and `TextField`. There are many more basic UI controls. In this chapter we will explain a few of them.
 
 {% include week12/17-1-RadioButton.md %}
 

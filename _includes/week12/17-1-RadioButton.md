@@ -1,6 +1,6 @@
 ### 17.1. RadioButtons
 
-A [`RadioButton`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/RadioButton.html) is a button that can be selected or not selected. The `RadioButton` cannot be "unselected" once selected.
+A [`RadioButton`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/RadioButton.html) is a button that can be selected or not selected. The `RadioButton` cannot be "deselected" once it's selected. To deselect it, select another radiobutton in the same radiobutton group
 
 You create a `RadioButton` using its constructor. Here is a `RadioButton` instantiation example:
 
@@ -40,7 +40,7 @@ boolean isSelected = teacherRadioButton.isSelected();
 
 Radio buttons are typically used in a group to present several mutually exclusive options. Groups are defined by using the object [`ToggleGroup`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ToggleGroup.html) from the JavaFX library. When `ToggleGroup` is used, only one radio button inside the group can be selected. 
 
-In the example above we create two groups of RadioButtons in order to to have two inputs. The following code is used
+In the example above we create two groups of RadioButtons in order to have two inputs. The following code is used
 
 ```java
 public void start(Stage stage) {
