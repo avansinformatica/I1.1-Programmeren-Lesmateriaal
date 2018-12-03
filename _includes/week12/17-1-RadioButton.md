@@ -99,7 +99,7 @@ RadioButton selectedGroup = (RadioButton)studyToggleGroup.getSelectedToggle();
 System.out.println(selectedGroup.getText());
 ```
 
-It's also possible to add `EventHandler` to see if the selection is changed like in the example below, which displays a popup when *Computer Engineering* is selected.
+It's also possible to add `EventHandler` to see if the selection is changed like in the example below, which displays a pop-up when *Computer Engineering* is selected.
 
 ```java
 compEngRB.setOnAction(e -> {
