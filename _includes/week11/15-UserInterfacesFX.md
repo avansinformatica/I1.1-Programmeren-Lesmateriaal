@@ -40,10 +40,6 @@ When the program starts, the application looks like this.
 
 ![First GUI](images/15_first_gui.png)
 
->#### Create your own JavaFX applications
->To create your own JavaFx projects in IntelliJ, choose File -> New Project. select JavaFx from the project list and then JavaFx Application. Next, you have a view of creating projects location.
-{: .tip}
-
 What's wrong with the program? Our class `JavaFxExample` inherits a Class [Application](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html) that provides a framework for creating graphical user interfaces. The application is launched by the application class method [launch](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#launch-java.lang.Class-java.lang.String...--), which will be given a class name *ClassName.class*  to be launched as a parameter.
 
 When the method `launch` is called, the method in the `Application` class creates a new object of the class given in the parameter   and invokes the method `init`. The method `init` is inherited from `Application` class, and is used to initialize objects that are  used inside the program. We left it out of this, because our program is quite simple. After invoking the method, the program calls the method `start`, which gets a [Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html) object describing the window as a parameter. In the implementation above of the methode `start`, the stage object is given as a parameter and sets the title by the method `setTitle`, after the method `show` called the window we be displayed. Eventually, the program will listen to user interface events such as window closure, which will lead to the application shutdown.
