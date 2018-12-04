@@ -178,6 +178,7 @@ public class JavaFxExample extends Application {
         Button button = new Button("First button!");
 
         FlowPane componentGroup = new FlowPane();
+        componentGroup.setHgap(10);
         componentGroup.getChildren().add(label);
         componentGroup.getChildren().add(button);
 
@@ -264,6 +265,7 @@ The [HBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.
     @Override
     public void start(Stage stage) {
         HBox hBox = new HBox();
+        hBox.setSpacing(10);
         hBox.getChildren().add(new Label("One"));
         hBox.getChildren().add(new Label("Two"));
         hBox.getChildren().add(new Label("Three"));
@@ -309,13 +311,15 @@ The class [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout
 @Override
 public void start(Stage stage) {
     GridPane  gridPane = new GridPane();
-    
+    gridPane.setHgap(10);
+    gridPane.setVgap(10);
+
     for (int x = 1; x <= 3; x++) {
         for (int y = 1; y <= 3; y++) {
             gridPane.add(new Button("" + x + ", " + y), x, y);
         }
     }
-        
+
     Scene scene = new Scene(gridPane);
 
     stage.setScene(scene);
@@ -359,7 +363,7 @@ public class JavaFxExample extends Application {
         borderPane.setTop(hBox);
         borderPane.setLeft(vBox);
         borderPane.setCenter(new TextArea());
-        
+
         Scene scene = new Scene(borderPane);
 
         stage.setScene(scene);
