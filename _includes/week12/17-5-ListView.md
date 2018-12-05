@@ -153,3 +153,7 @@ public class ListViewExperiments extends Application  {
     }
 }
 ```
+
+
+{% include week12/exercise/FX_003.md %}
+{: .exercises }
