@@ -40,10 +40,6 @@ When the program starts, the application looks like this.
 
 ![First GUI](images/15_first_gui.png)
 
->#### Create your own JavaFX applications
->To create your own JavaFx projects in IntelliJ, choose File -> New Project. select JavaFx from the project list and then JavaFx Application. Next, you have a view of creating projects location.
-{: .tip}
-
 What's wrong with the program? Our class `JavaFxExample` inherits a Class [Application](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html) that provides a framework for creating graphical user interfaces. The application is launched by the application class method [launch](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#launch-java.lang.Class-java.lang.String...--), which will be given a class name *ClassName.class*  to be launched as a parameter.
 
 When the method `launch` is called, the method in the `Application` class creates a new object of the class given in the parameter   and invokes the method `init`. The method `init` is inherited from `Application` class, and is used to initialize objects that are  used inside the program. We left it out of this, because our program is quite simple. After invoking the method, the program calls the method `start`, which gets a [Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html) object describing the window as a parameter. In the implementation above of the methode `start`, the stage object is given as a parameter and sets the title by the method `setTitle`, after the method `show` called the window we be displayed. Eventually, the program will listen to user interface events such as window closure, which will lead to the application shutdown.
@@ -178,6 +174,7 @@ public class JavaFxExample extends Application {
         Button button = new Button("First button!");
 
         FlowPane componentGroup = new FlowPane();
+        componentGroup.setHgap(10);
         componentGroup.getChildren().add(label);
         componentGroup.getChildren().add(button);
 
@@ -264,6 +261,7 @@ The [HBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.
     @Override
     public void start(Stage stage) {
         HBox hBox = new HBox();
+        hBox.setSpacing(10);
         hBox.getChildren().add(new Label("One"));
         hBox.getChildren().add(new Label("Two"));
         hBox.getChildren().add(new Label("Three"));
@@ -309,13 +307,15 @@ The class [VBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout
 @Override
 public void start(Stage stage) {
     GridPane  gridPane = new GridPane();
-    
+    gridPane.setHgap(10);
+    gridPane.setVgap(10);
+
     for (int x = 1; x <= 3; x++) {
         for (int y = 1; y <= 3; y++) {
             gridPane.add(new Button("" + x + ", " + y), x, y);
         }
     }
-        
+
     Scene scene = new Scene(gridPane);
 
     stage.setScene(scene);
@@ -359,7 +359,7 @@ public class JavaFxExample extends Application {
         borderPane.setTop(hBox);
         borderPane.setLeft(vBox);
         borderPane.setCenter(new TextArea());
-        
+
         Scene scene = new Scene(borderPane);
 
         stage.setScene(scene);
