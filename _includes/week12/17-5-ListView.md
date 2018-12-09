@@ -154,6 +154,75 @@ public class ListViewExperiments extends Application  {
 }
 ```
 
+#### 17.5.1. Working with ObservableList
+
+JavaFX components do not store their data in normal ArrayLists internally, but in `ObservableList`. An ObservableList is similar to an `ArrayList` to store data, but it adds a feature where it is possible to get notified in code when the data changes. In JavaFX this is used to update the user interface components.
+
+Fortunately, it is very easy to map an `ObservableList` to an `ArrayList`, using the `FXCollections` class.
+
+```java
+    ArrayList<String> myData = new ArrayList<>();
+    ...
+    studentList.setItems(FXCollections.observableList(myData));
+```
+
+The advantage of using this, is that you can use your own data classes (ArrayList of data), which is really easy to refresh into the user interface. An example of use would be
+
+```java
+public class ListDemo extends Application {
+
+    private ArrayList<String> data;
+    private int i;
+
+    public ListDemo()
+    {
+        this.data = new ArrayList<String>();
+        this.data.add("Item 1");
+        this.data.add("Item 2");
+        this.data.add("Item 3");
+        this.i = 4;
+    }
+
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        BorderPane main = new BorderPane();
+
+        ListView<String> list = new ListView<String>();
+        main.setCenter(list);
+
+        HBox bottomBar = new HBox();
+        main.setBottom(bottomBar);
+
+        list.setItems(FXCollections.observableList(data));
+
+        Button add = new Button("Add");
+        bottomBar.getChildren().add(add);
+        add.setOnAction(e -> {
+            this.data.add("Item " + i);
+            list.refresh();
+            this.i++;
+        });
+
+        Button print = new Button("Print Console");
+        bottomBar.getChildren().add(print);
+        print.setOnAction(e -> {
+            System.out.println(this.data);
+        });
+
+        stage.setScene(new Scene(main));
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(ListDemo.class);
+    }
+}
+
+```
+
+In this example, when we click the 'add' button, a new item gets added to the `ArrayList`. To update the list, just call the `list.refresh()` method to update the user interface to represent the new data. The beauty is that the user interface and your own data classes are automatically in sync, so you do not have to add items to the `ListView` and your own data class seperately, and you do not have to read out the values of the list to get data. This is a good example of seperating data and logic as discussed last week. This technique also works for `ComboBox`
 
 {% include week12/exercise/FX_003.md %}
 {: .exercises }
