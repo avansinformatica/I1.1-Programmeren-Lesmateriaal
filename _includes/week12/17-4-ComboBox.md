@@ -55,7 +55,3 @@ comboBox.setEditable(true);
 Once the `ComboBox` is editable the user can type in values into the `ComboBox`. The entered value is also read via the `getValue` method as explained earlier. The following screenthot shows a `ComboBox` which is editable, and with a custom value entered:
 
 ![ComboBox Editable](images/17_4_ComboBoxEdit.png)
-
-#### 17.4.1. Working with ObservableList
-
-TODO!!!

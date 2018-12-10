@@ -83,33 +83,35 @@ public class Person {
     private SimpleStringProperty lastName;
     private SimpleStringProperty email;
 
-    public Person(String fName, String lName, String email) {
-        this.firstName = new SimpleStringProperty(fName);
-        this.lastName = new SimpleStringProperty(lName);
+    public Person(String firstName, String lastName, String email) {
+        this.firstName = new SimpleStringProperty(firstName);
+        this.lastName = new SimpleStringProperty(lastName);
         this.email = new SimpleStringProperty(email);
     }
 
     public String getFirstName() {
-        return firstName.get();
+        this.return firstName.get();
     }
-    public void setFirstName(String fName) {
-        firstName.set(fName);
+
+    public void setFirstName(String firstName) {
+        this.firstName.set(firstName);
     }
 
     public String getLastName() {
-        return lastName.get();
+        return this.lastName.get();
     }
-    public void setLastName(String fName) {
-        lastName.set(fName);
+
+    public void setLastName(String lastName) {
+        this.lastName.set(lastName);
     }
 
     public String getEmail() {
-        return email.get();
-    }
-    public void setEmail(String fName) {
-        email.set(fName);
+        return this.email.get();
     }
 
+    public void setEmail(String email) {
+        this.email.set(email);
+    }
 }
 ```
 
@@ -142,56 +144,55 @@ When the data model is defined, and the data is added and associated with the co
 Because the object `ObservableList` enables the tracking of any changes to its elements, the `TableView` content automatically updates whenever the data changes.
 
 ```java
-    private TableView table = new TableView();
-    private ObservableList<Person> data =
-            FXCollections.observableArrayList(
-                    new Person("Jacob", "Smith", "jacob.smith@example.com"),
-                    new Person("Isabella", "Johnson", "isabella.johnson@example.com"),
-                    new Person("Ethan", "Williams", "ethan.williams@example.com"),
-                    new Person("Emma", "Jones", "emma.jones@example.com"),
-                    new Person("Michael", "Brown", "michael.brown@example.com")
-            );
+private TableView table = new TableView();
+private ObservableList<Person> data =
+        FXCollections.observableArrayList(
+                new Person("Jacob", "Smith", "jacob.smith@example.com"),
+                new Person("Isabella", "Johnson", "isabella.johnson@example.com"),
+                new Person("Ethan", "Williams", "ethan.williams@example.com"),
+                new Person("Emma", "Jones", "emma.jones@example.com"),
+                new Person("Michael", "Brown", "michael.brown@example.com")
+        );
 
-    @Override
-    public void start(Stage stage)  {
-        Scene scene = new Scene(new Group());
-        stage.setTitle("Table View");
-        stage.setWidth(410);
-        table.setPrefWidth(370);
-        stage.setHeight(500);
+@Override
+public void start(Stage stage)  {
+    Scene scene = new Scene(new Group());
+    stage.setTitle("Table View");
+    stage.setWidth(410);
+    table.setPrefWidth(370);
+    stage.setHeight(500);
 
-        Label label = new Label("Address Book");
-        label.setFont(new Font("Arial", 20));
+    Label label = new Label("Address Book");
+    label.setFont(new Font("Arial", 20));
 
-        table.setEditable(true);
+    table.setEditable(true);
 
-        TableColumn firstNameCol = new TableColumn("First Name");
-        firstNameCol.setPrefWidth(100);
-        firstNameCol.setCellValueFactory(
-                new PropertyValueFactory<Person, String>("firstName"));
-        TableColumn lastNameCol = new TableColumn("Last Name");
-        lastNameCol.setPrefWidth(100);
-        lastNameCol.setCellValueFactory(
-                new PropertyValueFactory<Person, String>("lastName"));
-        TableColumn emailCol = new TableColumn("Email");
-        emailCol.setMinWidth(200);
-        emailCol.setCellValueFactory(
-                new PropertyValueFactory<Person, String>("email"));
+    TableColumn firstNameCol = new TableColumn("First Name");
+    firstNameCol.setPrefWidth(100);
+    firstNameCol.setCellValueFactory(
+            new PropertyValueFactory<Person, String>("firstName"));
+    TableColumn lastNameCol = new TableColumn("Last Name");
+    lastNameCol.setPrefWidth(100);
+    lastNameCol.setCellValueFactory(
+            new PropertyValueFactory<Person, String>("lastName"));
+    TableColumn emailCol = new TableColumn("Email");
+    emailCol.setMinWidth(200);
+    emailCol.setCellValueFactory(
+            new PropertyValueFactory<Person, String>("email"));
 
-        table.setItems(data);
+    table.setItems(data);
+    table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
 
-        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+    VBox vbox = new VBox();
+    vbox.setSpacing(5);
+    vbox.setPadding(new Insets(10, 0, 0, 10));
+    vbox.getChildren().addAll(label, table);
 
-        VBox vbox = new VBox();
-        vbox.setSpacing(5);
-        vbox.setPadding(new Insets(10, 0, 0, 10));
-        vbox.getChildren().addAll(label, table);
+    ((Group) scene.getRoot()).getChildren().addAll(vbox);
 
-        ((Group) scene.getRoot()).getChildren().addAll(vbox);
-
-        stage.setScene(scene);
-        stage.show();
-    }
+    stage.setScene(scene);
+    stage.show();
+}
 ```
 
 When you compile and run this application code, the following screen will appear:
@@ -247,3 +248,5 @@ deleteButton.setOnAction(e -> {
 
 The code above here deletes the selected row from the `ObservableList`. You can do many more actions on the `TableView` such as editing, sorting and filtering, but they are outside of the scope of this course.
 
+{% include week12/exercise/FX_004.md %}
+{: .exercises }
