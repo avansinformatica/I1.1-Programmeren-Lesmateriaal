@@ -89,6 +89,17 @@
           margin-bottom: 16px;
         }
 
+        ul.tags
+        {
+          display: block;
+          float: right;
+        }
+
+        ul.tags li
+        {
+          display: inline;
+        }
+
  
         h2{ margin-bottom: 20px;}
         h3{ margin-bottom: 20px;}
@@ -290,6 +301,12 @@
           };
         });
 
+        $("blockquote.exercise").each(function(){
+          if($(this).find(".tags").length > 0)
+          {
+            $(this).find("h3").append($(this).find(".tags")[0]);
+          }
+        });
 
         //replace ~~stuff~~ in output code blocks with red text
         $("code.language-output").each(function(index, element)
