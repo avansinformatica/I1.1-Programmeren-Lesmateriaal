@@ -232,19 +232,18 @@
         }
 
     </style>
-    <title>{{ page.title }}</title>
+    <title>OGP0 - {{ page.title }}</title>
   </head>
   <body>
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {% if page.title == "Week 1" %} active{% endif %}" href="week1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 1</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="basics">Compiler, setup and printing</a>
-                <a class="dropdown-item" href="variables">Variables</a>
-                <a class="dropdown-item" href="user-input">User input</a>
-                <a class="dropdown-item" href="if">If statement</a>
-                <a class="dropdown-item" href="code-layout">Code layout</a>
-                <a class="dropdown-item" href="logical-operations">Logical operations</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/basics">Compiler, setup and printing</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/variables">Variables</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/user-input">User input</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/if">If statement</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/code-layout">Code layout</a>
               </div>
           </li>
           <li class="nav-item">
