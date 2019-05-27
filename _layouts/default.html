@@ -269,8 +269,15 @@
                 <a class="dropdown-item" href="{{site.baseurl}}/subjects/method-return2">Return values and stopping a method</a>
                 <a class="dropdown-item" href="{{site.baseurl}}/subjects/bit-operations">Bit operations</a>
               </div>
-          </li>          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 4" %} active{% endif %}" href="week4">Week 4</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 4" %} active{% endif %}" href="week4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 4</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/method-memory">Methods and copying parameters</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/code-layout2">More on code layouts</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/object-oriented-programming">Object Oriented Programming</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/random">Randomness</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if page.title == "Week 5" %} active{% endif %}" href="week5">Week 5</a>

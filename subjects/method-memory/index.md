@@ -1,3 +1,11 @@
+---
+layout: default
+title: Methods and copying parameters
+meta: 
+todo: 
+---
+{% include licence.md %}
+---
 ## 19. Methods and copying parameters
 
 Let us focus on a couple of details concerning methods.
@@ -112,6 +120,6 @@ Note that again the parameter name inside the method can be anything. It does no
 
 Now, you probably start to wonder why does the value of the parameter get copied and the original variable stay intact when the parameter is of int type, but the original list is given to the method when the parameter is of `ArrayList` type? In Java only the values of *primitive data types* (which are `int`, `double`, `char`, `boolean` and a couple of others that we have not yet discussed) get copied to the method. When the method parameters are of other types only the references are copied to the method. A reference is like a "wire", therefore the method can access the list using it directly. The variables that are not of primitive data types are of **reference data types** and are "wired" just like the ArrayList in the previous example. The method is given the wire and the method can access the parameter directly.
 
-{% include week04/exercise/001.md %}
-{% include week04/exercise/002.md %}
+{% include_relative exercises/001.md %}
+{% include_relative exercises/002.md %}
 {: .exercises }
