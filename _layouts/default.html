@@ -152,6 +152,9 @@
           min-height: 120px;
           color: white;
           border-radius: 10px;
+          background-image: url({{site.baseurl}}/images/tip.png);
+          background-repeat: no-repeat;
+
         }
 
         .exercise .tip
@@ -159,20 +162,9 @@
           border: 1px solid #fefefe;
           padding-left: 55px;
           min-height: 70px;
-        }
-
-        .exercise .tip::before {
           content:url({{site.baseurl}}/images/tip_small.png);
-          float: left;
-          margin-left: -50px;
-        }​
-
-        .tip::before {
-          content:url({{site.baseurl}}/images/tip.png);
-          float: left;
-          margin-left: -100px;
-        }​
-
+          background-repeat: no-repeat;
+        }
 
         kbd, .key {
           display: inline;
