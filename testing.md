@@ -52,3 +52,53 @@ public class NameTest {
     //....
 ```
 
+
+## Recursion
+
+```java
+// one class needs to have a main() method
+public class HelloWorld
+{
+  // arguments are passed using the text field below this editor
+  public static void main(String[] args)
+  {
+    TestRecurse r = new TestRecurse();
+    
+    r.recurse(10);
+    System.out.println("Recursion: " + r.c);
+  }
+}
+
+public class TestRecurse extends BadRecurse
+{
+  public int c = 0;
+  @Override
+ public void recurse(int count)
+ {
+   c++;
+   super.recurse(count);
+ }
+}
+
+// you can add other public classes to this editor in any order
+public class Recurse
+{
+  public void recurse(int count)
+  {
+    if(count < 0)
+      return;
+    System.out.println(count);
+    recurse(count-1);
+  }
+}
+
+// you can add other public classes to this editor in any order
+public class BadRecurse
+{
+  public void recurse(int count)
+  {
+    for(int i = 10; i >= 0; i--)
+      System.out.println(i);
+  }
+}
+```

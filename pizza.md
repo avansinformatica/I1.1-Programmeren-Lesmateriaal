@@ -39,7 +39,6 @@ Ontwikkel een klasse Huurder
 
     **Opdracht**:	Ontwikkel een (void) methode met de naam `print` die alle waarden die als attribuut zijn opgeslagen op het beeldscherm toont.
 
-
 6.	In praktijk moet een huurder kunnen besluiten of hij een kamer die hem wordt aangeboden kan huren of anders gezegd kan hij de gevraagde huur betalen. 
 	Vertaald naar eerder genoemde attributen van de klasse Kamer en de klasse Huurder:
 	is de huurprijs van de kamer kleiner of gelijk aan de maximale Huurpijs van de Huurder ?

@@ -1,6 +1,6 @@
 ---
 layout: ogp1
-title: Week 11-1
+title: Week 11
 ---
 {% include_relative /licence.md %}
 ---
@@ -8,4 +8,4 @@ title: Week 11-1
 ---
 {% include week11/16-Multiple-UI-FX.md %}
 ---
-end of week 5-1
+end of week 11
