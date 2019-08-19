@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 16. Object
+## Objects and Values
 
 Strings and integers have some differences. Integers are "just values", they can be used in calculations and they can be printed on the screen:
 
@@ -14,7 +14,7 @@ Strings and integers have some differences. Integers are "just values", they can
 int x = 1;
 int y = 2;
 
-y = 3*x;
+y = 3 * x;
 
 System.out.println( "value of y now: " + y );
 ```
