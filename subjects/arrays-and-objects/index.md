@@ -6,7 +6,7 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 6.8. About arrays and objects
+## About arrays and objects
 If need be, any type of object can be put into an array. In the following, an example of an array into which will be put Person objects:
 
 ```java

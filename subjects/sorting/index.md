@@ -6,11 +6,11 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 6.6. Sorting an array
+## Sorting an array
 
 We'll get back to arrays again.
 
-### 6.6.1 Sorting an array with the ready-made tools of Java.
+### Sorting an array with the ready-made tools of Java.
 
 As we've seen, there's all kinds of useful things already in Java. For example for handling ArrayLists you can find many useful help methods in the class Collections. For arrays you can find helpful methods in the class `Arrays`. Sorting a table can be done with `Arrays.sort(array)`.
 
@@ -39,7 +39,7 @@ for(int value: values) {
 42
 ```
 
-### 6.6.2 Implementation of a sorting algorithm
+### Implementation of a sorting algorithm
 
 It's easy to sort an array with the ready-made tools of Java. The general knowledge of a program requires knowing at least one sorting algorithm (or in other words, a way to sort an array). Let's get familiar with the "classic" sorting algorithm, choice sorting. Let's do this with a few excercise.
 

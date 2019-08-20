@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 2.2 Assignment operations
+## Assignment operations
 
 Because changing the value of a variable is a very common operation, Java has special assignment operations for it.
 

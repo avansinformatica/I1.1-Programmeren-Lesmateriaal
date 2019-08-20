@@ -5,7 +5,7 @@ meta: Put extra info here, like if there any subjects required for this subject
 ---
 {% include licence.md %}
 ---
-## 8. Conditional statements and truth values
+## Conditional statements and truth values
 
 So far, our programs have progressed from one command to another in a straightforward manner. In order for the program to *branch* to different execution paths based on e.g. user input, we need conditional statements.
 
@@ -87,7 +87,7 @@ if (isLesser) {
 1 is less than 3!
 ```
 
-### 8.3 else if
+### else if
 
 If there are more than two conditions for the program to check, it is recommended to use the `else if` command. It works like the `else` command, but with an additional condition. `else if` comes after the `if` command. There can be multiple `else if` commands.
 
@@ -111,7 +111,7 @@ The number is three!
 
 Let us read out loud the example above: If number is one, print out "The number is one.". Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three, print out "The number is three!". Otherwise print out "Quite a lot!".
 
-### 8.4 Comparing strings
+### Comparing strings
 
 Strings cannot be compared using the equality operator (==). For string comparison, we use the `equals`. command, which is always associated with the string to compare.
 
@@ -144,7 +144,7 @@ When comparing strings, it is crucial to make sure that both string variables ha
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-### 8.5 Logical operations
+### Logical operations
 
 The condition statements can be made more complicated using logical operations. The logical operations are:
 
@@ -227,7 +227,7 @@ The number was equal to or less than 0 or it was in the range 10-99
 {% include_relative exercises/005.md %}
 {: .exercises }
 
-## 9. Changing variables
+## Changing variables
 
 We usually want to change the value of an existing variable. This can be done using the normal assignment statement. In the next example, we increase the value of the variable `age` by one:
 

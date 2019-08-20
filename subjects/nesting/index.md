@@ -6,7 +6,7 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 6.3. About blocks and nested loops
+## About blocks and nested loops
 
 A piece of code that begins with a curly bracket { and ends with a curly bracket } is called a block. As we've already seen, blocks are used - among other things - to denote the code of conditional and loop sentences. An important feature of a block is that variables defined within it only exist within it..
 
@@ -78,7 +78,7 @@ So first i=0 prints 0: and a carriage return. After this i grows and 1 is printe
 
 The inner for loop is also easy to understand separately. It prints out `0 1 2`. When we combine these two, we'll notice that the inner for loop carries out its print just before the outer for loop's carriage return.
 
-### 6.3.1 variables defined outside of a for loop as its condition
+### variables defined outside of a for loop as its condition
 
 Let's inspect the following alteration to the previous example:
 

@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 19. Methods and copying parameters
+## Methods and copying parameters
 
 Let us focus on a couple of details concerning methods.
 

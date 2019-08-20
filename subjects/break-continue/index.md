@@ -6,9 +6,9 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 2.3 Changing the flow of execution in a loop
+## Changing the flow of execution in a loop
 
-#### 2.3.1 Break
+#### Break
 
 It is also possible to change the flow of execution in a loop. This is done with the `break` and `continue` keywords.
 
@@ -39,7 +39,7 @@ System.out.println("Your age is " + age);
 
 Note that this example uses a `while(true)` command, which is another bad practice
 
-#### 2.3.2 Continue
+#### Continue
 
 The `continue` statement jumps back to the beginning of the loop. This can be used to 'skip' certain values of variables. An example
 

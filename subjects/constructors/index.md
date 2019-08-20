@@ -6,7 +6,7 @@ todo: merge with more information on constructors
 ---
 {% include licence.md %}
 ---
-## 23.1 Multiple constructors
+## Multiple constructors
 
 Let us return to the class that handles Persons again. The class `Person` currently looks like this:
 
@@ -121,7 +121,7 @@ Esko, age 0 years
 
 The technique in which a class has two constructors is called *constructor overloading*. A class can have multiple constructors, which are different from one another according to parameter quanitities and/or types. However, it is not possible to create two different constructors that have exactly the same type of parameters. We cannot add a constructor `public Person(String name, int weight)` on top of the old ones, since it is impossible for Java to tell the difference between this one and the one in which the integer stands for the age.
 
-### 23.2 Calling your own constructor
+### Calling your own constructor
 
 But wait, in chapter 21 we noted that "copy-paste" code is not too great of an idea! When we inspect the overloaded constructors above, we notice that they have the same code repeated in them. We are not ok with *this*.
 
@@ -144,7 +144,7 @@ public Person(String name, int age) {
 
 Calling the own constructor of a class `this(name, 0);` might seem a little peculiar. But we can imagine that during the call it will automatically copy-paste the code from the constructor below and that 0 is entered to the age parameter.
 
-### 23.3 Overloading a method
+### Overloading a method
 
 Just like constructors, methods can also be overloaded and multiple versions of a method can exist. Again, the parameter types of different versions have to be different. Let us create another version of the `becomeOlder`, which enables aging the person the amount of years that is entered as a parameter:
 

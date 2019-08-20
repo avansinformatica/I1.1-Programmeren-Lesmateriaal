@@ -6,7 +6,7 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 6.2. Array
+## Array
 
 During the course, we've used ArrayLists numerous times to store different kinds of objects. ArrayList is easy to use because it offers a lot of ready-made tools that make the programmer's life a little easier: automatic growing of a list, thanks to the list which doesn't run out of space (unless of course the list grows so large that it makes the program take up all the memory that is reserved for it), for example.
 
@@ -56,7 +56,7 @@ If an index points *past an array*, that is, to a cell that doesn't exist, we wi
 
 We'll notice that the array clearly is related to ArrayList. Arrays, as with lists, have their cells in a certain order!
 
-### 25.1 Iteration of an array
+### Iteration of an array
 
 The size of an array object can be found out by typing `array.length` into the code, notice that you don't use parentheses with this one. `array.length()` does not work!
 
@@ -92,7 +92,7 @@ for (String name : names) {
 
 **Notice**: when using a for-each-type of loop you cannot set values to the cells of the array! With the format of the for-sentence we inspect next that can be done too.
 
-### 6.2 For and array length
+### For and array length
 
 Going through all cells of an array with for happens like this:
 
@@ -106,7 +106,7 @@ for (int i = 0; i < numbers.length; i++ ) {
 
 Notice, that in the condition `i < numbers.length` we compare the value of the loop variable to the length we get from the array. The condition should not in any case be "hardcoded" as, for example, `i < 5` because often the length of the array can't be known for sure beforehand.
 
-### 6.2.1 Array as a parameter
+### Array as a parameter
 
 Arrays can be used - just as any other objects - as a parameters to a method. Notice that, as with all objects, the method gets a reference to an array, so all changes done to the content of the array in the method also show up in the main program.
 
@@ -133,7 +133,7 @@ As we already know, the name of the parameter within a method can be freely chos
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-### 6.2.2 Creating a new array
+### Creating a new array
 
 If the size of the array isn't always the same, that is, if its size depends on user input for example, the previously introduced way of creating arrays will not do. It is also possible to create a table so that its size is defined with the help of a variable:
 
@@ -190,7 +190,7 @@ Values again:
 1
 ```
 
-### 6.2.3 An array as the return value
+### An array as the return value
 
 Since methods can return objects, they can also return arrays. This particular method that returns an array looks like this -- notice that arrays might as well contain objects.
 

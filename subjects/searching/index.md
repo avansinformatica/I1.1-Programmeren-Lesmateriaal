@@ -6,7 +6,7 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 6.7 Searching
+## Searching
 
 In addition to sorting, another very typical problem that a programmer runs into is finding a certain value in an array. Earlier, we've implemented methods that search for values in lists and arrays. In the case of arrays, values and strings can be searched for in the following way:
 
