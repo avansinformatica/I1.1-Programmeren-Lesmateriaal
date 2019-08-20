@@ -46,7 +46,7 @@ public class TestTrace {
     }
 }
 ```
-{: .interactive}
+{: .interactive #voorbeeldDemo }
 
 ## Output
 
@@ -141,7 +141,6 @@ window.onload = function()
 
 
 </script>
-<script src="js/trace.js"></script>
 <style>
 #editor {
     width: 100%;
