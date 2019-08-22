@@ -26,6 +26,28 @@ System.out.println("Hello World, try me");
 ```
 {: .tryme}
 
+
+```java
+public class TestTrace {
+    public static void main(String[] args) {
+        method1(10);
+    }
+
+    public static void method1(int value) {
+        method2(value+1);
+    }
+
+    public static void method2(int value) {
+        method3(value/2);
+    }
+
+    public static void method3(int value) {
+        System.out.println(value);
+    }
+}
+```
+{: .interactive #voorbeeldDemo }
+
 ## Output
 
 ```output
@@ -114,7 +136,10 @@ window.onload = function()
             editor.gotoLine(1);
         });
     });
+
 }
+
+
 </script>
 <style>
 #editor {

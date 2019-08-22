@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 3.2. Strings of characters
+## Strings of characters
 
 In this section, we take a closer look at strings of characters in Java, which are called `Strings`. We have already used variables of String type when printing, and learned how to compare Strings. Comparing two strings is performed by calling the equals() method of the string.
 
@@ -58,7 +58,7 @@ char character = word.charAt(word.length());
 {% include_relative exercises/006.md %}
 {: .exercises }
 
-### 3.2.1 Other methods for strings
+### Other methods for strings
 
 We often want to read only a specific part of a string. A method in the String class called `substring` makes this possible. It can be used in two ways:
 

@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 3.6. Bit operators
+## Bit operators
 
 So far we've been calculating with numbers using the `+`, `-`, `/`, `%` and `*` operators. These operations match with the normal math that we're used to. For computer programming however, there are also some other operations that operate on a bit level.
 
@@ -39,7 +39,7 @@ These bits have an order. There are 2 ways of storing these bits in memory. The 
 
 Besides writing down numbers in different number systems, there are also a number of interesting operations we can do on these numbers
 
-### 3.6.1 Bitwise And operator
+### Bitwise And operator
 
 The bitwise And operator in java is written using the `&` operator. A bitwise And will combine the bits of 2 numbers with the And operator. An example
 
@@ -63,7 +63,7 @@ As we can observe, the only bits set to 1 in the result are the ones where the b
 | 0     | 1      | 0      |
 | 1     | 1      | 1      |
 
-### 3.6.2 Bitwise Or operator
+### Bitwise Or operator
 
 The bitwise Or operator in java is written using the `|` operator. A bitwise And will combine the bits of 2 numbers with the Or operator. An example
 
@@ -87,7 +87,7 @@ As we can observe, the bits set to 1 in the result are the ones where the bit is
 | 0     | 1      | 1      |
 | 1     | 1      | 1      |
 
-### 3.6.3 Bitwise Xor operator
+### Bitwise Xor operator
 
 The bitwise Xor operator, or Exclusive Or, in java is written using the `^` operator. A bitwise Xor will combine the bits of 2 numbers with the Xor operator. An example
 
@@ -112,7 +112,7 @@ As we can observe, the bits set to 1 in the result are the ones where only one b
 | 1     | 1      | 0      |
 
 
-### 3.6.4 Representation of negative numbers: Two's complement
+### Representation of negative numbers: Two's complement
 
 So far we've only worked with positive numbers, but how do we store negative numbers? A first thought would be to reserve a single bit for the sign. If the on the most left is 1, it is a negative number, if it is a 0, it is a positive number. So for an 8bit number, we could do
 
@@ -155,7 +155,7 @@ As seen in the table, for positive numbers, there's nothing special. For negativ
 
 Compared to other systems for representing signed numbers, two's-complement has the advantage that the fundamental arithmetic operations of addition, subtraction, and multiplication are identical to those for unsigned binary numbers, making it easier and faster to implement
 
-### 3.6.5 Bitshift Operators
+### Bitshift Operators
 
 Another operator often used for bit operations is bit shifting. Bit shifting is moving all the bits and shifting them a number of bits to the left or right. Bit shifting is done by the `<<` or `>>` operators. The `<<` operator shifts all bits left, and the `>>` shifts all bits right. 
 
@@ -178,7 +178,7 @@ int a = -1 >> 1;                    // -1 will shift to -2
 int b = -1 >>> 1;                   // -1 will shift to 2147483647
 ```
 
-### 3.6.6 Not Operator
+### Not Operator
 The not operator flips all bits in a number, including the sign bit.
 
 ```java
@@ -186,9 +186,9 @@ int a = ~1;                         //~1 = -2
 int b = ~0;                         //~0 = -1
 ```
 
-### 3.6.7 Practical applications
+### Practical applications
 
-#### 3.6.7.1 Bits as a boolean array
+#### Bits as a boolean array
 
 An integer is made up of 32 bits, which can all be individually set. This can be used to store multiple true/false values. In a single int, we can store 32 booleans, which is a lot smaller to communicate (smaller filesize, less network data usage). To access these booleans, we can make a method to test if a bit is set, and a method to set or unset a bit
 
@@ -238,7 +238,7 @@ public static void printText(String text, int alignment) {
 printText("Hello World", HALIGN_CENTER | VALIGN_BOTTOM);
 ```
 
-#### 3.6.7.1 Combining numbers
+#### Combining numbers
 
 An integer is 32bit in size. This means we can store a single number in it, with 4 294 967 296 different options. In some low-level applications, it's only possible to send a single parameter, where we want to send more than 1 parameter. In this case, we can *encode* 2 numbers into a single number. We can do this in the decimal system as well. Suppose we can only send a 6-digit number, but we want to send 2 smaller numbers. We could just stick these 2 numbers together. The number `123456` would mean `123` and `456`, and `001002` would mean `1` and `2`. We can use some modulo arithmatic to seperate these numbers (`int number1 = number % 1000; int number2 = number / 1000`)
 

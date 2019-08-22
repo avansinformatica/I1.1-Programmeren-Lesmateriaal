@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 2.4 For loops
+## For loops
 
 By now you will have noticed that there are usually 3 important components in a loop; the initialization, condition and increment
 

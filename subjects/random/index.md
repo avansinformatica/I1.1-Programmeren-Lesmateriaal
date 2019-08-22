@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 22. Randomness
+## Randomness
 
 When programming, you may occasionally need to simulate random events. Situations such as the unpredictability of weather, or surprising moves on the AI's part in a computer game can often be simulated with random number generators, running on a computer. In Java, there is a ready-made class `Random`, which you can use in the following way:
 

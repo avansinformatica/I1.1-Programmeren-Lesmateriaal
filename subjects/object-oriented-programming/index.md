@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 21. Object-oriented programming
+## Object-oriented programming
 
 Before we begin, here is a small introduction to object-oriented programming.
 
@@ -14,7 +14,7 @@ In procedural programming - which is the way of programming we have been studyin
 
 In object oriented programming, just like in procedural programming, we attempt to divide a program into smaller parts. In object-oriented programming the small parts are objects. Each separate object has its own individual responsibility; an object contains a related group of information and functionality. Object-oriented programs consist of multiple objects which together define how the program works.
 
-### 21.1 Object
+### Object
 
 We have already used many of the ready-made objects in Java. For example, ArrayLists are objects. Each separate list consists of information related to it; that is, the state of the object. Functionality is also contained in the ArrayList objects: the methods by which the state of the object can be altered. As an example, there are two ArrayList objects in the following piece of code, cities and countries :
 
@@ -52,7 +52,7 @@ String anotherText = new String("more text");
 
 Cases in which ready-made parts of Java call `new` out of sight of the programmer also exist.
 
-### 21.2 Class
+### Class
 
 It is clear that all objects are not similar to one another. For example, `ArrayList` objects differ drastically from `String` objects. All `ArrayLists` have the same methods `add`, `contains`, `remove`, `size`, ... and respectively all String objects have the same methods (`substring`, `length`, `charAt`, ...). `Arraylist` and `String` objects do not have the same methods because they are different types of objects.
 
@@ -60,7 +60,7 @@ The type of a certain group of objects is called a **class**. `ArrayList` is a c
 
 Objects of the same class all have the same methods and a similar state. For example, the state of an `ArrayList` object consists of elements inserted to the list while the state of a `String` object consists of a string of characters.
 
-### 21.3 A class and its objects
+### A class and its objects
 
 A **class defines** what kind of objects it has:
 
@@ -87,7 +87,7 @@ Constructors take parameters the way any other method does.
 {% include_relative exercises/001.md %}
 {: .exercises }
 
-### 21.4 Defining your own class - object variables
+### Defining your own class - object variables
 
 A class is defined to serve some meaningful whole. Often a "meaningful whole" represents something from the real world. If a computer program needs to handle personal data it could be sensible to define a separate class Person which then holds methods and attributes related to an individual.
 
@@ -129,7 +129,7 @@ Variables defined within a class are called object *attributes*, *object fields*
 
 So, we have defined the schematics -- the class -- for the person object. All person objects have the variables `name` and `age`. The 'state' of the objects is determined by the values that have been set to its variables.
 
-### 21.5 Defining your own class - constructor, or "formatting the state"
+### Defining your own class - constructor, or "formatting the state"
 
 When an object is created its starting state is defined at the same time. Self-defined objects are created for the most part in the same way as ready-made objects (`ArrayList` objects for example) are created. Objects are created with the `new` command. When creating an object it would be handy to be able to set the values of some of the variables of that object.
 
@@ -160,7 +160,7 @@ A few notes: within the constructor there is a command `this.age = 0`. Through i
 
 One more thing: if the programmer does not create a constructor for her class, Java will automatically create a default constructor for it. A default constructor is a constructor that does nothing. So, if you for some reason do not need a constructor you do not need to write one.
 
-### 21.6 Class definition - methods
+### Class definition - methods
 
 We already know how to create and initialize objects. However, objects are useless if they cannot do anything. Therefore, objects should have methods. Let us add to the Person class a method that prints the object on the screen:
 
@@ -212,7 +212,7 @@ Martin, age 0 years
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-### 21.7 More methods
+### More methods
 
 Let us create a method that can be used to increase the age of a person by one:
 
@@ -313,7 +313,7 @@ Pekka and Andrew total of 3 years old
 {% include_relative exercises/005.md %}
 {: .exercises }
 
-### 21.8 The Person class grows
+### The Person class grows
 
 Let us get back to work on the `Person` class. The current version of the class looks like this:
 
@@ -453,7 +453,7 @@ andy is a minor
 bob is an adult
 ```
 
-### 21.9 toString
+### toString
 
 We have been guilty of bad programming style; we have created a method that prints an object, `printPerson`. The recommended way of doing this is by defining a method that returns a "character string representation" of the object. In Java, a method returning a `String` representation is called `toString`. Let us define this method for person:
 
@@ -508,7 +508,7 @@ What happens is that the object is asked for its string representation. The stri
 {% include_relative exercises/006.md %}
 {: .exercises }
 
-### 21.10 More methods
+### More methods
 
 Let us continue with the class `Person`. We would be interested in knowing the [body mass index](http://en.wikipedia.org/wiki/Body_mass_index) of a person. To calculate the index, we need to know the height and weight of the person. We add for both height and weight object variables and methods that can be used to assign the variables a value. When this is in place, we add a method that calculates the body mass index.
 
@@ -572,7 +572,7 @@ Matti, body mass index: on 26.54320987654321
 John, body mass index: on 20.897959183673468
 ```
 
-### 21.11 Object variable and parameter with identical name
+### Object variable and parameter with identical name
 
 Above, the method setHeight assigns the object variable height the value of the parameter `newHeight`:
 
@@ -600,7 +600,7 @@ public void setHeight(int height) {
 }
 ```
 
-### 21.12 Contolling the number of decimals when printing a float
+### Contolling the number of decimals when printing a float
 
 The number of decimals in the last output was far too high, two decimals would be enough. One technique to control how a float number is printed is to use the command `String.format`.
 

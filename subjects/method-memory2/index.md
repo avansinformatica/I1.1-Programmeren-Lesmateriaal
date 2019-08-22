@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-### 23.4 Object is at the end of a wire
+### Object is at the end of a wire
 
 In chapter 20, we noted that `ArrayList` is at the end of a wire. Also objects are 'at the end of a wire'. What does this mean? Let us inspect the following example:
 
@@ -140,7 +140,7 @@ Java Result: 1~~
 
 Not good. This might be the first time in your life that you see the text **NullPointerException**. But we can assure you that it will not be the last. NullPointerException is an exception state, when we try to call methods of an object with the value `null`.
 
-### 23.5 An object as a method parameter
+### An object as a method parameter
 
 We have seen that a method can have, for example `int`, `double`, `String` or `ArrayList` as its parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type of object as a parameter. Let us demonstrate this with an example.
 
@@ -214,7 +214,7 @@ Juhana is not accepted as a member
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-### 23.6 Another object of the same type as a parameter to a method
+### Another object of the same type as a parameter to a method
 
 We will keep on working with the `Person` class. As we recall, persons know their age:
 
@@ -286,7 +286,7 @@ public class Person {
 
 Even though age is a private object variable, we can read the value of the variable by writing compared.age. This is because `private` variables can be read in all methods that the class in question contains. Note that the syntax resembles the call of a method of an object. Unlike calling a method, we refer to a field of an object, in which case we do not write the parentheses.
 
-### 23.7 The date as an object
+### The date as an object
 
 Another example of the same theme. Let us create a class, which can represent dates.
 
@@ -362,7 +362,7 @@ public static void main(String[] args) {
 {% include_relative exercises/003.md %}
 {: .exercises }
 
-### 23.8 Objects on a list
+### Objects on a list
 
 We've used `ArrayLists` in a lot of examples and assignments already. You can add character strings, for example, to an `ArrayList` object and going through the strings, searching, removing and sorting them and so forth, are painless actions.
 
@@ -413,7 +413,7 @@ Martin, age 30 years
 {% include_relative exercises/004.md %}
 {: .exercises }
 
-### 23.9 An object within an object
+### An object within an object
 
 Objects can have objects within them, not only character strings but also self-defined objects. Let's get back to the `Person`-class again and add a birthday for the person. We can use the `MyDate`-object we created earlier here:
 
@@ -491,7 +491,7 @@ When age is removed, the `olderThan` method has to be changed so that it compare
 {% include_relative exercises/005.md %}
 {: .exercises }
 
-### 23.10 A list of objects within an object
+### A list of objects within an object
 
 Let's expand the `WeightWatchersAssociation` object so that the association records all its members into an `ArrayList` object. So in this case the list will be filled with `Person` objects. In the extended version the association is given a name as a constructor parameter:
 
@@ -590,7 +590,7 @@ The members of weight watchers association 'kumpulan paino':
 {: .exercises }
 
 
-### 23.11 Method returns an object
+### Method returns an object
 
 We've seen methods that return booleans, numbers, lists and strings. It's easy to guess that a method can return any type of an object. Let's make a method for the weight watchers association that returns the person with the highest weight index.
 
@@ -640,7 +640,7 @@ member with the greatest weight index: Petri
 weight index 37,42
 ```
 
-### 23.12 Method returns an object it creates
+### Method returns an object it creates
 
 In the last example a method returned one Person object that the WeightWatcers object had in it. It's also possible that a method returns an entirely new object. In the following is a simple counter that has a method `clone` with which a clone - an entirely new counter object - can be made from the counter, which at creation has the same value as the counter that is being cloned:
 
@@ -708,7 +708,7 @@ The value of the object being cloned and the value of the clone - after the clon
 {% include_relative exercises/007.md %}
 {: .exercises }
 
-## 23.13 More assignments
+##  More assignments
 
 All the new theory for this week has already been covered. However, since this week's topics are quite challenging, we will practise our routine with a couple of more exercises.
 

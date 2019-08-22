@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 16. Object
+## Objects and Values
 
 Strings and integers have some differences. Integers are "just values", they can be used in calculations and they can be printed on the screen:
 
@@ -14,7 +14,7 @@ Strings and integers have some differences. Integers are "just values", they can
 int x = 1;
 int y = 2;
 
-y = 3*x;
+y = 3 * x;
 
 System.out.println( "value of y now: " + y );
 ```
@@ -68,7 +68,7 @@ Both of the commands above create a new String object. Using the `new` command w
 The object's "type" is called a *class*. The class of a string of characters is called `String` and the class of readers is called `Scanner`. Later we learn much more about classes and objects.
 
 
-## 3.4. ArrayList or an "object container"
+## ArrayList or an "object container"
 Often during programming, we would like to keep many different strings in memory. A very bad idea would be to define a variable for each of them:
 
 ```java
@@ -107,7 +107,7 @@ When the list is created, two strings are added by calling the list method `add`
 
 Internally an ArrayList is -- as its name suggests -- a list. The added strings automatically go to the end of the ArrayList.
 
-### 3.4.1 Methods of ArrayLists
+### Methods of ArrayLists
 
 ArrayList provides us with many useful methods:
 
@@ -155,7 +155,7 @@ Barto is not on the teachers list
 Note! The methods remove and contains assume that the objects stored in the ArrayList do have an equals method. We will get back to this later in the course.
 ```
 
-### 3.4.2 Going through an ArrayList
+### Going through an ArrayList
 
 In the following example 4 names are added to the list. Then the whole list is printed:
 
@@ -223,7 +223,7 @@ Now, printing works regardless of the amount of items in the list.
 
 Using a while loop, and "self indexing" the locations in the list, is usually not the best way to go through a list. A much more recommended way is to use the for-each loop described below.
 
-### 3.4.3 for-each
+### for-each
 
 Even though the command is usually referred to as for-each, the real name of the command is only `for`. There are two versions of for, the traditional and the "for-each". The latter is used now.
 
@@ -255,7 +255,7 @@ Even though the for command might seem a bit strange at first, you should defini
 {: .exercises }
 
 
-### 3.4.4 Ordering, reversing and shuffling a list
+### Ordering, reversing and shuffling a list
 
 Items in an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the list items are of type String. Ordering is done as follows:
 
@@ -296,7 +296,7 @@ Collections also includes other useful methods:
 {: .exercises }
 
 
-### 3.4.5 ArrayList as a parameter for a method
+### ArrayList as a parameter for a method
 
 ArrayList can be given to a method as a parameter:
 
@@ -355,7 +355,7 @@ The program now includes two lists, *programmingLanguages* and *countries*. Firs
 >As we notice from the example above, an ArrayList can be printed as it is. The print formatting is not usually what is sought after, so we are forced to handle the printing ourself. For example, with the help of the `for` command.
 {: .exercises }
 
-### 3.4.6 Numbers in an ArrayList
+### Numbers in an ArrayList
 ArrayLists can be used to store any type of values. If the stored variables are of integer type, there are a couple of details to remember. An integer ArrayList is defined like this: `ArrayList<Integer>`, instead of writing `int` you must write `Integer`.
 
 The method `remove` does not work like expected when the list consists of int numbers::
@@ -388,7 +388,7 @@ ArrayLists can also be used to store `doubles` (decimal numbers) and characters 
 {% include_relative exercises/008.md %}
 {: .exercises }
 
-### 3.4.7 ArrayList as return value of a method
+### ArrayList as return value of a method
 
 ArrayList can also be returned from a method as a return value. In the next example, a method creates an ArrayList, adds three integers into the list and then returns the list. Pay attention to how the main program assigns the list returned by the method as a value into a variable that has the same type as the return value:
 

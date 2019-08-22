@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-### 3.1.2 Return values
+### Return values
 
 A method can return a value. In the examples above, methods have not been returning anything. This is expressed by writing `void` in the first line of the method, just before it's name.
 
@@ -116,7 +116,7 @@ sum(sum(1, 2), sum(first, second));
 //    sum(3, 5) = 8
 ```
 
-### 3.1.3 The method's own variables
+### The method's own variables
 
 The following method calculates the average of the numbers the method gets as parameters. The method uses helper variables sum and average. The method's own variables can be introduced just like any other variables.
 

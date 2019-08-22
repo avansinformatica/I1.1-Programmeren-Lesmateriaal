@@ -6,9 +6,9 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 3.1. More about methods
+## More about methods
 
-### 3.1.1 Methods and visibility of variables
+### Methods and visibility of variables
 
 Let us try to change from within a method the value of a variable located in the main program.
 

@@ -6,7 +6,7 @@ todo: what should be improved in this chapter
 ---
 {% include licence.md %}
 ---
-## 20. Instructions on code-writing and problem solving
+## Instructions on code-writing and problem solving
 
 Two of the leading software developers, *Martin Fowler* and *Kent Beck* have said in the book *Refactoring: Improving the Design of Existing Code* that:
 
@@ -17,7 +17,7 @@ Two of the leading software developers, *Martin Fowler* and *Kent Beck* have sai
 
 We are now taking the first steps towards becoming good programmers.
 
-### 20.1 Well indented and "breathing" code
+### Well indented and "breathing" code
 
 Let us take a look at a code that first adds numbers to a list and then prints the items fo the list. Then all instances of a certain number are removed from the list and the list gets printed.
 
@@ -79,7 +79,7 @@ Now, the code starts to make sense. For example, the printing and the number rem
 
 There are even comments in the code to help the reader understand what happens and where!
 
-### 20.2 Getting rid of copy-paste with methods
+### Getting rid of copy-paste with methods
 
 What could be called the Original sin of a programmer is to create copy-paste code. This means using the same code in multiple places by copy-pasting it around the source code. In our example, the printing of the list is done twice. The code that handles the printing part should be separated as its own method. Then the printing method should be called from the main program:
 
@@ -113,7 +113,7 @@ public static void print(ArrayList<Integer> numbers) {
 }
 ```
 
-### 20.3 Slicing separate tasks into methods with descriptive names
+### Slicing separate tasks into methods with descriptive names
 
 Now, the code has become even more easy to read. A distinctively separate entity, the printing of the list is now a method that is easy to understand. By defining a new method the readability of the main program has improved. Pay attention to the descriptive name of the method: the name describes exactly what the method does. Next, we can remove the advising comments here we *print numbers*, because the name of the method speaks for itself.
 

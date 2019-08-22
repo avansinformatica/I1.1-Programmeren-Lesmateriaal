@@ -5,9 +5,9 @@ meta: Put extra info here, like if there any subjects required for this subject
 ---
 {% include licence.md %}
 ---
-## 4. Variables and assignment
+## Variables and assignment
 
-### 4.1 Variables and data types
+### Variables and data types
 
 A *variable* is one of the most important concepts in computer programming. A variable should be imagined as a box in which you can store information. The information stored in a variable always has a type. Java only has a limited number of data types, but it can be extended with custom types. Those custom types can be recognized, as their name is always spelled with a capital. The basic set of variable types in java is as followed:
 
@@ -70,7 +70,7 @@ The variable's type is integer. Its value is 123
 The variable's type is integer. Its value is 42
 ```
 
-### 4.2 Variable data types are immutable
+### Variable data types are immutable
 
 When a variable is declared with a data type, it cannot be changed later. For example, a text variable cannot be changed into an integer variable and it cannot be assigned integer values.
 
@@ -89,7 +89,7 @@ decimalNumber = 1; // Works! :)
 {% include_relative exercises/001.md %}
 {: .exercises }
 
-### 4.3 Allowed and descriptive variable names
+### Allowed and descriptive variable names
 
 There are certain limitations on the naming of our variables. Even though umlauts, for example, can be used, it is better to avoid them, because problems might arise with [character encoding](http://en.wikipedia.org/wiki/Character_encoding). For example, it is recommended to use A instead of Ä.
 
@@ -115,20 +115,20 @@ int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 
 It is strongly recommended to name variables so that their purpose can be understood without comments and without thinking. Variable names used in this course **must** be descriptive.
 
-#### 4.3.1 Valid variable names
+#### Valid variable names
 
 * lastDay = 20
 * firstYear = 1952
 * name = "Matti"
 
-#### 4.3.2 Invalid variable names
+#### Invalid variable names
 
 * last day of the month = 20
 * 1day = 1952
 * watchout! = 1910
 * 1920 = 1
 
-## 5. Calculation
+## Calculation
 
 The calculation operations are pretty straightforward: +, -, * and /. A more peculiar operation is the modulo operation %, which calculates the remainder of a division. The order of operations is also pretty straightforward: the operations are calculated from left to right taking the parentheses into account.
 
@@ -149,13 +149,18 @@ int calcWithoutParens = 1 + 1 + 3 * 2 + 5;   // 13
 The parentheses example above can also be done step by step.
 
 ```java
-int calcWithParens = (1 + 1);
-calcWithParens = calcWithParens + 3 * (2 + 5);  // 23
+class CalcTest {
+    public static void main(String[] args) {
+        int calcWithParens = (1 + 1);
+        calcWithParens = calcWithParens + 3 * (2 + 5);  // 23
 
-int calcWithoutParens = 1 + 1;
-calcWithoutParens = calcWithoutParens + 3 * 2;
-calcWithoutParens = calcWithoutParens + 5;      // 13
+        int calcWithoutParens = 1 + 1;
+        calcWithoutParens = calcWithoutParens + 3 * 2;
+        calcWithoutParens = calcWithoutParens + 5;      // 13
+    }
+}
 ```
+{: .interactive #variables-calc }
 
 Calculation operations can be used almost anywhere in the program code.
 
@@ -167,7 +172,7 @@ System.out.println(first + second);
 System.out.println(2 + second - first - second);
 ```
 
-### 5.1 Floating point numbers (decimal numbers)
+### Floating point numbers (decimal numbers)
 
 Calculating the division and remainder of whole numbers is a little trickier. A floating point number (decimal number) and integer (whole number) often get mixed up. If all the variables in a calculation operation are integers, the end result will also be an integer.
 
@@ -239,7 +244,7 @@ From now on, make sure that you name your variables that follow good conventions
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-## 6. Concatenation or combining strings
+## Concatenation or combining strings
 
 Let us take a closer look on combining strings with the + operator.
 

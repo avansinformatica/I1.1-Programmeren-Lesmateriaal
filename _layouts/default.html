@@ -224,6 +224,7 @@
         }
 
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>OGP0 - {{ page.title }}</title>
   </head>
   <body>
@@ -278,8 +279,17 @@
                 <a class="dropdown-item" href="{{site.baseurl}}/subjects/method-memory2">More on memory</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 6" %} active{% endif %}" href="week6">Week 6</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 6" %} active{% endif %}" href="week6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 6</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/arrays">Arrays</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/nesting">Nesting</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/static">Static</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/sorting">Sorting</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/searching">Searching</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/arrays-and-objects">Arrays and Objects</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/assignments/6">Assignments</a>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -297,7 +307,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -380,6 +389,101 @@
             });
         });
 
+
+
+
+        $("div.interactive").each(function(index, element)
+        {
+          var animationFrame = 0;
+
+          $(this).find(".btn").remove();
+          var row = $('<div class="row"></div>');
+
+          $(this).wrap(row);
+          $(this).addClass("col")
+          var line = 1;
+
+          var code = $(this).find("code");
+
+          var el = $(this).find("code")[0].firstChild;
+          
+          while(el != null)
+          {
+            $(el).attr("linenr", line);
+
+            if(el.nodeType == 3)
+              line += (el.nodeValue.split("\n").length - 1);
+
+            el = el.nextSibling;
+          };
+
+          
+          var col2 = $(`<div class="col" style="border-radius: 10px; border: 1px solid #181712; padding: 10px; background-color: white; margin-bottom: 16px;"></div>`);
+          $(this).after(col2);
+
+          var prev = $(`<input type="button" class="btn btn-primary" value="<">`);
+          var step = $(`<input value="0">`);
+          var next = $(`<input type="button" class="btn btn-primary" value=">">`);
+
+          var controls = $(`<div style="margin-bottom: 10px;"></div>`);
+          controls.append(prev);
+          controls.append(step);
+          controls.append(next);
+          col2.append(controls);
+
+          var stack = $(`<ul class="list-group" style="margin-bottom: 10px;"></ul>`);
+          col2.append(stack);	
+          var variables = $(`<ul class="list-group"></ul>`);
+          col2.append(variables);	
+
+          var cons = $(`<div class="language-output"></div>`)
+          $(this).parent().after(cons);
+
+          var setVars = function(f)
+          {
+            variables.empty();
+            for(var i in f.variables)
+            {
+              var item = $(`<li class="list-group-item">` + f.variables[i].name + ` -> ` + f.variables[i].value + `</li>`);
+              variables.append(item);
+            }
+          }
+
+          var tracelog = "";
+          var buildAnimationFrame = function()
+          {
+            cons.text(tracelog[animationFrame].out);
+            stack.empty();
+            var frame = tracelog[animationFrame].stack;
+            for(var i in frame)
+            {
+              var item = $(`<li class="list-group-item">` + frame[i].method + `</li>`);
+              stack.append(item);
+            }
+            stack.find("li:first").addClass("active");
+            setVars(frame[0]);
+            code.find(".lineback").children().unwrap();
+            code.find(".lineback").remove();
+            code.find("[linenr='"+frame[0].line+"']").wrapAll(`<span style="background-color: #eee;" class="lineback"></span>`);
+          }
+
+          $.getJSON("{{site.baseurl}}/js/trace/" + $(this).attr("id") + ".js", function(data)
+          {
+            tracelog = data;
+            buildAnimationFrame();
+          });
+
+          next.click(function(){
+            step.val(Math.min((1*step.val()) + 1, tracelog.length-1));
+            animationFrame = 1*step.val();
+            buildAnimationFrame();
+          })
+          prev.click(function(){
+            step.val(Math.max((1*step.val()) - 1, 0));
+            animationFrame = 1*step.val();
+            buildAnimationFrame();
+          })
+        });
 
       });
     
