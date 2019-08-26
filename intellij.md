@@ -8,7 +8,7 @@
 
 ### IntelliJ
 
-To program in Java we'll use the IntelliJ IDEA, Community edition. This can be found at [the jetbrains website](https://www.jetbrains.com/idea/download/#section=windows). It's also possible to use the ultimate edition, a licence is available at https://www.jetbrains.com/student/, free for students. We won't be using any ultimate features through the course though.
+To program in Java we'll use the IntelliJ IDEA, Community edition, specifically version 2018.3.6 for compatibility with the TMC plugin described below. This can be found at [the jetbrains website](https://www.jetbrains.com/idea/download/#section=windows). It's also possible to use the ultimate edition, a licence is available at https://www.jetbrains.com/student/, free for students. We won't be using any ultimate features through the course though. 
 
 ### Creating a TMC account
 
