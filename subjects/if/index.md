@@ -43,6 +43,7 @@ if (number >= 1000) {
     System.out.println("The number was greater than or equal to 1000");
 }
 ```
+{: .interactive .hideStack #if-1 }
 
 A block can contain any code including other `if` statements.
 
@@ -58,6 +59,7 @@ if (number > 0) {
     }
 }
 ```
+{: .interactive .hideStack #if-2 }
 
 The comparison operators can also be used outside the if statements. In such case the truth value will be stored in a truth value variable.
 
@@ -104,10 +106,7 @@ if (number == 1) {
     System.out.println("Quite a lot!");
 }
 ```
-
-```output
-The number is three!
-```
+{: .interactive .hideStack #if-3 }
 
 Let us read out loud the example above: If number is one, print out "The number is one.". Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three, print out "The number is three!". Otherwise print out "Quite a lot!".
 
@@ -124,6 +123,7 @@ if (text.equals("marzipan")) {
     System.out.println("The variable text does not contain the text marzipan");
 }
 ```
+{: .interactive .hideStack #if-4 }
 
 The `equals` command is always attached to the string variable with a dot in between. A string variable can also be compared to another string variable.
 
@@ -137,6 +137,7 @@ if (text.equals(anotherText)) {
     System.out.println("The texts are not the same!");
 }
 ```
+{: .interactive .hideStack #if-5 }
 
 When comparing strings, it is crucial to make sure that both string variables have been assigned some value. If a value has not been assigned, the program execution terminates with a *NullPointerException* error, which means that variable has no value assigned to it (null).
 
@@ -238,6 +239,7 @@ System.out.println(age);  // prints 1
 age = age + 1;            // the new value of age is the old value of age + 1
 System.out.println(age);  // prints 2
 ```
+{: .interactive .hideStack #if-6 }
 
 The `age = age + 1` statement increments the value of the variable `age` by one. It is also possible to increment a variable by one as below:
 
@@ -248,6 +250,7 @@ System.out.println(age);  // prints 1
 age++;                    // means the same as age = age + 1
 System.out.println(age);  // prints 2
 ```
+{: .interactive .hideStack #if-7 }
 
 Another example:
 
@@ -264,6 +267,7 @@ System.out.println(length);  // prints 25
 length--;                    // means the same as length = length - 1;
 System.out.println(length);  // prints 24
 ```
+{: .interactive .hideStack #if-8 }
 
 {% include_relative exercises/006.md %}
 {: .exercises }
