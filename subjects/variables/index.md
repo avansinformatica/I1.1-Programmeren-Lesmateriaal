@@ -149,18 +149,14 @@ int calcWithoutParens = 1 + 1 + 3 * 2 + 5;   // 13
 The parentheses example above can also be done step by step.
 
 ```java
-class CalcTest {
-    public static void main(String[] args) {
-        int calcWithParens = (1 + 1);
-        calcWithParens = calcWithParens + 3 * (2 + 5);  // 23
+int calcWithParens = (1 + 1);
+calcWithParens = calcWithParens + 3 * (2 + 5);  // 23
 
-        int calcWithoutParens = 1 + 1;
-        calcWithoutParens = calcWithoutParens + 3 * 2;
-        calcWithoutParens = calcWithoutParens + 5;      // 13
-    }
-}
+int calcWithoutParens = 1 + 1;
+calcWithoutParens = calcWithoutParens + 3 * 2;
+calcWithoutParens = calcWithoutParens + 5;      // 13
 ```
-{: .interactive #variables-calc }
+{: .interactive .hideStack .hideOutput #variables-calc }
 
 Calculation operations can be used almost anywhere in the program code.
 
@@ -259,6 +255,7 @@ String sentence = greeting + name + goodbye;
 
 System.out.println(sentence);
 ```
+{: .interactive .hideStack #variables-concat }
 
 ```output
 Hi John, and goodbye!
