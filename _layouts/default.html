@@ -223,6 +223,18 @@
           border: 1px solid #c6002a;
         }
 
+        .lineback, .lineback > *
+        {
+          background-color: #c6002a !important; 
+          color: white !important;
+        }
+        .hideStack .stack {
+          display: none !important;
+        }
+        .hideOutput + .output {
+          display: none !important;
+        }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Programmeren 1 - {{ page.title }}</title>
@@ -395,7 +407,15 @@
           var animationFrame = 0;
 
           $(this).find(".btn").remove();
-          var row = $('<div class="row"></div>');
+          var row = $('<div class="row traceview"></div>');
+
+          if($(this).hasClass("hideOutput"))
+            row.addClass("hideOutput");
+          if($(this).hasClass("hideStack"))
+            row.addClass("hideStack");
+
+          var lineHandler = $('<div style="position: absolute; top: 0px; background-color: rgba(204,204,204,0.3); width: 96%">&nbsp;</div>');
+          $(this).find("pre.highlight").prepend(lineHandler);
 
           $(this).wrap(row);
           $(this).addClass("col")
@@ -419,22 +439,26 @@
           var col2 = $(`<div class="col" style="border-radius: 10px; border: 1px solid #181712; padding: 10px; background-color: white; margin-bottom: 16px;"></div>`);
           $(this).after(col2);
 
-          var prev = $(`<input type="button" class="btn btn-primary" value="<">`);
-          var step = $(`<input value="0">`);
-          var next = $(`<input type="button" class="btn btn-primary" value=">">`);
+          var prev = $(`<input type="button" class="btn btn-primary btn-prev" value="<">`);
+          var step = $(`<input value="0" readonly="true" class="text-center">`);
+          var next = $(`<input type="button" class="btn btn-primary btn-next" value=">">`);
 
-          var controls = $(`<div style="margin-bottom: 10px;"></div>`);
+          var controls = $(`<div style="margin-bottom: 10px;" class="row"></div>`);
           controls.append(prev);
           controls.append(step);
           controls.append(next);
+
+          prev.wrap($('<div class="col-2"></div>'));
+          step.wrap($('<div class="col text-center"></div>'));
+          next.wrap($('<div class="col-2"></div>'));
           col2.append(controls);
 
-          var stack = $(`<ul class="list-group" style="margin-bottom: 10px;"></ul>`);
+          var stack = $(`<ul class="list-group stack" style="margin-bottom: 10px;"></ul>`);
           col2.append(stack);	
-          var variables = $(`<ul class="list-group"></ul>`);
+          var variables = $(`<ul class="list-group" class="variables"></ul>`);
           col2.append(variables);	
 
-          var cons = $(`<div class="language-output"></div>`)
+          var cons = $(`<pre class="language-output output"></pre>`)
           $(this).parent().after(cons);
 
           var setVars = function(f)
@@ -442,6 +466,8 @@
             variables.empty();
             for(var i in f.variables)
             {
+              if(f.variables[i].name == "args" && f.variables[i].type == "java.lang.String[]")
+                continue;
               var item = $(`<li class="list-group-item">` + f.variables[i].name + ` -> ` + f.variables[i].value + `</li>`);
               variables.append(item);
             }
@@ -460,9 +486,8 @@
             }
             stack.find("li:first").addClass("active");
             setVars(frame[0]);
-            code.find(".lineback").children().unwrap();
-            code.find(".lineback").remove();
-            code.find("[linenr='"+frame[0].line+"']").wrapAll(`<span style="background-color: #eee;" class="lineback"></span>`);
+            if(code.find("[linenr='"+frame[0].line+"']").length > 0)
+              lineHandler.css("top", code.find("[linenr='"+frame[0].line+"']").position().top);
           }
 
           $.getJSON("{{site.baseurl}}/js/trace/" + $(this).attr("id") + ".js", function(data)
