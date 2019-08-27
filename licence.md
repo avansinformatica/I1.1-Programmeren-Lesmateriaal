@@ -5,7 +5,7 @@
 
 Authors: Arto Hellas, Matti Luukkainen  
 Translators to English: Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas, Etiënne Goossens  
-Extra material added by: Etiënne Goossens, Maurice Snoeren, Johan Talboom
+Extra material added by: Etiënne Goossens, Maurice Snoeren, Johan Talboom  
 Adapted for Informatica by: Ruud Hermans
 
 The course is maintained by [Technische Informatica Breda](http://www.avans.nl/opleidingen/opleidingzoeker/technische-informatica-breda-voltijd-bachelor/introductie)
