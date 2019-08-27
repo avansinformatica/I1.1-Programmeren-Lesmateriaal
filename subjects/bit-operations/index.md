@@ -75,7 +75,7 @@ System.out.println(Integer.toBinaryString(result));
 ```
 
 ```output
-1101
+1110
 ```
 
 As we can observe, the bits set to 1 in the result are the ones where the bit is set to 1 either one of the `firstNumber` and the `secondNumber`. This can be combined in this small table
