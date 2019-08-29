@@ -12,24 +12,6 @@ Note that the commands in the block following the if statement (i.e. the lines a
 
 The use of indentation is crucial for the readability of program code. During this course and generally everywhere, you are expected to indent the code properly. IntelliJ helps with the correct indentation. You can easily indent your program by pressing shift, alt, and f simultaneously. It's also possible to select a whole section of code, and press tab to indent this whole section
 
-### else
-
-If the truth value of the comparison is false, another optional block can be executed using the `else` command.
-
-```java
-int number = 4;
-
-if (number > 5) {
-    System.out.println("Your number is greater than five!");
-} else {
-    System.out.println("Your number is equal to or less than five!");
-}
-```
-
-```output
-Your number is equal to or less than five!
-```
-
 {% include_relative exercises/001.md %}
 {% include_relative exercises/002.md %}
 {% include_relative exercises/003.md %}

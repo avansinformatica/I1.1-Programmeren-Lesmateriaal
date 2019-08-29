@@ -102,17 +102,7 @@ public class ProgramBody {
     }
 }
 ```
-
-When the program is executed, we see the following output:
-
-```output
-Let us try if we can get to the method world:
-Greetings from the world of methods!
-It seems like we can, let us try again:
-Greetings from the world of methods!
-Greetings from the world of methods!
-Greetings from the world of methods!
-```
+{: .interactive #method-1 }
 
 What is noteworthy here is the execution order of the program code. The execution starts with the main program's (or main's) lines of code, from top to bottom, one by one. When the line of code to be executed happens to be a method call, the lines of code in the method block are executed again one by one. When the method block ends, the execution continues from the place where the method was called. To be exact, the execution continues from the next line after the original method call.
 
@@ -179,15 +169,17 @@ A method can be defined to have more than one parameter. In this case, the param
 public static void greet(String name, String greetingsFrom) {
     System.out.println("Hi " + name + ", greetings from " + greetingsFrom);
 }
-```
 
-```java
-String who = "Matt";
-String greetings = "Alabama";
+public static void main(String[] args)
+{
+    String who = "Matt";
+    String greetings = "Alabama";
 
-greet(who, greetings);
-greet(who, greetings + " from Nevada");
+    greet(who, greetings);
+    greet(who, greetings + " from Nevada");
+}
 ```
+{: .interactive #method-2 }
 
 In the last `greet` function (or method) call the second parameter is formed by concatenating (or adding) the text “from Nevada” to the variable `greetings`. This is done before the actual function call.
 
@@ -220,17 +212,7 @@ public static void main(String[] args) {
     greetManyTimes("Martin", 2);
 }
 ```
-
-Output:
-
-```output
-Hi Anthony, greetings from the world of methods!
-Hi Anthony, greetings from the world of methods!
-Hi Anthony, greetings from the world of methods!
-and
-Hi Martin, greetings from the world of methods!
-Hi Martin, greetings from the world of methods!
-```
+{: .interactive .hideStack #method-3 }
 
 {% include_relative exercises/003.md %}
 {% include_relative exercises/004.md %}

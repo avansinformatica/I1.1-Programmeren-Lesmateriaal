@@ -16,6 +16,8 @@ int length = 100;
 length += 10;  // same as length = length + 10;
 length -= 50;  // same as length = length - 50;
 ```
+{: .interactive .hideStack #assignments-shorthand-1 }
+
 
 When performing the assignment operation on an existing variable, it is written as `variable operation= change`, for example `variable += 5`. Note that a variable must be defined before you can assign a value to it. Defining a variable is done by specifying the variable type and the name of the variable.
 
@@ -35,6 +37,7 @@ length += 100;
 
 // the variable length now holds the value 200
 ```
+{: .interactive .hideStack #assignments-shorthand-2 }
 
 There are also other assignment operations:
 
@@ -47,6 +50,7 @@ length %= 3;    // same as length = length % 3;
 
 // the variable length now holds the value 1
 ```
+{: .interactive .hideStack #assignments-shorthand-3 }
 
 Often during a loop, the value of a variable is calculated based on repetition. The following program calculates 3*4 somewhat clumsily as the sum 3+3+3+3:
 
@@ -59,6 +63,8 @@ while (i < 4) {
    i++;  // means the same as i = i + 1;
 }
 ```
+{: .interactive .hideStack #assignments-shorthand-4 }
+
 
 In the beginning `result = 0`. During the loop, the value of the variable is incremented by 3 on each iteration. Because there are 4 iterations, the value of the variable is 3*4 in the end.
 
@@ -73,6 +79,8 @@ while (i < 4) {
    i++;          // means the same as i = i+1;
 }
 ```
+{: .interactive .hideStack #assignments-shorthand-5 }
+
 
 {% include_relative exercises/001.md %}
 {% include_relative exercises/002.md %}

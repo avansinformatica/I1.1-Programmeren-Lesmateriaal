@@ -109,6 +109,7 @@ while (number < 11) {
     number++;  // number++ means the same as number = number + 1
 }
 ```
+{: .interactive .hideStack #while-1 }
 
 The example above can be read "as long as the variable number is less than 11, print the variable and increment it by one".
 
@@ -122,6 +123,8 @@ while (number >= 1) {
     number = number / 2;
 }
 ```
+{: .interactive .hideStack #while-2 }
+
 
 >Complete the following exercises using the while statement:
 {% include_relative exercises/005.md %}
@@ -157,6 +160,7 @@ while (i < 10) {
     i++;
 }
 ```
+{: .interactive .hideStack #while-3 }
 
 With the structure above, the variable `i` remembers the number of times the the loop has been executed. The condition to end the loop is based on comparing the value of `i`.
 

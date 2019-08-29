@@ -29,6 +29,7 @@ public class Main {
     }
 }
 ```
+{: .interactive #method-callstack-1 }
 
 If we put a breakpoint at the line with the `System.out.println` code, and look at IntelliJ, we get the following callstack:
 
