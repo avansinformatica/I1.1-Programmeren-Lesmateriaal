@@ -37,6 +37,7 @@ while (true) {
 System.out.println("Your age is " + age);
 ```
 
+
 Note that this example uses a `while(true)` command, which is another bad practice
 
 #### Continue
@@ -59,6 +60,7 @@ while (i < 100) {
     System.out.println(i);
 }
 ```
+{: .interactive .hideStack #break-continue-5 }
 
 This example will output all values that are not dividable by 2, 3, 5. Note that the output does not include 0, as this is skipped by the `i++` command. 
 

@@ -269,5 +269,20 @@ System.out.println(length);  // prints 24
 ```
 {: .interactive .hideStack #if-8 }
 
+### else
+
+If the truth value of the comparison is false, another optional block can be executed using the `else` command.
+
+```java
+int number = 4;
+
+if (number > 5) {
+    System.out.println("Your number is greater than five!");
+} else {
+    System.out.println("Your number is equal to or less than five!");
+}
+```
+{: .interactive .hideStack #if-9 }
+
 {% include_relative exercises/006.md %}
 {: .exercises }
