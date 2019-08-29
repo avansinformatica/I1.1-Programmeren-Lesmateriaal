@@ -19,7 +19,7 @@ Create an account on the [TMC](https://tmc.mooc.fi) website. In the *Organizatio
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/2056781/sp/205678100/embedIframeJs/uiconf_id/34305081/partner_id/2056781?iframeembed=true&playerId=kaltura_player&entry_id=1_9js76cqo&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;&wid=1_wats2otg" width="1280" height="720" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0" title="Kaltura Player"></iframe>
 
 
-After installing IntelliJ and starting it, the first thing should do is setup the TestMyCode plugin. In the startup screen, click on the configure button, and click plugins. On the screen that pops up, search for TMC, then click on the button to search online repositories. Select the TMC plugin, install it and restart IntelliJ. After installing, a new option should appear, **Get started with TMC**. Click it to fill in your information and select the right course
+After installing IntelliJ and starting it, the first thing you should do is setup the TestMyCode plugin. In the startup screen, click on the configure button, and click plugins. On the screen that pops up, search for TMC, then click on the button to search online repositories. Select the TMC plugin, install it and restart IntelliJ. After installing, a new option should appear, **Get started with TMC**. Click it to fill in your information and select the right course
 ![startup](images/intellij_startup.png)
 
 ### Starting up
@@ -39,11 +39,11 @@ After you're logged in you can download the TMC exercises through the TMC menu, 
 
 #### Configure JDK for testing
 
-To test code using the TMC tests, java has to be added to the system path, so 'javac' can be found. If this is not in the path, you will have to add this manually. In order to add this manually, follow the following steps (windows 10)
+To test code using the TMC tests, java has to be added to the system path, so 'javac' can be found. If this is not in the path, you will have to add this manually. If you get a window with an error that 'javac' cannot be found when running the tests, you should follow these steps. In order to add this manually, follow the following steps (windows 10)
 
 - Press the windows key, and type `Edit environment variables for your account`. A popup should appear to edit the environment variables
   ![environment](images/intellij_environment.png)
-- In this window, in the User variables section, doubleclick the path item (or add a new one if it's not there), and a new window will pop up to edit the path variable  
+- In this window, in the User variables section, doubleclick the `path` item (or add a new one if it's not there), and a new window will pop up to edit the `path` variable  
   ![path](images/intellij_path.png)
 - Add the path to your java JDK's bin directory. This would be `C:\Program Files\Java\jdk-12.0.2\bin` for a default java installation, at the time of writing. Please note the version number you're using
 - Press Ok, and restart IntelliJ
