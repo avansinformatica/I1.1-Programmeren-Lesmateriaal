@@ -29,13 +29,7 @@ System.out.println( "String "+ word1 +" length: " + word1.length() );
 
 System.out.println( "String "+ word2 +" length: " + word2.length() );
 ```
-
-Program output:
-
-```output
-String Programming length: 11
-String Java length: 4
-```
+{: .interactive .hideStack #arraylist-1 }
 
 We can determine the length by calling the String method `length()`. Strings have other methods as well. Integers (or whole numbers, variables of type `int`) have no methods at all. They do not "know" anything.
 
@@ -98,6 +92,8 @@ public class ListProgram {
     }
 }
 ```
+{: .interactive .hideStack #arraylist-2 }
+
 
 In the above main program method, the first row creates a new ArrayList called `wordList`, which can be used as a container for String variables. The type of the ArrayList is `ArrayList<String>`, which means that the ArrayList is meant for storing Strings. The list is created using the command `new ArrayList<String>();`.
 
@@ -136,6 +132,7 @@ public static void main(String[] args) {
     }
 }
 ```
+{: .interactive .hideStack #arraylist-3 }
 
 First a list of strings is created and then 6 names added to it. `size` tells us the amount of strings in the list. **Note**: when the method is called, the call should have the following format: `teachers.size()`. First comes the name of the object, then follows a dot followed by the name of the method.
 
@@ -146,14 +143,6 @@ We can remove strings from lists through the method `remove`. The method can be 
 At the end of the example, the method contains is called. This method is used for asking the list if it contains the string given as a parameter. If it does, the method returns the value `true`.
 
 Program output:
-
-```output
-the number of teachers 6
-first teacher on the list Anthony
-third teacher on the list Paul
-Barto is not on the teachers list
-Note! The methods remove and contains assume that the objects stored in the ArrayList do have an equals method. We will get back to this later in the course.
-```
 
 ### Going through an ArrayList
 
@@ -173,8 +162,9 @@ public static void main(String[] args) {
     System.out.println( teachers.get(2) );
     System.out.println( teachers.get(3) );
 }
-
 ```
+{: .interactive .hideStack #arraylist-4 }
+
 This solution works, but is really clumsy. What if there were more items in the list? Or less? What if we would not know how many items there are?
 
 First, we create a temporary version:
@@ -199,6 +189,7 @@ public static void main(String[] args) {
     System.out.println( teachers.get(place) );  // place = 3
 }
 ```
+{: .interactive .hideStack #arraylist-5 }
 
 Using our old friend the while command, we can increment the variable `place` by one until it gets too big:
 
@@ -219,6 +210,8 @@ public static void main(String[] args) {
     }
 }
 ```
+{: .interactive .hideStack #arraylist-6 }
+
 Now, printing works regardless of the amount of items in the list.
 
 Using a while loop, and "self indexing" the locations in the list, is usually not the best way to go through a list. A much more recommended way is to use the for-each loop described below.
@@ -244,6 +237,8 @@ public static void main(String[] args) {
     }
 }
 ```
+{: .interactive .hideStack #arraylist-7 }
+
 As we can see, the indexes of the list can be ignored if we go through the content of the list "automatically".
 
 In the code block of the for command (inside { }) a variable `teacher` is used. It is defined in the for row, on the left side of the colon. What happens is that every item in the list `teachers` becomes the value of the variable `teacher`, one by one. It means that when for is entered, the first `teacher` is *Anthony*, the second execution of for makes the `teacher` become *Paul* etc.
@@ -272,17 +267,7 @@ public static void main(String[] args) {
     }
 }
 ```
-
-Output:
-
-```output
-Anthony
-Barto
-John
-Martin
-Matt
-Paul
-```
+{: .interactive .hideStack #arraylist-8 }
 
 We give the list as a parameter for the method `Collections.sort`. The import line `import java.util.Collections;` or `import java.util.*;` needs to be at the beginning of the program in order to get tools of Collections working in our program.
 
@@ -317,6 +302,7 @@ public static void main(String[] args) {
     print(list);
 }
 ```
+{: .interactive .hideStack #arraylist-9 }
 
 The type of the parameter is defined as an ArrayList of String variables the same way a String ArrayList is defined:
 
@@ -341,12 +327,12 @@ public static void main(String[] args) {
     countries.add("Sweden");
     countries.add("Norway");
 
-    print(programmingLanguages);    // method is given the list programmingLanguages
-as a parameter
+    print(programmingLanguages);    // method is given the list programmingLanguages as a parameter
 
    print(countries);                 //  method is given the list countries as a parameter
 }
 ```
+{: .interactive .hideStack #arraylist-10 }
 
 The program now includes two lists, *programmingLanguages* and *countries*. First the printing method is given the list *programmingLanguages*. The method `print` internally refers to the list given as a parameter with the name *printed*! Next, the printing method is given the list *countries*. Now, the method uses again the name *printed* referring to the parameter list.
 
@@ -374,6 +360,8 @@ public static void main(String[] args) {
     numbers.remove(Integer.valueOf(4));
 }
 ```
+{: .interactive .hideStack #arraylist-11 }
+
 
 `numbers.remove(4)` tries to remove the item in the index 4 from the list. There are only 2 items in the list, so the command generates an error. We must use a slightly more complicated command if the number 4 needs to be removed: `numbers.remove( Integer.valueOf(4) );`
 
@@ -414,6 +402,8 @@ public class Main {
     }
 }
 ```
+{: .interactive .hideStack #arraylist-12 }
+
 
 {% include_relative exercises/009.md %}
 {% include_relative exercises/010.md %}
