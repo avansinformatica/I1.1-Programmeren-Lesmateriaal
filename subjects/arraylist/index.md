@@ -204,7 +204,7 @@ public static void main(String[] args) {
     teachers.add("Matt");
 
     int place = 0;
-    while ( place < teachers.size() )  // remember why place <= teachers.size() doesn't work?
+    while ( place < teachers.size() ) {  // remember why place <= teachers.size() doesn't work?
         System.out.println( teachers.get(place) );
         place++;
     }
@@ -353,11 +353,13 @@ public static void main(String[] args) {
     numbers.add(4);
     numbers.add(8);
 
-    // tries to remove the number from the index 4, does not work as expected!
-    numbers.remove(4);
-
+ 
     // this removes the number 4 from the list
     numbers.remove(Integer.valueOf(4));
+
+    // tries to remove the number from the index 8, does not work as expected!
+    numbers.remove(8);
+
 }
 ```
 {: .interactive .hideStack #arraylist-11 }
@@ -381,6 +383,8 @@ ArrayLists can also be used to store `doubles` (decimal numbers) and characters 
 ArrayList can also be returned from a method as a return value. In the next example, a method creates an ArrayList, adds three integers into the list and then returns the list. Pay attention to how the main program assigns the list returned by the method as a value into a variable that has the same type as the return value:
 
 ```java
+import java.util.*;
+
 public class Main {
 
     public static ArrayList<Integer> addNumbersToList(int num1, int num2, int num3){
