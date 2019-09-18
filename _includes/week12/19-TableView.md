@@ -6,7 +6,7 @@ The [`TableView`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/contr
 
 In this chapter we are creating an address book using the `TableView`
 
-![Address Book](images/19_TableView_AddressBook.png)
+![Address Book]({{site.baseurl}}/images/19_TableView_AddressBook.png)
 
 The screen capture is created using the following code:
 
@@ -69,7 +69,7 @@ emailCol.getColumns().addAll(firstEmailCol, secondEmailCol);
 
 After you have added these lines to code, and compiled and run the application code, the table appears as shown in the figure down here.
 
-![TableView combined columns](images/19_TableView_AddressBook2.png)
+![TableView combined columns]({{site.baseurl}}/images/19_TableView_AddressBook2.png)
 
 Although the table is added to the application, the standard caption *No content in table* appears, because no data is defined. Instead of showing this caption, you can use the method `setPlaceholder` to specify a `Node` object to appear in an empty table.
 
@@ -197,7 +197,7 @@ public void start(Stage stage)  {
 
 When you compile and run this application code, the following screen will appear:
 
-![Filled Addressbook](images/19_2_AddressBook-filled.png)
+![Filled Addressbook]({{site.baseurl}}/images/19_2_AddressBook-filled.png)
 
 ### 19.3. Modify data
 
@@ -233,7 +233,7 @@ addButton.setOnAction(new EventHandler<ActionEvent>() {
 
 When a user clicks the *Add* button, the values entered in the text fields are included in a `Person` constructor and added to the data `ObservableList`. Thus, the new entry with contact information appears in the table.
 
-![Addressbook Add](images/19_3_AddressBook-add.png)
+![Addressbook Add]({{site.baseurl}}/images/19_3_AddressBook-add.png)
 
 To delete a row from the dataset, you can implement it by create a `Button` which has the following `EventHandler` attached:
 

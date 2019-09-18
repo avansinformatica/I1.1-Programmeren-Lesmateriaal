@@ -114,7 +114,7 @@ Unlike a parameter of `int` type, a list will not be copied and therefore the me
 
 The picture below will clarify the example. `ArrayList` does not live in an imagined "box" like an `int`. The variable name in the example `numbers` is only a *reference* that refers to the place where the ArrayList is. One way to visualize this is that an `ArrayList` is connected with a wire. The name of the `ArrayList` is a "wire", and the list itself is located "at the other end of the wire". When we give the ArrayList to a method as a parameter, we actually give the method a wire. When the method uses its parameter, it finds the original list at the other end of this wire. Actually the main program and the method do have separate wires, but both wires have the same original list at the end of them and all the changes will be made directly to the original list. During and after this week we will find out that many things in Java are "connected with a wire".
 
-![reference](images/19_reference.png)
+![reference]({{site.baseurl}}/images/19_reference.png)
 
 Note that again the parameter name inside the method can be anything. It does not need to be the same as the name in the main program (or other method that calls it). In the example above, the method uses the name list but the method caller sees the same list with a different name: `numbers`.
 

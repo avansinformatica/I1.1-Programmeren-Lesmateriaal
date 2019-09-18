@@ -71,11 +71,11 @@ A class describes the "blueprint" of the objects that are made out of it (are in
 
 Lets take an analogy from the world outside of computers: the blueprints of a house. The blueprints define how the building is to be built and in that way dictate the shape and size of it. The blueprints are the class, they define the general characteristics of the objects created out of that class:
 
-![blueprint](images/21_blueprint.jpg)
+![blueprint]({{site.baseurl}}/images/21_blueprint.jpg)
 
 Individual objects, the houses in our analogy, are made from that same blueprint. They are instances of the same class. The state of individual objects, the attributes, can vary (color of walls, building material of the roof, doors, windowsills, etc...). Here is one instance of a House object:
 
-![house](images/21_house.jpg?thumbmedium)
+![house]({{site.baseurl}}/images/21_house.jpg?thumbmedium)
 
 An object is always created from its class by calling the method - the constructor - that creates the object with the command `new`. For example, a new instance is created from the class Scanner by calling `new Scanner(..)`:
 

@@ -25,7 +25,7 @@ What is the real problem?
 
 Variables have got their own type, and in addition to it they also have got the type of their parent classes and interfaces. The class `String` derives from the `Object` class, and therefore `String` objects are also `Object`-type. The class Object does not derive from the class `String`, and therefore `Object` variables are not automatically `String`-type. Let's dig deeper into the [String](http://docs.oracle.com/javase/8/docs/api/java/lang/String.html) class API documentation, expecially the upper part of the HTML page.
 
-![String API](images/13_StringAPI.png)
+![String API]({{site.baseurl}}/images/13_StringAPI.png)
 
 The `String` class API documentation starts with the common heading; this is followed by the class package (`java.lang`). After the package you find the class name (Class `String`), and this is followed by the *inheritance hierarchy*.
 

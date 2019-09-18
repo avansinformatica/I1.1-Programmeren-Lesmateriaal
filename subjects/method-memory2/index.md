@@ -20,7 +20,7 @@ public static void main(String[] args) {
 
 When we run the sentence `Person pekka = new Person("Pekka", 24);` an object is born. The object can be accessed through the variable `pekka`. Technically speaking, the object is not within the variable `pekka` (in the box 'pekka'), but pekka refers to the object that was born. In other words, the object is 'at the end of a wire' that is attached to a variable named `pekka`. The concept could be visualized like this:
 
-![person](images/23_person1.png)
+![person]({{site.baseurl}}/images/23_person1.png)
 
 Let us add to the program a variable `person` of the type `Person` and set its starting value to `pekka`. What happens now?
 
@@ -48,7 +48,7 @@ In the beginning, Pekka was 24 years old. Then a `Person` object at the end of a
 
 The command `Person person = pekka;` makes `person` refer to the same object that pekka refers to. So, a copy of the object is not born, but instead both of the variables refer to the same object. With the command `Person person = pekka;` a *copy of the wire* is born. The same thing as a picture (Note: in the picture p refers to the variable `pekka`, and h to the variable person in the main program. The variable names have also been abbreviated in some of the following pictures.):
 
-![person](images/23_person2.png)
+![person]({{site.baseurl}}/images/23_person2.png)
 
 In the example, "an unknown `person` steals Pekka's identity". In the following, we have expanded the example so that a new object is created and `pekka` begins to refer to a new object:
 
@@ -78,7 +78,7 @@ Pekka Mikkola, age 24 years
 
 The variable `pekka` refers to one object, but then begins to refer to another. Here is the situation after running the previous line of code:
 
-![person](images/23_person3.png)
+![person]({{site.baseurl}}/images/23_person3.png)
 
 Let's develop the example further by making `person` to refer to 'nothing', to `null`:
 
@@ -103,7 +103,7 @@ public static void main(String[] args) {
 
 After running that, the situation looks like this:
 
-![person](images/23_person4.png)
+![person]({{site.baseurl}}/images/23_person4.png)
 
 Nothing refers to the second object. The object has become 'garbage'. Java's garbace collector cleans up the garbage every now and then by itself. If this did not happen, the garbage would pile up in the computer's memory until the execution of the program is done.
 
@@ -473,7 +473,7 @@ In chapter 24.4, we noted that objects are 'at the end of a wire'. Take a look a
 
 Person objects have the object variables `name`, which is a String-object and `birthMyDate`, which is a MyDate object. The variables of person are consequently both objects, so technically speaking they don't actually exist within a person object, but are 'at the end of a wire'. In other words a person has a reference to the objects stored in its object variables. The concept as a picture:
 
-![birthday](images/23_birthday.png)
+![birthday]({{site.baseurl}}/images/23_birthday.png)
 
 The main program now has two person programs at the ends of wires. The persons have a name and a birthdate. Because both are objects, both are at the ends of wires the person holds.
 

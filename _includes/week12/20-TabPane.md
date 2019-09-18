@@ -2,7 +2,7 @@
 
 Tabs are very useful components to split a single screen into multiple pages. This functionallity is provided using the class [`Tab`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Tab.html) which represent a tabpage and the tab control class [`TabPane`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TabPane.html)
 
-![Tab Example](images/20_Tab-example.png)
+![Tab Example]({{site.baseurl}}/images/20_Tab-example.png)
 
 The following code is used to create the example above:
 

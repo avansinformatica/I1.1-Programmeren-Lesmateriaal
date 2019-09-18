@@ -4,7 +4,7 @@
 
 The [`MenuBar`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/MenuBar.html) provides applications with a visual drop down menu similar to that most desktop applications have at the top of their application window. The `MenuBar` is represented by the class `javafx.scene.control.MenuBar`. Here is an example screenshot of what a  `MenuBar` can look like:
 
-![Menu Example](images/12_Menu_Example.png)
+![Menu Example]({{site.baseurl}}/images/12_Menu_Example.png)
 
 Before you can use the `MenuBar` you must create a `MenuBar` instance. Here is an example of creating a `MenuBar` instance:
 
@@ -88,4 +88,4 @@ menuBar.getMenus().add(menu);
 
 The `MenuBar` resulting from the above example will look similar to this:
 
-![Menu Submenu](images/12_Menu_SubMenu.png)
+![Menu Submenu]({{site.baseurl}}/images/12_Menu_SubMenu.png)

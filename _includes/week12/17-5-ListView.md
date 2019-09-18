@@ -38,7 +38,7 @@ public void start(Stage stage)  {
 
 The application resulting from running this example would look similar to this screenshot:
 
-![ListView](images/17_5_ListView.png)
+![ListView]({{site.baseurl}}/images/17_5_ListView.png)
 
 Like we noticed inside ComboBoxes, it's recommened to use an `OberservableList` when items can be changed.
 

@@ -48,7 +48,7 @@ Launching the above application creates a user interface where you can switch fr
 
 Let's look at two separate views. In the first view, the user is asked to enter a password. If the user writes the wrong password, the wrong password will be reported. If the user writes the correct password, the program will switch to the next view. The Program activity is as follows.
 
-![Login screen](images/16_1_login_screen.gif)
+![Login screen]({{site.baseurl}}/images/16_1_login_screen.gif)
 
 ```java
 import javafx.application.Application;
@@ -207,7 +207,7 @@ public class ExampleApplication extends Application {
 
 The application works as follows:
 
-![Switch screen](images/16_2_switch_screen.gif)
+![Switch screen]({{site.baseurl}}/images/16_2_switch_screen.gif)
 
 {% include week11/exercise/FX_012.md %}
 {: .exercises }

@@ -238,7 +238,7 @@ public static int abs(int number)
 
 Writing these methods for all basic math concepts is not very hard, but it is a lot of work to write them. Fortunately, a lot of this has already been written, and combined in the `Math` structure. We can find a lot of information on this in the [documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html). In this documentation, we can typically find some very important information on these method. The document starts with a long list of available methods, followed by a short description. Clicking on a method will show a longer description
 
-![abs](images/2_8_abs.png)
+![abs]({{site.baseurl}}/images/2_8_abs.png)
 
 In the line `public static int abs(int a)` we can see the parameter type, and a description of the parameter. We can also see the *return type*, which will be covered next week. Also a precise description is available, to see exactly what this method will do.
 

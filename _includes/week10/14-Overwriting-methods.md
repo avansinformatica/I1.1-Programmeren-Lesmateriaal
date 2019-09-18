@@ -2,7 +2,7 @@
 
 Let's take the example of shapes. There are a number of different geometrical shapes. In this example we're focussing on the `Rectangle` and `Circle`. These shapes both have a color, a `Rectangle` has a `width` and `height`, but a `Circle` only has a radius. We can summarize this in the following diagram. With these shapes, we would like to be able to calculate the surface area and circumference.
 
-![Shape](images/10_shape.png)
+![Shape]({{site.baseurl}}/images/10_shape.png)
 
 We can start implementing the shape class
 

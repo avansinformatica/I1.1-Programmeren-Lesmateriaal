@@ -38,7 +38,7 @@ public void start(Stage stage) {
 
 The application resulting from running this example would look similar to this:
 
-![ComboBox](images/17_4_ComboBox.png)
+![ComboBox]({{site.baseurl}}/images/17_4_ComboBox.png)
 
 You can read the selected value of a `ComboBox` via its `getValue` method. If no choice is selected, the `getValue` method returns null. Here is an example of calling `getValue`:
 
@@ -54,4 +54,4 @@ comboBox.setEditable(true);
 
 Once the `ComboBox` is editable the user can type in values into the `ComboBox`. The entered value is also read via the `getValue` method as explained earlier. The following screenthot shows a `ComboBox` which is editable, and with a custom value entered:
 
-![ComboBox Editable](images/17_4_ComboBoxEdit.png)
+![ComboBox Editable]({{site.baseurl}}/images/17_4_ComboBoxEdit.png)
