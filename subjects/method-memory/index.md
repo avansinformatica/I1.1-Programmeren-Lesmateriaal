@@ -50,7 +50,7 @@ We can imagine that the main program method `main` and the method `addThree` bot
 
 The picture below will demonstrate what happens.
 
-![memory](images/19_copy.png)
+![memory]({{site.baseurl}}/images/19_copy.png)
 
 The method can still naturally pass information to the caller, which happens by using a return value (i.e. using a `return` command to return a variable with a value). We can get the previous example to work by changing the code a little bit:
 
