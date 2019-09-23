@@ -37,7 +37,7 @@ public class ImageApplication extends Application {
 
 Executing a program creates the following window. It is assumed that the file *humming.jpg* exists and is found at the root of the project (from the same folder as the file pom.xml).
 
-![ImageView]({{site.baseurl}}/images/17_ImageView.png)
+![ImageView](images/17_ImageView.png)
 
 The example uses the picture [Linda Tanner](https://www.flickr.com/photos/15323831@N05) available at [http://www.freestockphotos.biz/stockphoto/17874](http://www.freestockphotos.biz/stockphoto/17874). Image is licensed under the Creative Commons CC BY 2.0 license.
 
@@ -67,7 +67,7 @@ public void start(Stage stage) {
 }
 ```
 
-![ImageView2]({{site.baseurl}}/images/17_ImageView2.png)
+![ImageView2](images/17_ImageView2.png)
 
 {% include week12/exercise/FX_002.md %}
 {: .exercises }

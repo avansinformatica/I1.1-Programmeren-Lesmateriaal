@@ -34,7 +34,7 @@ public void start(Stage stage) {
 
 The application resulting from running this code looks like this:
 
-![Checkboxes]({{site.baseurl}}/images/17_2_CheckBoxes.png)
+![Checkboxes](images/17_2_CheckBoxes.png)
 
 The method `isSelected` can be used to check if the Checkbox is selected. It's also possible to add `EventHandler` to see if the selection is changed like in the example below
 

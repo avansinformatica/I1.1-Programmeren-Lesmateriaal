@@ -28,7 +28,7 @@ public void start(Stage stage) {
 
 The application resulting from running this example looks like this:
 
-![RadioButton]({{site.baseurl}}/images/17_1_RadioButton1.png)
+![RadioButton](images/17_1_RadioButton1.png)
 
 The `RadioButton` class has a method named `isSelected` which lets you determine if the `RadioButton` is selected or not. The `isSelected` method returns a boolean with the value true if the `RadioButton` is selected, and false if not. Here is an example:
 
@@ -90,7 +90,7 @@ public void start(Stage stage) {
 
 The application resulting from running this example looks like this:
 
-![RadioButton]({{site.baseurl}}/images/17_1_RadioButton.png)
+![RadioButton](images/17_1_RadioButton.png)
 
 The selected radio button can be found by using the method `isSelected` on the object `RadioButton`, which returns a `Boolean` value, or the selected object `RadioButton` can be found using the method `getSelectedToggle` on the object `ToggleGroup`. If no RadioButton is selected the `getSelectedToggle` method returns null .
 

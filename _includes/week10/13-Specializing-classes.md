@@ -4,7 +4,7 @@ In java it's possible to extend classes to add functionality. By extending a cla
 
 In the animal kingdom are lots of different animals, like a `Sparrow`, `Seagull`, `Cow` and `Pig`. All of these animals can make sounds. We can group these animals together though, into `Birds` and `Mammals`. A major difference between these 2 groups of animals, is that birds can fly. We can model this in the following scheme
 
-![animals]({{site.baseurl}}/images/13_animals.png)
+![animals](images/13_animals.png)
 
 In this example, all animals can make a sound, so we will want to share this functionality among all classes
 

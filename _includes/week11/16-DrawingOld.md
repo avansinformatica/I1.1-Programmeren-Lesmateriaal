@@ -28,7 +28,7 @@ The overridden `paintComponent` method calls the superclass `paintComponent` met
 
 When we start our user interface we see an empty screen, whose background colour is white. The size of the user interface below is set to 300x300 through the method `setPreferredSize`, and its title is *"Drawing Board"*.
 
-![Drawing Board]({{site.baseurl}}/images/16_drawingboard.png)
+![Drawing Board](images/16_drawingboard.png)
 
 Drawing on the board is possible using the methods provides by the [Graphics](http://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html) object. Let's modify the method `paintComponent` of `DrawingBoard` and let's draw two rectangles using the method `fillRect` of the `Graphics` object.
 
@@ -46,7 +46,7 @@ The method `fillRect` receives as parameter the x and y coordinates of a rectang
 
 As you notice from the picture, the coordinate system does not work as we are accustomed to.
 
-![drawing board blocks]({{site.baseurl}}/images/15_drawingboard-blocks.png)
+![drawing board blocks](images/15_drawingboard-blocks.png)
 
 Java's `Graphics` object (and most of other programming language libraries) expects the value of the y axis to grow downwards. The coordinate system origin, i.e. the point *(0,0)* is in the upper left corner: the `Graphics` object always knows the UI component where we draw, and it is able to define the location of the point to draw based on it. The location of the UI origin can become clear with the help of the following program. First we draw a green 10-pixel long, 200-pixel high rectangle which starts from the point *(0,0)*. Then we draw a black 200-pixel long, 10-pixel high rectangle which starts from the point *(0,0)*. The drawing colour is defined by the method setColor of our `Graphics` object.
 
@@ -62,7 +62,7 @@ Java's `Graphics` object (and most of other programming language libraries) expe
     }
 ```
 
-![Drawing board coordinates]({{site.baseurl}}/images/16_drawingboard-coordinates.png)
+![Drawing board coordinates](images/16_drawingboard-coordinates.png)
 
 Such coordinate system reversibility depends on the way user interface size is modified. When we modify the size of a user interface, this is reduced or increased by "dragging the bottom right corner"; in this way, the drawing on the screan would move while we change the UI size. Because the grid starts from the upper left corner, the drawing position is always the same, but the visible part changes.
 
@@ -155,7 +155,7 @@ Now, our user interface can be started giving it an `Avatar` object as construct
         SwingUtilities.invokeLater(ui);
 ```
 
-![GUI]({{site.baseurl}}/images/16_drawingboard-avatar.png)
+![GUI](images/16_drawingboard-avatar.png)
 
 In the user interface above, we see a ball-like Avatar.
 
@@ -287,7 +287,7 @@ Let's also modify the `createComponents` method of `UserInterface` and give an i
 
 Now, our avatar's moves are visible also in the user interface. Whenever the user presses the keyboard, the user interface keyboard listener handles the call. At the end of each call, the `repaint` method of our drawing board is called, and the drawing board gets repainted.
 
-![Moving avatar]({{site.baseurl}}/images/16_1_drawingboard-avatar-movement.png)
+![Moving avatar](images/16_1_drawingboard-avatar-movement.png)
 
 {% include week11/exercise/042.md %}
 {: .exercises }

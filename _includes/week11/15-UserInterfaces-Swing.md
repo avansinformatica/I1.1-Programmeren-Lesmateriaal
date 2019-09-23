@@ -101,7 +101,7 @@ public class Main {
 
 When we execute the main method above, the user interface we have defined in the class `UserInterface` appears in our screen.
 
-![First GUI]({{site.baseurl}}/images/11_17-first-ui.png)
+![First GUI](images/11_17-first-ui.png)
 
 ### 15.1 UI Components
 
@@ -122,7 +122,7 @@ Let's modify our UI container to display text. We create a new `JLabel` text com
 
 As you see from the code above, `JLabel` shall display the text *"Text field!"*. When we execute the user interface, we see the following window.
 
-![Text field]({{site.baseurl}}/images/15_1_1_text-field.png)
+![Text field](images/15_1_1_text-field.png)
 
 {% include week11/exercise/036.md %}
 {: .exercises }
@@ -138,7 +138,7 @@ You can add buttons to your user interface using the class `JButton`. Adding a `
     }
 ```
 
-![Click]({{site.baseurl}}/images/15_1_2_click.png)
+![Click](images/15_1_2_click.png)
 
 Next, we try to add both text and a button to our user interface.
 
@@ -153,7 +153,7 @@ Next, we try to add both text and a button to our user interface.
 
 When we execute the program we see the following user interface.
 
-![Text]({{site.baseurl}}/images/15_1_2_text.png)
+![Text](images/15_1_2_text.png)
 
 ### 15.2 Setting up UI Components
 
@@ -180,7 +180,7 @@ The UI layout manager we want to use is assigned to the `Container` object in th
 
 Notice that the button *"Center"* is not visible in our user interface because the button *"Default (Center)"* is assigned to its place by default. A container with the code above will look like the following after increasing its size manually.
 
-![LayoutOverride]({{site.baseurl}}/images/15_2_layout-override.png)
+![LayoutOverride](images/15_2_layout-override.png)
 
 As for UI components, there are also many UI layout managers. Oracle has a visual guide to learn more about UI layout managers at [http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html](http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html). Below, we introduce the layout manager [BoxLayout](http://docs.oracle.com/javase/8/docs/api/javax/swing/BoxLayout.html).
 
@@ -201,7 +201,7 @@ Arranging the user interface with `BoxLayout` works as using `BorderLayout`. We 
     }
 ```
 
-![YAxis]({{site.baseurl}}/images/15_2_1_layout-xaxis.png)
+![YAxis](images/15_2_1_layout-xaxis.png)
 
 Setting up the components vertically does not require major changes. We modify the direction parameter of the `BoxLayout` constructor: `BoxLayout.Y_AXIS`.
 
@@ -216,7 +216,7 @@ Setting up the components vertically does not require major changes. We modify t
     }
 ```
 
-![YAxis]({{site.baseurl}}/images/15_2_1_layout-yaxis.png)
+![YAxis](images/15_2_1_layout-yaxis.png)
 
 Using the different layout managers, we can create user interfaces where the components are set up appropriately. Below, there is an example of user interface where the components are placed vertically. First there is some text, and then an optional selection. You can create a multiple-exclusion scope for a set of buttons -- meaning that turning "on" one of those buttons turns off all the others in the group -- using [ButtonGroup](http://docs.oracle.com/javase/8/docs/api/javax/swing/ButtonGroup.html) and [JRadioButton](http://docs.oracle.com/javase/8/docs/api/javax/swing/JRadioButton.html).
 
@@ -241,7 +241,7 @@ Using the different layout managers, we can create user interfaces where the com
 
 Once the UI is launched, and Meat is selected, the UI looks as follows.
 
-![ButtonGroup]({{site.baseurl}}/images/15_2_1_buttongroup.png)
+![ButtonGroup](images/15_2_1_buttongroup.png)
 
 {% include week11/exercise/037.md %}
 {: .exercises }
@@ -280,7 +280,7 @@ Next, we create the a `JButton` for our user interface, and we add a instance of
     }
 ```
 
-![Send]({{site.baseurl}}/images/15_3_send.png)
+![Send](images/15_3_send.png)
 
 When we press the button in our user interface we see the following message.
 
@@ -311,7 +311,7 @@ Let's take the following user interface, which has two [JTextArea](http://docs.o
 
 After a manual resize, the UI looks like the following.
 
-![Copier]({{site.baseurl}}/images/15_3_1_copier.png)
+![Copier](images/15_3_1_copier.png)
 
 We want to implement our user interface so that the text in the left area would be copied into the right area when we press the `JButton`. This is possible by implementing an action event listener. Let's create the class `AreaCopier` which implements `ActionListener` and copies the text from one to the other `JTextArea`.
 
@@ -359,7 +359,7 @@ Adding the new action event listener to the `JButton` object is possible using t
 
 When we press the button, the text in the left area is copied into the right one.
 
-![NestedObjects]({{site.baseurl}}/images/15_3_1_copier2.png)
+![NestedObjects](images/15_3_1_copier2.png)
 
 {% include week11/exercise/038.md %}
 {: .exercises }
@@ -411,7 +411,7 @@ For our UI layout, we use `GridLayout`. There are three lines and two columns in
 
 After adding the information, our user interface looks like the following.
 
-![Copier]({{site.baseurl}}/images/15_4_persondetails.png)
+![Copier](images/15_4_persondetails.png)
 
 The action event listener has to know about the recording functionality (`PersonRecord` interface), as well as the fields it uses. Let's create the class `PersonRecordListener` which implements ActionListener. As constructor parameter, the class is assigned an object which implements the interface `PersonRecord`, as well as two `JTextField` objects which stand for the name and ID fields. In the method `actionPerformed` we create a new `Person` object and we record it using the record method of our `PersonRecord` object.
 
@@ -482,7 +482,7 @@ Now we can create the action event listener `PersonRecordListener`, which is giv
 
 Sometimes we end up in a situation, where the `Container` object provided by `JFrame` is not suitable enough for our UI layout. We may want our user interface to look different or to group up UI components according to their use. For instance, building a user interface like the one below would not be so easy, using only the `Container` object provided by the class `JFrame`.
 
-![NestedObjects]({{site.baseurl}}/images/15_5_nestedobjects.png)
+![NestedObjects](images/15_5_nestedobjects.png)
 
 We can place Container objects inside each other. The class [JPanel](http://docs.oracle.com/javase/8/docs/api/javax/swing/JPanel.html) (see also [How to Use Panels](http://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)) allows for nested `Container` objects. It is possible to add UI components to a `JPanel` instance in the same way we add components to the Container instance of `JFrame` class. Moreover, it is possible to add an instance of `JPanel` to a `Container` object. This makes possible to use many `Container` objects to develop one user interface.
 

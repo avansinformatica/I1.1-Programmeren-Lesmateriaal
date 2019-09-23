@@ -12,36 +12,36 @@ To see the contents of variables so far, we've been using the `System.out.printl
 
 A debugger can pause the execution of your program, so you can view the values of variables, and then allow you to run your code line by line to see the flow of execution.
 
-So far we've been using the TMC plugin's run buttons ![tmc]({{site.baseurl}}/images/tmc.png) to start our program. In order to run the program with debugging, we have to use the debug ![tmc]({{site.baseurl}}/images/debug.png){: .key .light} button, or use the debug option in the run menu. Running the program with a debugger won't change anything about the execution of your program, so you won't see a difference by just pressing debug
+So far we've been using the TMC plugin's run buttons ![tmc](images/tmc.png) to start our program. In order to run the program with debugging, we have to use the debug ![tmc](images/debug.png){: .key .light} button, or use the debug option in the run menu. Running the program with a debugger won't change anything about the execution of your program, so you won't see a difference by just pressing debug
 
-![breakpoint]({{site.baseurl}}/images/breakpoint.png?right)To pause the execution to inspect, a **breakpoint** can be added to the code. This is done by clicking in the gutter of your code window (just right of the line number). A red dot will appear to show the position of the breakpoint. To remove the breakpoint, just click the red dot to remove it. When running the code with a debugger and a breakpoint, the execution will pause the moment java starts executing that line. The line with the breakpoint will not have been executed yet.
+![breakpoint](images/breakpoint.png?right)To pause the execution to inspect, a **breakpoint** can be added to the code. This is done by clicking in the gutter of your code window (just right of the line number). A red dot will appear to show the position of the breakpoint. To remove the breakpoint, just click the red dot to remove it. When running the code with a debugger and a breakpoint, the execution will pause the moment java starts executing that line. The line with the breakpoint will not have been executed yet.
 
 When pausing execution, a debugging window will appear in the bottom of IntelliJ. This is a powerful view into your application, with a lot of buttons and features. 
 
-![debugger]({{site.baseurl}}/images/debugger.png)
+![debugger](images/debugger.png)
 
 On the left side are buttons for
-- ![restart]({{site.baseurl}}/images/restart.png){: .key .light} restarting  
+- ![restart](images/restart.png){: .key .light} restarting  
   This will restart the running application
-- ![continue]({{site.baseurl}}/images/continue.png){: .key .light} resuming  
+- ![continue](images/continue.png){: .key .light} resuming  
   Only available when the application is not running. If the application is paused, it will continue running until it hits another breakpoint. If the application is not running, it will start the application
-- ![pause]({{site.baseurl}}/images/pause.png){: .key .light} pausing  
+- ![pause](images/pause.png){: .key .light} pausing  
   If the application is running (and doing some heavy computation or maybe an infinite loop, so it appears 'frozen'), this will pause the application. It will show exactly which line currently is executing, so it is a very good tool to find infinite loops
-- ![kill]({{site.baseurl}}/images/kill.png){: .key .light} killing  
+- ![kill](images/kill.png){: .key .light} killing  
   Instantly stops the current running application. The program is just removed from memory
 
 On the top are buttons for
-- ![executionpoint]({{site.baseurl}}/images/show_execution_point.png){: .key .light} Show execution point  
+- ![executionpoint](images/show_execution_point.png){: .key .light} Show execution point  
   This will move the code view to the line that is currently executing. This is handy if you scrolled through a lot of code while debugging, and you want to go back to the line that is currently running and showing the problem
-- ![step over]({{site.baseurl}}/images/step_over.png){: .key .light} Step Over  
+- ![step over](images/step_over.png){: .key .light} Step Over  
   This will run the current line of code, and move to the next line.
-- ![step into]({{site.baseurl}}/images/step_into.png){: .key .light} Step Into  
+- ![step into](images/step_into.png){: .key .light} Step Into  
   This will step into the method called in the current line. See chapter 2-9 for more details 
-- ![force step into]({{site.baseurl}}/images/force_step_into.png){: .key .light} Force Step Into  
+- ![force step into](images/force_step_into.png){: .key .light} Force Step Into  
   This will step into the method called in the current line. See chapter 2-9 for more details
-- ![step out]({{site.baseurl}}/images/step_out.png){: .key .light} Step Out  
+- ![step out](images/step_out.png){: .key .light} Step Out  
   This will finish the current method, and break at the end of this method. See chapter 2-9 for more details
-- ![run to cursor]({{site.baseurl}}/images/run_to_cursor.png){: .key .light} Run to cursor  
+- ![run to cursor](images/run_to_cursor.png){: .key .light} Run to cursor  
   This will continue code execution, and will place a temporary breakpoint at the cursor. This is very convenient when debugging code with a lot of loops, as you don't have to step through the code line by line, but you can just run the code until the end of the loop, without having to add a breakpoint and resuming
 
 The main view consists of 2 parts, on the left is the call stack (we'll go more in depth into the callstack in chapter 2-9), and the variables windows. The variables windows is used to view the contents of variables. By default, all the 'used' variables are shown, so if your program uses a variable called `months`, this variable will automatically be shown here. It is also possible to add variables or expressions in the watch, by double-clicking and typing the name of the variable, or the expression
