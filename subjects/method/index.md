@@ -6,7 +6,7 @@ todo:
 ---
 {% include licence.md %}
 ---
-## 2.6. Methods
+## Methods
 
 We have so far used many different commands of Java: assignment, calculations, comparison, if structures and while structures. We have been using a "command" `System.out.println()` to print text. We can also count the maximum of two numbers with the help of the "command" `Math.max()`. We are also familiar with `reader.nextLine()`, usually seen together with `Integer.parseInt()`.
 
@@ -26,7 +26,7 @@ Method names also seem to include a dot, for example `reader.nextLine()`. Actual
 
 This far we have been using ready-made methods from Java libraries. Next we will learn how to create our own methods.
 
-## 2.7. Self-written methods
+## Self-written methods
 
 This far we have been using a programming style where code is written (and read and executed) from top to bottom.
 
@@ -115,7 +115,7 @@ From now on when we introduce methods, we will not point out that they need to b
 {% include_relative exercises/002.md %}
 {: .exercises }
 
-### 2.7.1 Method parameters
+### Method parameters
 
 We can make our methods more useful by giving it *parameters*! Parameters are variables that we define inside brackets in the first line, just after the method name. When the method is called, the parameters are assigned values.
 
@@ -161,7 +161,7 @@ Hi John 24 years, greetings from the world of methods!
 
 In both cases the method has only one parameter. The value for the parameter is calculated before calling the method. In the first case the parameter value comes from the String concatenation (a cool word that means putting the text together) `name1 + " " + name2`. The value for the concatenation is *Anne Green*. In the second case we get the parameter value from the String concatenation `"John " + age + " years"`.
 
-### 2.7.2 Many parameters
+### Many parameters
 
 A method can be defined to have more than one parameter. In this case, the parameters are always listed in the same order.
 
@@ -188,7 +188,7 @@ Hi Matt, greetings from Alabama
 Hi Matt, greetings from Alabama from Nevada
 ```
 
-### 2.7.3 Method calling another method
+### Method calling another method
 
 Methods can also be called outside of main. Methods can call each other! Let us create a method greetManyTimes that greets the user many times getting assistance from the method `greet`:
 
@@ -221,7 +221,7 @@ public static void main(String[] args) {
 {: .exercises }
 
 
-## 2.8 Math Library
+## Math Library
 
 A lot of functionality can be implemented by now, using the basic code stuctures that we've encountered so far. We could for example, write a method to determine the [absolute value](https://en.wikipedia.org/wiki/Absolute_value) of a number. The code for such a method could be as follows
 
