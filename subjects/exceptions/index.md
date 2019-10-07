@@ -1,4 +1,12 @@
-## 11. Exceptions
+---
+layout: ogp1
+title: Exceptions
+meta: Put extra info here, like if there any subjects required for this subject
+todo: what should be improved in this chapter
+---
+{% include licence.md %}
+---
+## Exceptions
 
 Exceptions are such situations where the program executions is different from our expectations. For instance, the program may have called a method of a *null*  reference, in which case the user is thrown a `NullPointerException`. If we try to retrieve a index outside a table, the user is *thrown* a `IndexOutOfBoundsException`. All of them are a type of `Exception`.
 
@@ -104,7 +112,7 @@ You haven't written a proper number.
 Write a number: ~~43~~
 ```
 
-### 11.1 Throwing Exceptions
+### Throwing Exceptions
 
 Methods and constructors can *throw* exceptions. So far, there are two kinds of exceptions which can be thrown. There are the ones which have to be handled, and the ones which don't have to be dealt with. When we have to handle the exceptions, we do it either in a `try-catch` chunk, or *throwing them from* a `method`.
 
@@ -191,11 +199,11 @@ Grade wrongGrade = new Grade(22);
 Exception in thread "..." java.lang.IllegalArgumentException: The grade has to be between 0-5
 ```
 
-{% include week09/exercise/001.md %}
-{% include week09/exercise/002.md %}
+{% include_relative exercises/001.md %}
+{% include_relative exercises/002.md %}
 {: .exercises }
 
-### 11.2 Exceptions and Interfaces
+### Exceptions and Interfaces
 
 Interfaces do not have a method body, but the method definition can be freely chosen when the developer implements the interface. Interfaces can also define the exceptions throw. For instance, the classes which implement the following `FileServer` can *possibly* throw an exception in their methods `download` and `save`.
 
@@ -229,7 +237,7 @@ public class TextServer implements FileServer {
 }
 ```
 
-### 11.3 The Exception Information
+### The Exception Information
 
 The `catch` block tells how we handle an exception, and it tells us what exception we should be prepared for: `catch (Exception e)`. The exception information is saved into the `e` variable.
 

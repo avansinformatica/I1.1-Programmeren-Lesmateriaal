@@ -1,6 +1,14 @@
-## 12. FileIO
+---
+layout: ogp1
+title: FileIO
+meta: Put extra info here, like if there any subjects required for this subject
+todo: what should be improved in this chapter
+---
+{% include licence.md %}
+---
+## FileIO
 
-### 12.1 Reading a File
+### Reading a File
 A relevant part of programming is related to stored files, in one way or in another. Let's take the first steps in Java file handling. Java's API provides the class [File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html), whose contents can be read using the already known [Scanner](http://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html) class.
 
 If we read the desciption of the `File` [API](http://docs.oracle.com/javase/8/docs/api/java/io/File.html) we notice the `File` class has the constructor `File(String pathname)`, which *creates a new File instance by converting the given pathname string into an abstract pathname*. This means the `File` class constructor can be given the pathname of the file we want to open.
@@ -122,7 +130,7 @@ changing
 program
 ```
 
-#### 12.1.1 Character Set Issues
+#### Character Set Issues
 
 When we read a text file (or when we save something into a file), Java has to find out the character set used by the operating system. Knowledge of the character set is required both to save text on the computer harddisk in binary format, and to translate binary data into text.
 
@@ -139,13 +147,13 @@ Scanner reader = new Scanner(f, "UTF-8");
 
 Anther thing you can do to set up a character set is using an environment variable. Macintosh and Windows users can set up an the value of the environment variable `JAVA_TOOL_OPTIONS` to the string `-Dfile.encoding=UTF8`. In such case, Java always uses UTF-8 characters as a default.
 
-{% include week09/exercise/003.md %}
-{% include week09/exercise/004.md %}
-{% include week09/exercise/005.md %}
+{% include_relative exercises/001.md %}
+{% include_relative exercises/002.md %}
+{% include_relative exercises/003.md %}
 {: .exercises }
 
 
-### 12.2 Writing a File
+### Writing a File
 
 In section 12.1, we learnt that reading from a file happened with the help of the classes `Scanner` and `File`. The class [FileWriter](http://docs.oracle.com/javase/6/docs/api/java/io/FileWriter.html) provides the functionality to write to a file. The `FileWriter` constructor is given as parameter a `String` illustrating the file location.
 
@@ -203,6 +211,6 @@ public class FileHandler {
 
 In most of the cases, instead of writing text at the end of a file with the method `append`, it is easier to write all the file again.
 
-{% include week09/exercise/006.md %}
-{% include week09/exercise/007.md %}
+{% include_relative exercises/004.md %}
+{% include_relative exercises/005.md %}
 {: .exercises }
