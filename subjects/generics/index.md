@@ -1,5 +1,5 @@
 ---
-layout: ogp0
+layout: ogp1
 title: Generics
 meta: 
 todo: 

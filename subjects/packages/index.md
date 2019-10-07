@@ -71,7 +71,7 @@ From now on, in *all* our exercises we will use packages. Next, we will create o
 {% include_relative exercises/001.md %}
 {: .exercises }
 
-### 9.1 A Concrete Directory Construction
+### A Concrete Directory Construction
 
 All the projects which can be seen are stored in your computer *[file system](http://en.wikipedia.org/wiki/File_system)*. Each project has its own directory (folder) which contains the project directories and files.
 
