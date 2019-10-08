@@ -1,6 +1,14 @@
-## 16. Abstract class
+---
+layout: ogp1
+title: Abstract Classes
+meta: Put extra info here, like if there any subjects required for this subject
+todo: what should be improved in this chapter
+---
+{% include licence.md %}
+---
+## Abstract classes
 
-In Exercise 10.3 there's a problem though. It is possible to execute the following code
+In Exercise overwriting-methods-2 there's a problem though. It is possible to execute the following code
 
 ```java
 Vector2D vector = new Vector3D(10,10,10);
@@ -38,6 +46,6 @@ In order to make an object, just extend the Shape class, and implement the abstr
 
 <!-- TODO: abstract toString() -->
 
-{% include week10/exercise/004_new.md %}
-{% include week10/exercise/005_new.md %}
+{% include_relative exercises/001.md %}
+{% include_relative exercises/002.md %}
 {: .exercises }
