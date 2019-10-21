@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="highlighter.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/highlighter.css">
     <style>
         blockquote
         {
@@ -89,6 +89,17 @@
           margin-bottom: 16px;
         }
 
+        ul.tags
+        {
+          display: block;
+          float: right;
+        }
+
+        ul.tags li
+        {
+          display: inline;
+        }
+
  
         h2{ margin-bottom: 20px;}
         h3{ margin-bottom: 20px;}
@@ -141,6 +152,9 @@
           min-height: 120px;
           color: white;
           border-radius: 10px;
+          background-image: url({{site.baseurl}}/images/tip.png);
+          background-repeat: no-repeat;
+
         }
 
         .exercise .tip
@@ -148,20 +162,9 @@
           border: 1px solid #fefefe;
           padding-left: 55px;
           min-height: 70px;
+          content:url({{site.baseurl}}/images/tip_small.png);
+          background-repeat: no-repeat;
         }
-
-        .exercise .tip::before {
-          content:url(images/tip_small.png);
-          float: left;
-          margin-left: -50px;
-        }​
-
-        .tip::before {
-          content:url(images/tip.png);
-          float: left;
-          margin-left: -100px;
-        }​
-
 
         kbd, .key {
           display: inline;
@@ -220,28 +223,75 @@
           border: 1px solid #c6002a;
         }
 
+        .lineback, .lineback > *
+        {
+          background-color: #c6002a !important; 
+          color: white !important;
+        }
+        .hideStack .stack {
+          display: none !important;
+        }
+        .hideOutput + .output {
+          display: none !important;
+        }
+
     </style>
-    <title>{{ page.title }}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>OGP0 - {{ page.title }}</title>
   </head>
   <body>
         <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 7" %} active{% endif %}" href="week7">Week 7</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 1" %} active{% endif %}" href="week1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 1</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/hashmaps">Hashmaps</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/autotesting">Automatic Testing</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/interfaces">Interfaces</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/assignments/7">Extra assignments</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 8" %} active{% endif %}" href="week8">Week 8</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 2" %} active{% endif %}" href="week2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 2</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/generics">Generics</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/collections">Collections</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/single-responsable-principle">Single Responsable Principle</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/packages">Packages</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/interfaces2">Many Interfaces</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/assignments/8">Extra assignments</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 9" %} active{% endif %}" href="week9">Week 9</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 3" %} active{% endif %}" href="week3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 3</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/exceptions">Exceptions</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/fileio">File IO</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 10" %} active{% endif %}" href="week10">Week 10</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 4" %} active{% endif %}" href="week4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 4</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/polymorphism">Polymorphism</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/specializing-classes">Specializing Classes</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/inheritance">Inheritance</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/overwriting-methods">Overwriting Methods</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/abstract-classes">Abstract Classes</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/casting">Casting</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/access-modifiers">Access Modifiers</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 11" %} active{% endif %}" href="week11">Week 11</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 5" %} active{% endif %}" href="week5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 5</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/gui-basics">GUI Basics</a>
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/gui-multiple">Multiple GUI's</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.title == "Week 12" %} active{% endif %}" href="week12">Week 12</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {% if page.title == "Week 6" %} active{% endif %}" href="week6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Week 6</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{site.baseurl}}/subjects/gui-extra">Arrays</a>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -249,7 +299,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 <!--              <a class="dropdown-item" href="glossary">Glossary</a> -->
-              <a class="dropdown-item" href="intellij">IntelliJ FAQ</a>
+              <a class="dropdown-item" href="{{site.baseurl}}/intellij">IntelliJ FAQ</a>
 <!--              <a class="dropdown-item" href="#">Seperate Articles</a> -->
             </div>          </li>
         </ul>
@@ -259,7 +309,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
@@ -290,6 +339,12 @@
           };
         });
 
+        $("blockquote.exercise").each(function(){
+          if($(this).find(".tags").length > 0)
+          {
+            $(this).find("h3").append($(this).find(".tags")[0]);
+          }
+        });
 
         //replace ~~stuff~~ in output code blocks with red text
         $("code.language-output").each(function(index, element)
@@ -337,6 +392,114 @@
         });
 
 
+
+
+        $("div.interactive").each(function(index, element)
+        {
+          var animationFrame = 0;
+
+          $(this).find(".btn").remove();
+          var row = $('<div class="row traceview"></div>');
+
+          if($(this).hasClass("hideOutput"))
+            row.addClass("hideOutput");
+          if($(this).hasClass("hideStack"))
+            row.addClass("hideStack");
+
+          var lineHandler = $('<div style="position: absolute; top: 0px; background-color: rgba(204,204,204,0.3); width: 96%">&nbsp;</div>');
+          $(this).find("pre.highlight").prepend(lineHandler);
+
+          $(this).wrap(row);
+          $(this).addClass("col")
+          var line = 1;
+
+          var code = $(this).find("code");
+
+          var el = $(this).find("code")[0].firstChild;
+          
+          while(el != null)
+          {
+            $(el).attr("linenr", line);
+
+            if(el.nodeType == 3)
+              line += (el.nodeValue.split("\n").length - 1);
+
+            el = el.nextSibling;
+          };
+
+          
+          var col2 = $(`<div class="col" style="border-radius: 10px; border: 1px solid #181712; padding: 10px; background-color: white; margin-bottom: 16px;"></div>`);
+          $(this).after(col2);
+
+          var prev = $(`<input type="button" class="btn btn-primary btn-prev" value="<">`);
+          var step = $(`<input value="0" readonly="true" class="text-center">`);
+          var next = $(`<input type="button" class="btn btn-primary btn-next" value=">">`);
+
+          var controls = $(`<div style="margin-bottom: 10px;" class="row"></div>`);
+          controls.append(prev);
+          controls.append(step);
+          controls.append(next);
+
+          prev.wrap($('<div class="col-2"></div>'));
+          step.wrap($('<div class="col text-center"></div>'));
+          next.wrap($('<div class="col-2"></div>'));
+          col2.append(controls);
+
+          var stack = $(`<ul class="list-group stack" style="margin-bottom: 10px;"></ul>`);
+          col2.append(stack);	
+          var variables = $(`<ul class="list-group" class="variables"></ul>`);
+          col2.append(variables);	
+
+          var cons = $(`<pre class="language-output output"></pre>`)
+          $(this).parent().after(cons);
+
+          var setVars = function(f)
+          {
+            variables.empty();
+            for(var i in f.variables)
+            {
+              if(f.variables[i].name == "args" && f.variables[i].type == "java.lang.String[]")
+                continue;
+              var item = $(`<li class="list-group-item">` + f.variables[i].name + ` -> ` + f.variables[i].value + `</li>`);
+              variables.append(item);
+            }
+          }
+
+          var tracelog = "";
+          var buildAnimationFrame = function()
+          {
+            cons.text(tracelog[animationFrame].out);
+            stack.empty();
+            var frame = tracelog[animationFrame].stack;
+            for(var i in frame)
+            {
+              var item = $(`<li class="list-group-item">` + frame[i].method + `</li>`);
+              stack.append(item);
+            }
+            stack.find("li:first").addClass("active");
+            setVars(frame[0]);
+            if(code.find("[linenr='"+frame[0].line+"']").length > 0)
+              lineHandler.css("top", code.find("[linenr='"+frame[0].line+"']").position().top);
+          }
+
+          $.getJSON("{{site.baseurl}}/js/trace/" + $(this).attr("id") + ".js", function(data)
+          {
+            tracelog = data;
+            buildAnimationFrame();
+          });
+
+          next.click(function(){
+            step.val(Math.min((1*step.val()) + 1, tracelog.length-1));
+            animationFrame = 1*step.val();
+            buildAnimationFrame();
+          })
+          prev.click(function(){
+            step.val(Math.max((1*step.val()) - 1, 0));
+            animationFrame = 1*step.val();
+            buildAnimationFrame();
+          })
+        });
+
       });
     
 
@@ -344,14 +507,14 @@
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620020-1"></script>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620020-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'UA-120620020-1');
-    </script>
+    </script>-->
 
   </body>
 </html>
