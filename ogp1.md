@@ -9,4 +9,4 @@ todo: what should be improved in this chapter
 
 # Welcome
 
-Welcome to the OGP1 course. Please click one of the weeks in top to view the course material.
+Welcome to the Programmeren 2 course. Please click one of the weeks in top to view the course material.
