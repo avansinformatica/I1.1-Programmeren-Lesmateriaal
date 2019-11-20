@@ -11,9 +11,9 @@ todo: what should be improved in this chapter
 
 Let's look at creating Graphical User Interfaces (GUI). Graphical user interfaces differ from the previously used text user interfaces in several ways. When creating graphical user interfaces, we primarily use libraries that provide ready-to-use grapical components such as text boxes and buttons.
 
-User inputs handling also differs from text user input. In which textual interfaces the functionality is coupled to a particular form of input, in graphical user interfaces that functionality needs to be added to handle the user interface input. For example, a programmer adds a method to a button related to pressing a button in the user interface.
+User input handling also differs from text user input. In text interfaces the functionality is coupled to a particular form of input, in graphical user interfaces functionality needs to be added to handle user interface input. For example, a programmer adds a method to a button which handles the press of a button in the user interface.
 
-We are using the Java [JavaFX](https://en.wikipedia.org/wiki/JavaFX) User Interface [Library](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm) to create graphical user interfaces.
+We will use the Java [JavaFX](https://en.wikipedia.org/wiki/JavaFX) User Interface [Library](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm) to create graphical user interfaces.
 
 ### Graphical user interfaces and required libraries
 >The JavaFx library is used to create graphical user interfaces. With Linux machines - depending on Java installation - install the openjfx library as well. To install this in Ubuntu (command line) command:
@@ -49,7 +49,7 @@ When the program starts, the application looks like this.
 
 ![First GUI](images/15_first_gui.png)
 
-What's wrong with the program? Our class `JavaFxExample` inherits a Class [Application](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html) that provides a framework for creating graphical user interfaces. The application is launched by the application class method [launch](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#launch-java.lang.Class-java.lang.String...--), which will be given a class name *ClassName.class*  to be launched as a parameter.
+What's going on in this program? Our class `JavaFxExample` inherits a Class [Application](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html) that provides a framework for creating graphical user interfaces. The application is launched by the application class method [launch](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#launch-java.lang.Class-java.lang.String...--), which will be given a class name *ClassName.class*  to be launched as a parameter.
 
 When the method `launch` is called, the method in the `Application` class creates a new object of the class given in the parameter   and invokes the method `init`. The method `init` is inherited from `Application` class, and is used to initialize objects that are  used inside the program. We left it out of this, because our program is quite simple. After invoking the method, the program calls the method `start`, which gets a [Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html) object describing the window as a parameter. In the implementation above of the methode `start`, the stage object is given as a parameter and sets the title by the method `setTitle`, after the method `show` called the window we be displayed. Eventually, the program will listen to user interface events such as window closure, which will lead to the application shutdown.
 
@@ -58,7 +58,7 @@ When the method `launch` is called, the method in the `Application` class create
 
 ### Structure of the user interface
 
-The graphical user interfaces consist of essentially three parts. Stage is a program window. A Stage Object is set to a [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html) object that reflects the view in the window. The Scene Object, however, includes an object corresponding to the layout of related components (e.g., FlowPane), which again contains specific user interface components.
+The graphical user interfaces consist of essentially three parts. Stage is a program window. A Stage Object is set to a [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html) object that reflects the view in the window. The Scene Object includes an object corresponding to the layout of related components (e.g., FlowPane), which again contains specific user interface components.
 
 The program below creates a user interface with a single button.
 
@@ -94,9 +94,7 @@ The application looks like this:
 
 ![First Button App](images/15_1_firstButtonApp.png)
 
-The user interface components are added to the "corresponding child" of the object corresponding to their layout - above the FlowPane. This is related to the decision made in JavaFx design, where any object used to set the user interface components may contain other objects used for the layout of the user interface components and, of course, also user interface components. This enables graphical user interfaces, the way the user interface components are placed depends on their location in the user interface. For example, the options in the top menu in the UI are usually placed side by side, while the items are listed below.
-
-The structure of the user interface is therefore briefly as follows. The window contains a `Scene` object. The `Scene` Object contains an object corresponding to the layout of the user interface components. The object corresponding to the layout of the user interface components can include both user interface components and objects corresponding to the layout of the user interface components.
+The user interface components are added to the "corresponding child" of the object corresponding to their layout - above the FlowPane. This is related to the decision made in JavaFx design, where any object used to set the user interface components may contain other objects used for the layout of the user interface components and, of course, also user interface components. 
 
 ### User interface Components
 
@@ -284,7 +282,7 @@ The [HBox](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/HBox.
 
 ![HBox](images/15_3_2_hbox.png)
 
-As noted in the previous example, HBox sets the interface components by default directly towards each other. With the method `setSpacing`, the amound of spacing between the components can be set.
+As noted in the previous example, HBox sets the interface components by default directly towards each other. With the method `setSpacing`, the amount of spacing between the components can be set.
 
 ```java
 @Override
@@ -413,7 +411,7 @@ button1.setOnAction((event) -> {
 
 When the button above is pressed, the word *"Hello World!"* Is printed in the console.
 
-Event handlers associated with user interface components like the `EventHandler` we used above, are always linked to specific user interface component. Each time a method is applied to the user interface component, for example, pressing a button on a button, each event handler associated with that specific user interface component is called and the associated program code is executed.
+Event handlers associated with user interface components like the `EventHandler` we used above, are always linked to specific user interface component. Each time a method is applied to the user interface component, for example, clicking on a button, each event handler associated with that specific user interface component is called and the associated program code is executed.
 
 Typically, we want the event handler to modify the status of an object. To get access to the object, the event handler has a reference to the object being handled. Consider the following UI with two text fields and a button.
 
@@ -510,9 +508,9 @@ leftTextArea.textProperty().addListener((changedValue, oldValue, newValue) -> {
 
 ### Separation of application logic and user interface logic
 
-In general, the application logic (such as checking the data) and maintaining the user interface are location in the same class is generally a bad thing. It makes it hard to maintain the source code and testing the programs programs functionality. The motto *"There should be only one clear responsibility for every class"* is applicable for User Interfaces as well.
+If the application logic (such as checking the data) and the user interface code are in the same class this is generally a bad thing. It makes it hard to maintain the source code and test the programs functionality. The principle *"There should be only one clear responsibility for every class"* is applicable for User Interfaces as well.
 
-Consider the separation of application logic and user interface logic. Let's assume that we have the next interface and we want to make the user interface `PersonalCollection`.
+Consider the separation of application logic and user interface logic. Let's assume that we have the following interface and we want to make the user interface `PersonalCollection`.
 
 ```java
 public interface PersonCollection {

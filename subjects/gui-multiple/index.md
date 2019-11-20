@@ -328,7 +328,7 @@ public class WordView {
 }
 ```
 
-#### Word Trainig
+#### Word Training
 
 Then create the required functionality for training. For training, we also need a reference to the `WordDictionary` object so that we can search for words for practiced and check the correctness of the translations entered by the user. In addition to the dictionary, we need a text to ask the word, and a text field where the user can input the translation. `GridPane` is well suited for this.
 
@@ -390,7 +390,7 @@ public class TrainingView {
 }
 ```
 
-#### Traning Application
+#### Training Application
 
 Training app and stack the above categories together to provide the application menu. The training app is structured as follows.
 
