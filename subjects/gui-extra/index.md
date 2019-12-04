@@ -133,8 +133,6 @@ studyToggleGroup.selectedToggleProperty().addListener(
                 });
 ```
 
-![Checkboxes](images/17_2_CheckBoxes.png)
-
 {% include_relative exercises/001.md %}
 {: .exercises }
 
