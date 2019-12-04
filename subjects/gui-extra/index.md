@@ -133,7 +133,7 @@ studyToggleGroup.selectedToggleProperty().addListener(
                 });
 ```
 
-{% include week12/exercise/FX_001.md %}
+{% include_relative exercises/001.md %}
 {: .exercises }
 
 ### 17.2. CheckBoxes
